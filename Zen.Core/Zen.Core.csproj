@@ -87,6 +87,10 @@
       <Project>{B286E7CD-76E1-4662-8A0F-0EAFEF23EE87}</Project>
       <Name>Zen.Net</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Zen.Shared\Zen.Shared.csproj">
+      <Project>{133b14a6-af64-4cfd-be6e-a646b98a386e}</Project>
+      <Name>Zen.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Zen.Util\Zen.Util.csproj">
       <Project>{D1FE5BDF-2FA1-4EE9-8879-A7CA5110083C}</Project>
       <Name>Zen.Util</Name>
