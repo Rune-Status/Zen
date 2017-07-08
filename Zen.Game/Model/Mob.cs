@@ -7,7 +7,7 @@
             WalkingQueue = new WalkingQueue(this);
         }
 
-        public short Id { get; set; }
+        public int Id { get; set; }
         public bool Active => Id != 0;
 
         public Animation Animation { get; private set; }

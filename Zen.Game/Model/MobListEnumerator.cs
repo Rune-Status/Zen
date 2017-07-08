@@ -7,43 +7,31 @@ using System.Threading.Tasks;
 
 namespace Zen.Game.Model
 {
-    internal class EntityListEnumerator<T> : IEnumerator<T> where T : Entity
+    internal class MobListEnumerator<T> : IEnumerator<T> where T : Mob
     {
         private readonly int[] _indicies;
         private readonly T[] _entities;
-        private EntityList<T> _entityList;
+        private MobList<T> _mobList;
 
         protected int CurrentIndex;
         protected T current;
 
-        public EntityListEnumerator(T[] entities, HashSet<int> indicies, EntityList<T> entityList)
+        public MobListEnumerator(T[] entities, HashSet<int> indicies, MobList<T> mobList)
         {
             _entities = entities;
             _indicies = new int[indicies.Count]; 
             indicies.CopyTo(_indicies);
-            _entityList = entityList;
+            _mobList = mobList;
             CurrentIndex = -1;
         }
 
-        public T Current
-        {
-            get
-            {
-                return current;
-            }
-        }
+        public T Current => current;
 
-        object IEnumerator.Current
-        {
-            get
-            {
-                return current;
-            }
-        }
+        object IEnumerator.Current => current;
 
         public bool MoveNext()
         {
-            if (CurrentIndex++ >= _indicies.Length)
+            if (++CurrentIndex >= _indicies.Length)
             {
                 return false;
             }
@@ -55,7 +43,7 @@ namespace Zen.Game.Model
         {
             if (CurrentIndex >= 1)
             {
-                _entityList.Remove(_indicies[CurrentIndex - 1]);
+                _mobList.Remove(_indicies[CurrentIndex - 1]);
             }
         }
 
@@ -67,7 +55,7 @@ namespace Zen.Game.Model
 
         public void Dispose()
         {
-            _entityList = null;
+            _mobList = null;
             current = default(T);
             CurrentIndex = -1;
         }

@@ -76,8 +76,8 @@
     <Compile Include="Model\Appearance.cs" />
     <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Entity.cs" />
-    <Compile Include="Model\EntityList.cs" />
-    <Compile Include="Model\EntityListEnumerator.cs" />
+    <Compile Include="Model\MobList.cs" />
+    <Compile Include="Model\MobListEnumerator.cs" />
     <Compile Include="Model\Equipment.cs" />
     <Compile Include="Model\EquipmentDefinition.cs" />
     <Compile Include="Model\Gender.cs" />

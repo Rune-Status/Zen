@@ -1,4 +1,7 @@
-﻿using NLog;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using NLog;
 using Zen.Game.Model;
 using Zen.Game.Update;
 using Zen.Shared;
@@ -9,7 +12,7 @@ namespace Zen.Game
     {
         public static readonly GameWorld Instance = new GameWorld();
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        private readonly EntityList<Player> _players = new EntityList<Player>(GameConstants.MaxPlayers);
+        private readonly MobList<Player> _players = new MobList<Player>(GameConstants.MaxPlayers);
 
         private readonly PlayerUpdater _updater;
 
@@ -20,12 +23,12 @@ namespace Zen.Game
 
         public bool AddPlayer(Player player)
         {
-            if (player == null ||_players.Contains(player))
+            if (player == null || _players.Contains(player))
                 return false;
 
             _players.Add(player);
+
             var slotId = _players.IndexOf(player);
-            player.Id = (short) slotId;
 
             if (slotId != -1)
             {
@@ -33,7 +36,7 @@ namespace Zen.Game
             }
             else
             {
-                Logger.Error($"Could not register Player [Username={player.Username}, Id={player.Id}]");
+                Logger.Info($"Could not register Player [Username={player.Username}, Id={player.Id}]");
 
             }
             return true;
@@ -41,9 +44,6 @@ namespace Zen.Game
 
         public void RemovePlayer(Player player)
         {
-            var slotId = _players.IndexOf(player);
-            player.Id = (short) slotId;
-
             if (!_players.Contains(player))
                 return;
             if (!_players.Remove(player))
@@ -72,7 +72,7 @@ namespace Zen.Game
             _updater.Tick();
         }
 
-        public EntityList<Player> GetPlayers()
+        public MobList<Player> GetPlayers()
         {
             return _players;
         }

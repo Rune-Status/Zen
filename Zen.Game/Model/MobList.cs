@@ -7,7 +7,7 @@ using Zen.Shared;
 
 namespace Zen.Game.Model
 {
-    public class EntityList<T> : ICollection<T> where T : Entity
+    public class MobList<T> : ICollection<T> where T : Mob
     {
 
         private readonly T[] _entities;
@@ -15,13 +15,13 @@ namespace Zen.Game.Model
         private readonly int _capacity;
         private int _currentIndex = 1;
 
-        public EntityList(int capacity)
+        public MobList(int capacity)
         {
             _entities = new T[capacity];
             _capacity = capacity;
         }
 
-        public EntityList(IEnumerable<T> collection)
+        public MobList(IEnumerable<T> collection)
         {
             foreach (var entity in collection)
                 Add(entity);
@@ -43,7 +43,7 @@ namespace Zen.Game.Model
             else
             {
                 _entities[_currentIndex] = entity;
-                entity.Index = index;
+                entity.Id = index;
                 _indicies.Add(_currentIndex);
                 IncreaseIndex();
             }
@@ -53,8 +53,8 @@ namespace Zen.Game.Model
 
         public bool Remove(T entity)
         {
-            _entities[entity.Index] = null;
-            _indicies.Remove(entity.Index);
+            _entities[entity.Id] = null;
+            _indicies.Remove(entity.Id);
             DecreaseIndex();
             return true;
         }
@@ -94,12 +94,13 @@ namespace Zen.Game.Model
             return -1;
         }
 
-        public int Count => _indicies.Count;
+        public int Count => _indicies.Count();
+
         public bool IsReadOnly => throw new NotImplementedException();
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new EntityListEnumerator<T>(_entities, _indicies, this);
+            return new MobListEnumerator<T>(_entities, _indicies, this);
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
