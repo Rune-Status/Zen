@@ -74,6 +74,7 @@
     <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\EquipmentDefinition.cs" />
     <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\InterfaceSet.cs" />
     <Compile Include="Model\Inventory.cs" />

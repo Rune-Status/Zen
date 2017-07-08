@@ -8,6 +8,7 @@ using NLog;
 using NLog.Conditions;
 using NLog.Config;
 using NLog.Targets;
+using Zen.Core.Tools;
 using Zen.Game;
 using Zen.Net;
 using Zen.Net.Handshake;
@@ -77,6 +78,8 @@ namespace Zen.Core
                 _bootstrap.Group().ShutdownGracefullyAsync();
                 _bootstrap.ChildGroup().ShutdownGracefullyAsync();
             };
+
+            EquipmentDumper.Dump(_server.Cache);
         }
 
         public static void Main(string[] args)

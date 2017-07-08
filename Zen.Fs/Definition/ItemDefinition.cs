@@ -9,37 +9,45 @@ namespace Zen.Fs.Definition
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         public static ItemDefinition[] Definitions { get; private set; }
+        public static int Count => Definitions.Length;
+
+        public string Name { get; private set; }
 
         public int InventoryModelId { get; private set; }
-        public string Name { get; private set; }
-        public int ModelOffset1 { get; private set; }
-        public int ModelRotation2 { get; private set; }
-        public int ModelRotation1 { get; private set; }
         public int ModelZoom { get; private set; }
-        public int LendTemplateId { get; private set; }
-        public int LendId { get; private set; }
-        public int TeamId { get; private set; }
-        public int[] StackableAmounts { get; } = new int[10];
-        public int[] StackableIds { get; } = new int[10];
-        public int NotedTemplateId { get; private set; }
-        public int NotedId { get; private set; }
-        public int ColorEquip2 { get; private set; }
-        public int ColorEquip1 { get; private set; }
-        public bool Noted { get; private set; }
-        public int[] ModifiedTextureColor { get; private set; }
-        public int[] OriginalTextureColor { get; private set; }
-        public int[] ModifiedModelColors { get; private set; }
-        public int[] OriginalModelColors { get; private set; }
-        public string[] InventoryOptions { get; } = {null, null, "take", null, null};
-        public string[] GroundOptions { get; } = {null, null, null, null, "drop"};
-        public int FemaleWearModel2 { get; private set; }
-        public int MaleWearModel2 { get; private set; }
-        public int FemaleWearModel1 { get; private set; }
-        public int MaleWearModel1 { get; private set; }
-        public bool MembersOnly { get; private set; }
-        public int Value { get; private set; }
-        public bool Stackable { get; private set; }
+        public int ModelRotation1 { get; private set; }
+        public int ModelRotation2 { get; private set; }
+        public int ModelOffset1 { get; private set; }
         public int ModelOffset2 { get; private set; }
+
+        public bool Stackable { get; private set; }
+        public int Value { get; private set; }
+        public bool MembersOnly { get; private set; }
+
+        public int MaleWearModel1 { get; private set; } = -1;
+        public int MaleWearModel2 { get; private set; } = -1;
+        public int FemaleWearModel1 { get; private set; } = -1;
+        public int FemaleWearModel2 { get; private set; } = -1;
+
+        public string[] GroundOptions { get; } = {null, null, "take", null, null};
+        public string[] InventoryOptions { get; } = {null, null, null, null, "drop"};
+
+        public short[] OriginalModelColors { get; private set; }
+        public short[] ModifiedModelColors { get; private set; }
+        public short[] OriginalTextureColors { get; private set; }
+        public short[] ModifiedTextureColors { get; private set; }
+        public bool Unnoted { get; private set; }
+
+        public int ColorEquip1 { get; private set; }
+        public int ColorEquip2 { get; private set; }
+        public int NotedId { get; private set; } = -1;
+        public int NotedTemplateId { get; private set; } = -1;
+        public int[] StackableIds { get; private set; }
+        public int[] StackableAmounts { get; private set; }
+        public int TeamId { get; private set; }
+        public int LendId { get; private set; } = -1;
+        public int LendTemplateId { get; private set; } = -1;
+
         public Dictionary<int, object> Scripts { get; } = new Dictionary<int, object>();
 
         public static void Load(Cache cache)
@@ -142,11 +150,11 @@ namespace Zen.Fs.Definition
             }
             else if (opcode == 24)
             {
-                FemaleWearModel1 = buffer.ReadUnsignedShort();
+                MaleWearModel2 = buffer.ReadUnsignedShort();
             }
             else if (opcode == 25)
             {
-                MaleWearModel2 = buffer.ReadUnsignedShort();
+                FemaleWearModel1 = buffer.ReadUnsignedShort();
             }
             else if (opcode == 26)
             {
@@ -164,26 +172,26 @@ namespace Zen.Fs.Definition
             {
                 var length = buffer.ReadByte() & 0xFF;
 
-                OriginalModelColors = new int[length];
-                ModifiedModelColors = new int[length];
+                OriginalModelColors = new short[length];
+                ModifiedModelColors = new short[length];
 
                 for (var id = 0; id < length; id++)
                 {
-                    OriginalModelColors[id] = buffer.ReadUnsignedShort();
-                    ModifiedModelColors[id] = buffer.ReadUnsignedShort();
+                    OriginalModelColors[id] = (short) buffer.ReadUnsignedShort();
+                    ModifiedModelColors[id] = (short) buffer.ReadUnsignedShort();
                 }
             }
             else if (opcode == 41)
             {
                 var length = buffer.ReadByte() & 0xFF;
 
-                OriginalTextureColor = new int[length];
-                ModifiedTextureColor = new int[length];
+                OriginalTextureColors = new short[length];
+                ModifiedTextureColors = new short[length];
 
                 for (var id = 0; id < length; id++)
                 {
-                    OriginalTextureColor[id] = buffer.ReadUnsignedShort();
-                    ModifiedTextureColor[id] = buffer.ReadUnsignedShort();
+                    OriginalTextureColors[id] = (short) buffer.ReadUnsignedShort();
+                    ModifiedTextureColors[id] = (short) buffer.ReadUnsignedShort();
                 }
             }
             else if (opcode == 42)
@@ -193,7 +201,7 @@ namespace Zen.Fs.Definition
             }
             else if (opcode == 65)
             {
-                Noted = false;
+                Unnoted = true;
             }
             else if (opcode == 78)
             {
@@ -222,6 +230,11 @@ namespace Zen.Fs.Definition
             }
             else if (opcode >= 100 && opcode < 110)
             {
+                if (StackableIds == null)
+                {
+                    StackableIds = new int[10];
+                    StackableAmounts = new int[10];
+                }
                 StackableIds[opcode - 100] = buffer.ReadUnsignedShort();
                 StackableAmounts[opcode - 100] = buffer.ReadUnsignedShort();
             }

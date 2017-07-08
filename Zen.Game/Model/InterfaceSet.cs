@@ -270,6 +270,9 @@ namespace Zen.Game.Model
             public const int ChatboxOptions = 751;
             public const int PrivateChat = 754;
             public const int ChatboxBar = 137;
+
+            public const int AttackAxe = 75;
+            public const int AttackMaul = 76;
         }
 
         public class Slots

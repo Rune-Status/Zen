@@ -80,6 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Zen.Fs\Zen.Fs.csproj">
+      <Project>{903EF45E-08D8-4483-BE1D-E70ED70DC2C4}</Project>
+      <Name>Zen.Fs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Zen.Game\Zen.Game.csproj">
       <Project>{E6690EA5-B3B8-4474-BE52-B88494F4D88E}</Project>
       <Name>Zen.Game</Name>
