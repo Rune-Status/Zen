@@ -12,8 +12,8 @@ namespace Zen.Net
 {
     public class GameChannelHandler : ChannelHandlerAdapter
     {
-        private readonly ServiceManager _serviceManager;
         private readonly GameServer _server;
+        private readonly ServiceManager _serviceManager;
 
         public GameChannelHandler(ServiceManager serviceManager, GameServer server)
         {

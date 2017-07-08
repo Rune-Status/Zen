@@ -8,9 +8,8 @@ namespace Zen.Game
 {
     public class GameServer
     {
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-
         public const int Version = 530;
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         public GameServer()
         {

@@ -8,7 +8,7 @@ using Zen.Net.Service;
 
 namespace Zen.Net.Update
 {
-    public class UpdateSession : Net.Session
+    public class UpdateSession : Session
     {
         private readonly LinkedList<FileRequest> _fileRequests = new LinkedList<FileRequest>();
         private readonly UpdateService _service;

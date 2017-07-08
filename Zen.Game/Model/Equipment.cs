@@ -4,8 +4,6 @@ namespace Zen.Game.Model
 {
     public class Equipment : ItemContainer
     {
-        private readonly Player _player;
-
         public const int Head = 0,
             Cape = 1,
             Neck = 2,
@@ -19,6 +17,7 @@ namespace Zen.Game.Model
             Ammo = 13;
 
         public const int Capacity = 14;
+        private readonly Player _player;
 
         public Equipment(Player player) : base(Capacity)
         {
@@ -35,14 +34,11 @@ namespace Zen.Game.Model
 
 
             if (slot == Weapon && remaining == null)
-            {
                 WeaponChanged();
-            }
         }
 
         private void WeaponChanged()
         {
-
         }
 
         public override void FireItemChanged(int slot, Item item)
@@ -54,7 +50,9 @@ namespace Zen.Game.Model
         public override void FireItemsChanged()
         {
             if (Empty)
+            {
                 _player.Send(new InterfaceResetItemsMessage(387, 28));
+            }
             else
             {
                 var items = ToArray();

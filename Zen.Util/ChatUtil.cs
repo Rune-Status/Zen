@@ -128,7 +128,7 @@ namespace Zen.Util
                 var remainder = bitPos & 0x7;
                 key &= -remainder >> 31;
                 bitPos += size;
-                var end = (((remainder + size) - 1) >> 3) + off;
+                var end = ((remainder + size - 1) >> 3) + off;
 
                 remainder += 24;
                 dest[off] = (byte) (key |= (int) ((uint) mask >> remainder));

@@ -19,9 +19,7 @@ namespace Zen.Net.Game
         {
             _repository.InCodecs.TryGetValue(message.Opcode, out dynamic decoder);
             if (decoder == null)
-            {
                 return;
-            }
 
             output.Add(decoder.Decode(message));
         }

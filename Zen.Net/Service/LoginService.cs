@@ -90,12 +90,10 @@ namespace Zen.Net.Service
                 if (status != LoginConstants.StatusOk)
                     Session.SendLoginFailure(status);
                 else
-                {
                     lock (service.NewPlayers)
                     {
                         service.NewPlayers.Enqueue(new SessionPlayerPair(Session, result.Player));
                     }
-                }
             }
         }
 

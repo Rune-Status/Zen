@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using DotNetty.Transport.Channels;
+﻿using DotNetty.Transport.Channels;
 using Zen.Game;
 using Zen.Game.Model;
 using Zen.Game.Msg;
@@ -10,8 +9,8 @@ namespace Zen.Net.Game
 {
     public class GameSession : Session
     {
-        private readonly Player _player;
         private readonly LoginService _loginService;
+        private readonly Player _player;
         private readonly PlayerSession _playerSession;
 
         public GameSession(ServiceManager serviceManager, GameServer server, IChannel channel, Player player) : base(

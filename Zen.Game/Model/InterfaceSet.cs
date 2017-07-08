@@ -145,7 +145,9 @@ namespace Zen.Game.Model
 
         private Interface GetOpenInterface(int id)
         {
-            return (from @interface in _interfaces where @interface.Id == id select Opened(@interface) ? @interface : null).FirstOrDefault();
+            return (from @interface in _interfaces
+                where @interface.Id == id
+                select Opened(@interface) ? @interface : null).FirstOrDefault();
         }
 
         public class Interface

@@ -16,7 +16,6 @@ namespace Zen.Game.Msg.Encoder
             builder.Put(DataType.Short, items.Length);
 
             foreach (var item in items)
-            {
                 if (item == null)
                 {
                     builder.Put(DataType.Byte, DataTransformation.Subtract, 0);
@@ -36,7 +35,6 @@ namespace Zen.Game.Msg.Encoder
                     }
                     builder.Put(DataType.Short, item.Id + 1);
                 }
-            }
 
             return builder.ToGameFrame();
         }

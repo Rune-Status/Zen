@@ -14,14 +14,6 @@ namespace Zen.Game.Model
             InitializeMembers();
         }
 
-        private void InitializeMembers()
-        {
-            InterfaceSet = new InterfaceSet(this);
-            SkillSet = new SkillSet(this);
-            Inventory = new Inventory(this);
-            Equipment = new Equipment(this);
-        }
-
         public string Username { get; }
         public string Password { get; }
         public int Rights { get; } = 2;
@@ -36,6 +28,14 @@ namespace Zen.Game.Model
         public SkillSet SkillSet { get; private set; }
         public Inventory Inventory { get; private set; }
         public Equipment Equipment { get; private set; }
+
+        private void InitializeMembers()
+        {
+            InterfaceSet = new InterfaceSet(this);
+            SkillSet = new SkillSet(this);
+            Inventory = new Inventory(this);
+            Equipment = new Equipment(this);
+        }
 
         public new void Reset()
         {

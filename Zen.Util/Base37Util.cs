@@ -49,7 +49,7 @@ namespace Zen.Util
                     throw new ArgumentException($"Illegal character in string: {c}.");
             }
 
-            while (value != 0 && (value % 37) == 0)
+            while (value != 0 && value % 37 == 0)
                 value /= 37;
 
             return value;

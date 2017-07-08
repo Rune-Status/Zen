@@ -31,16 +31,14 @@ namespace Zen.Game.Msg.Encoder
                 force = false;
 
             for (var mapX = (position.CentralRegionX - 6) / 8; mapX <= (position.CentralRegionX + 6) / 8; mapX++)
+            for (var mapY = (position.CentralRegionY - 6) / 8; mapY <= (position.CentralRegionY + 6) / 8; mapY++)
             {
-                for (var mapY = (position.CentralRegionY - 6) / 8; mapY <= (position.CentralRegionY + 6) / 8; mapY++)
-                {
-                    if (!force && (mapY == 49 || mapY == 149 || mapY == 147 || mapX == 50 ||
-                                   mapX == 49 && mapY == 47)) continue;
+                if (!force && (mapY == 49 || mapY == 149 || mapY == 147 || mapX == 50 ||
+                               mapX == 49 && mapY == 47)) continue;
 
-                    var keys = _keyTable.GetKeys(mapX, mapY);
-                    foreach (var key in keys)
-                        builder.Put(DataType.Int, DataOrder.InversedMiddle, key);
-                }
+                var keys = _keyTable.GetKeys(mapX, mapY);
+                foreach (var key in keys)
+                    builder.Put(DataType.Int, DataOrder.InversedMiddle, key);
             }
 
             return builder.Put(DataType.Byte, DataTransformation.Subtract, position.Height)

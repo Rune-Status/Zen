@@ -4,9 +4,8 @@ namespace Zen.Game.Model
 {
     public class Inventory : ItemContainer
     {
-        private readonly Player _player;
-
         public const int Capacity = 28;
+        private readonly Player _player;
 
         public Inventory(Player player) : base(Capacity)
         {
@@ -22,7 +21,9 @@ namespace Zen.Game.Model
         public override void FireItemsChanged()
         {
             if (Empty)
+            {
                 _player.Send(new InterfaceResetItemsMessage(149, 0));
+            }
             else
             {
                 var items = ToArray();

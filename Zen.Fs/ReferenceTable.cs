@@ -92,9 +92,7 @@ namespace Zen.Fs
         {
             var hash = name.Hash();
             if (!NamedEntries.ContainsKey(hash))
-            {
                 return -1;
-            }
             return NamedEntries[hash];
         }
 

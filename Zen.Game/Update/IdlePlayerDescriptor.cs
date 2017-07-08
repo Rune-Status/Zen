@@ -14,14 +14,10 @@ namespace Zen.Game.Update
             GameFrameBuilder blockBuilder)
         {
             if (BlockUpdateRequired)
-            {
                 builder.PutBits(1, 1)
                     .PutBits(2, 0);
-            }
             else
-            {
                 builder.PutBits(1, 0);
-            }
         }
     }
 }

@@ -6,8 +6,8 @@ namespace Zen.Game.Update
 {
     public class AddPlayerDescriptor : PlayerDescriptor
     {
-        private readonly int _id;
         private readonly Direction _direction;
+        private readonly int _id;
         private readonly Position _position;
 
         public AddPlayerDescriptor(Player player, int[] tickets) : base(player, tickets)

@@ -1,5 +1,4 @@
-﻿using System;
-using DotNetty.Buffers;
+﻿using DotNetty.Buffers;
 using DotNetty.Transport.Channels;
 using Zen.Net.Login;
 using Zen.Net.Update;

@@ -5,8 +5,8 @@ namespace Zen.Game.Model
 {
     public class SkillSet
     {
-        private readonly Player _player;
         private readonly SkillMetadata[] _metadata;
+        private readonly Player _player;
 
         public SkillSet(Player player)
         {
