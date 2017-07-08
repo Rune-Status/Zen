@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
 
@@ -15,13 +16,13 @@ namespace Zen.Game.Update
 
         public void Tick()
         {
-            foreach (var player in _world.Players)
+            foreach (var player in _world.GetPlayers())
                 Preprocess(player);
 
-            foreach (var player in _world.Players)
+            foreach (var player in _world.GetPlayers())
                 UpdatePlayers(player);
 
-            foreach (var player in _world.Players)
+            foreach (var player in _world.GetPlayers())
                 Postprocess(player);
         }
 
@@ -63,7 +64,7 @@ namespace Zen.Game.Update
                     descriptors.Add(PlayerDescriptor.Create(p, tickets));
                 }
 
-            foreach (var p in _world.Players)
+            foreach (var p in _world.GetPlayers())
             {
                 if (localPlayers.Count >= 255)
                     break;

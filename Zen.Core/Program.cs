@@ -14,12 +14,12 @@ using Zen.Net;
 using Zen.Net.Handshake;
 using Zen.Net.Service;
 using Zen.Util;
+using Zen.Shared;
 
 namespace Zen.Core
 {
     public class Program
     {
-        public const int DefaultPortId = 43594;
 
         private readonly ServerBootstrap _bootstrap = new ServerBootstrap();
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();
@@ -29,7 +29,7 @@ namespace Zen.Core
 
         static Program()
         {
-            Console.Title = "Zen";
+            Console.Title = GameConstants.Title;
 
             var config = new LoggingConfiguration();
             var consoleTarget = new ColoredConsoleTarget();
@@ -85,7 +85,7 @@ namespace Zen.Core
         public static void Main(string[] args)
         {
             var port = args.Length == 0
-                ? DefaultPortId
+                ? GameConstants.Port
                 : int.Parse(args[0]);
 
             new Program(port).Start();

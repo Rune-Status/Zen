@@ -5,6 +5,7 @@ using DotNetty.Transport.Channels;
 using Zen.Fs;
 using Zen.Game;
 using Zen.Net.Service;
+using Zen.Shared;
 
 namespace Zen.Net.Update
 {
@@ -54,7 +55,7 @@ namespace Zen.Net.Update
                 var version = (UpdateVersionMessage) message;
 
                 var status = UpdateStatusMessage.StatusOk;
-                if (version.Version != GameServer.Version)
+                if (version.Version != GameConstants.Version)
                     status = UpdateStatusMessage.StatusOutOfDate;
 
                 var future = Channel.WriteAndFlushAsync(new UpdateStatusMessage(status));

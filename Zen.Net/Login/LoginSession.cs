@@ -41,7 +41,7 @@ namespace Zen.Net.Login
             if (request.ServerSessionKey != _serverSessionKey)
                 throw new IOException("Server session key mismatch.");
 
-            var versionMismatch = request.Version != GameServer.Version;
+            var versionMismatch = request.Version != GameConstants.Version;
 
             var table = Server.Cache.ChecksumTable;
             var crc = request.Crc;
