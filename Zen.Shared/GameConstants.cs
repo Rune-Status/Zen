@@ -11,5 +11,8 @@ namespace Zen.Shared
         public const string Title = "Zen";
         public const int Port = 43594;
         public const int Version = 530;
+
+        public const int MaxPlayers = 2048;
+        public const int MaxNpcs = 5000;
     }
 }

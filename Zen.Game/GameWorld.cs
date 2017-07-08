@@ -4,6 +4,7 @@ using System.Linq;
 using NLog;
 using Zen.Game.Model;
 using Zen.Game.Update;
+using Zen.Shared;
 
 namespace Zen.Game
 {
@@ -11,63 +12,72 @@ namespace Zen.Game
     {
         public static readonly GameWorld Instance = new GameWorld();
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        private readonly Dictionary<short, Player> _players = new Dictionary<short, Player>();
+        private readonly EntityList<Player> _players = new EntityList<Player>(GameConstants.MaxPlayers);
 
-        private readonly bool[] _slots = new bool[2500];
         private readonly PlayerUpdater _updater;
 
         private GameWorld()
         {
             _updater = new PlayerUpdater(this);
-            _slots[0] = true;
         }
-
-        public Dictionary<short, Player>.ValueCollection Players => _players.Values;
 
         public bool AddPlayer(Player player)
         {
-            short slotId;
-            if ((slotId = ReserveSlot()) == -1 || _players.ContainsKey(slotId))
+            if (player == null ||_players.Contains(player))
                 return false;
 
-            player.Id = slotId;
-            _players[slotId] = player;
+            _players.Add(player);
+            var slotId = _players.IndexOf(player);
+            player.Id = (short) slotId;
 
-            Logger.Info($"Registered Player [Username={player.Username}, Id={player.Id}]");
+            if (slotId != -1)
+            {
+                Logger.Info($"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
+            }
+            else
+            {
+                Logger.Info($"Could not register Player [Username={player.Username}, Id={player.Id}]");
+
+            }
             return true;
         }
 
         public void RemovePlayer(Player player)
         {
-            var slotId = player.Id;
-            if (!_players.ContainsKey(slotId)) return;
-            if (!_players.Remove(slotId)) return;
+            var slotId = _players.IndexOf(player);
+            player.Id = (short) slotId;
 
-            _slots[slotId] = false;
-            Logger.Info($"Unregistered Player [Username={player.Username}, Online={_players.Count}]");
+            if (!_players.Contains(player))
+                return;
+            if (!_players.Remove(player))
+                return;
+
+            Logger.Info($"Unregistered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
         }
 
-        public Player GetPlayer(string username) => _players.Values.FirstOrDefault(
-            player => player.Username.Equals(username, StringComparison.InvariantCultureIgnoreCase));
-
-        private short ReserveSlot()
+        public Player GetPlayer(string username)
         {
-            for (short id = 1; id < _slots.Length; id++)
+            foreach (var player in _players)
             {
-                if (_slots[id]) continue;
-
-                _slots[id] = true;
-                return id;
+                if (player != null && player.Username.Equals(username))
+                {
+                    return player;
+                }
             }
-            return -1;
+            return null;
         }
 
         public void Tick()
         {
-            foreach (var player in Players)
+            foreach (var player in _players)
                 player.Session?.ProcessMessageQueue();
 
             _updater.Tick();
+        }
+
+        public EntityList<Player> GetPlayers()
+        {
+            return _players;
         }
     }
 }

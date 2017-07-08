@@ -52,6 +52,9 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
       <HintPath>..\packages\NLog.5.0.0-beta09\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -73,6 +76,8 @@
     <Compile Include="Model\Appearance.cs" />
     <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\EntityList.cs" />
+    <Compile Include="Model\EntityListEnumerator.cs" />
     <Compile Include="Model\Equipment.cs" />
     <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\InterfaceSet.cs" />
@@ -161,6 +166,7 @@
       <Name>Zen.Util</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

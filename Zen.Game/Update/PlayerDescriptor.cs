@@ -15,7 +15,7 @@ namespace Zen.Game.Update
         {
             if (player.Active)
             {
-                var id = player.Id - 1;
+                var id = player.Id;
                 var ticket = player.Appearance.TicketId;
                 if (tickets[id] != ticket)
                 {
