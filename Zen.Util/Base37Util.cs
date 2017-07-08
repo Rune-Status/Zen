@@ -33,7 +33,7 @@ namespace Zen.Util
             if (len > 12)
                 throw new ArgumentException("String too long.");
 
-            var value = 0;
+            long value = 0;
             for (var pos = 0; pos < len; pos++)
             {
                 var c = str[pos];
@@ -46,10 +46,10 @@ namespace Zen.Util
                 else if (c >= '0' && c <= '9')
                     value += c - '0' + 27;
                 else if (c != ' ' && c != '_')
-                    throw new ArgumentException($"Illegal character in string: {c}.");
+                    throw new ArgumentException("Illegal character in string: " + c + ".");
             }
 
-            while (value != 0 && value % 37 == 0)
+            while (value != 0 && (value % 37) == 0)
                 value /= 37;
 
             return value;

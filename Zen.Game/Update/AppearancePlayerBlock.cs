@@ -9,11 +9,13 @@ namespace Zen.Game.Update
     {
         private readonly Appearance _appearance;
         private readonly string _username;
+        private readonly Equipment _equipment;
 
         public AppearancePlayerBlock(Player player) : base(0x4)
         {
             _username = player.Username;
             _appearance = player.Appearance;
+            _equipment = player.Equipment;
         }
 
         public override void Encode(PlayerUpdateMessage message, GameFrameBuilder builder)
@@ -26,9 +28,10 @@ namespace Zen.Game.Update
                 .Put(DataType.Byte, -1)
                 .Put(DataType.Byte, -1);
 
-            for (var id = 0; id < 4; id++)
+            for (var slot = 0; slot < 4; slot++)
+            {
                 propertiesBuilder.Put(DataType.Byte, 0);
-
+            }
 
             propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[2])
                 .Put(DataType.Byte, 0)
