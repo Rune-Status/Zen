@@ -49,10 +49,7 @@ namespace Zen.Game.Model
             }
         }
 
-        public void Add(T entity)
-        {
-            Add(entity, _currentIndex);
-        }
+        public void Add(T entity) => Add(entity, _currentIndex);
 
         public bool Remove(T entity)
         {
@@ -77,10 +74,7 @@ namespace Zen.Game.Model
                 Remove(entity);
         }
 
-        public bool Contains(T entity)
-        {
-            return _entities.Contains(entity);
-        }
+        public bool Contains(T entity) => _entities.Contains(entity);
 
         public void CopyTo(T[] entities, int index)
         {
@@ -100,14 +94,7 @@ namespace Zen.Game.Model
             return -1;
         }
 
-        public int Count
-        {
-            get
-            {
-                return _indicies.Count();
-            }
-        }
-
+        public int Count => _indicies.Count;
         public bool IsReadOnly => throw new NotImplementedException();
 
         public IEnumerator<T> GetEnumerator()

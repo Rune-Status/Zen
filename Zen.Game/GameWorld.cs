@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using NLog;
+﻿using NLog;
 using Zen.Game.Model;
 using Zen.Game.Update;
 using Zen.Shared;
@@ -36,7 +33,7 @@ namespace Zen.Game
             }
             else
             {
-                Logger.Info($"Could not register Player [Username={player.Username}, Id={player.Id}]");
+                Logger.Error($"Could not register Player [Username={player.Username}, Id={player.Id}]");
 
             }
             return true;
