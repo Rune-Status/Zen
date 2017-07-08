@@ -6,10 +6,11 @@ RuneScape Emulator written in C#
 * William Talleur
 
 ## Issue Tracker
-| Issue  | Summary | Priority | Assignee |
+| Issue  | Summary  | Status  | Priority  | Assignee  |
 | ------------- | ------------- | ------------- | ------------- | 
-| Framework redesign  | Refactor solution to include 5 sub-projects (Core, Net, Game, Filestore, Util)  | HIGH  | Tom Legodais  |
-| Player updating  | Player update block, appearance, etc  | HIGH  | N/A  |
+| Framework redesign  | Refactor solution to include 5 sub-projects (Core, Net, Game, Filestore, Util)  | HIGH  | In Development  | Tom Legodais  |
+| Player updating  | Player update block, appearance, etc  | HIGH  | Not started  | N/A  |
+| Entity List  |  |  HIGH  | Completed  |  William Talleur  |
 
 ## Libraries
 * DotNetty 0.4.5
