@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace Zen.Game.Model
 {
-    [JsonObject(MemberSerialization.OptIn)]
     public abstract class ItemContainer
     {
         public enum StackMode
@@ -13,8 +11,7 @@ namespace Zen.Game.Model
             StackableOnly
         }
 
-        [JsonProperty]
-        private Item[] _items;
+        private readonly Item[] _items;
         private readonly StackMode _stackMode;
 
         protected ItemContainer(int slots, StackMode stackMode = StackMode.StackableOnly)
@@ -200,11 +197,11 @@ namespace Zen.Game.Model
             FireItemsChanged();
         }
 
-        public void Set(int slot, Item item)
+        public void Set(int slot, Item item, bool fire = true)
         {
             CheckSlot(slot);
             _items[slot] = item;
-            FireItemChanged(slot);
+            if (fire) FireItemChanged(slot);
         }
 
         public void Swap(int originalSlot, int newSlot)

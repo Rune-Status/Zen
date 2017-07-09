@@ -2,7 +2,6 @@
 {
     public abstract class Entity
     {
-
         public Position Position { get; set; }
     }
 }

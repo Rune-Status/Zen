@@ -271,8 +271,25 @@ namespace Zen.Game.Model
             public const int PrivateChat = 754;
             public const int ChatboxBar = 137;
 
-            public const int AttackAxe = 75;
-            public const int AttackMaul = 76;
+            public const int Axe = 75;
+            public const int Maul = 76;
+            public const int Bow = 77;
+            public const int Claws = 78;
+            public const int Longbow = 79;
+            public const int FixedDevice = 80;
+            public const int Godsword = 81;
+            public const int Sword = 82;
+            public const int Pickaxe = 83;
+            public const int Halberd = 84;
+            public const int Staff = 85;
+            public const int Scythe = 86;
+            public const int Spear = 87;
+            public const int Mace = 88;
+            public const int Dagger = 89;
+            public const int MagicStaff = 90;
+            public const int Thrown = 91;
+            public const int Unarmed = 92;
+            public const int Whip = 93;
         }
 
         public class Slots

@@ -1,10 +1,8 @@
 ﻿using System;
-using Newtonsoft.Json;
 using Zen.Fs.Definition;
 
 namespace Zen.Game.Model
 {
-    [JsonObject(MemberSerialization.OptIn)]
     public class Item
     {
         public Item(int id, int amount = 1)
@@ -18,9 +16,7 @@ namespace Zen.Game.Model
 
         public ItemDefinition Definition => ItemDefinition.ForId(Id);
 
-        [JsonProperty]
         public int Amount { get; }
-        [JsonProperty]
         public int Id { get; }
 
         protected bool Equals(Item other)

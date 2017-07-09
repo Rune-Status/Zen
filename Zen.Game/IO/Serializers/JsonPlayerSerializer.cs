@@ -1,8 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
+using Zen.Game.IO.Json;
 using Zen.Game.Model;
 using Zen.Shared;
 
@@ -10,48 +9,68 @@ namespace Zen.Game.IO.Serializers
 {
     public class JsonPlayerSerializer : PlayerSerializer
     {
+        private readonly Column[] _columns =
+        {
+            new AppearanceColumn(), new SkillColumn(), new InventoryColumn(), new EquipmentColumn()
+        };
+
         public override SerializeResult Load(string username, string password)
         {
-            var filePath = GameConstants.CharacterFolder + username + ".json";
-            if (!File.Exists(filePath))
-            {
-                return new SerializeResult(LoginConstants.StatusOk, new Player(username, password)
-                {
-                    Position = new Position(3093, 3493)
-                });
-            }
-
-            using (var file = File.OpenText(filePath))
-            {
-                var serializer = new JsonSerializer
-                {
-                    Formatting = Formatting.Indented,
-                    NullValueHandling = NullValueHandling.Ignore
-                };
-
-                var player = serializer.Deserialize(file, typeof(Player)) as Player;
-
-                if (player == null) return new SerializeResult(LoginConstants.StatusErrorLoadingProfile);
-                if (!player.Password.Equals(password)) return new SerializeResult(LoginConstants.StatusInvalidPassword);
-
+            var path = GameConstants.CharacterFolder + username + ".json";
+            var player = new Player(username, password) {Position = new Position(3093, 3493)};
+            if (!File.Exists(path))
                 return new SerializeResult(LoginConstants.StatusOk, player);
-            }
+
+            dynamic playerObject;
+            using (var stream = File.OpenText(path))
+            using (JsonReader reader = new JsonTextReader(stream))
+                playerObject = JToken.ReadFrom(reader) as JObject;
+
+            if (playerObject == null)
+                return new SerializeResult(LoginConstants.StatusErrorLoadingProfile);
+
+            var playerPassword = (string) playerObject.Password;
+            if (!password.Equals(playerPassword))
+                return new SerializeResult(LoginConstants.StatusInvalidPassword);
+
+            player.Rights = playerObject.Rights;
+
+            var positionObject = playerObject.Position;
+            int x = positionObject.X;
+            int y = positionObject.Y;
+            int height = positionObject.Height;
+            player.Position = new Position(x, y, height);
+
+            foreach (var column in _columns)
+                column.Load(playerObject, player);
+
+            return new SerializeResult(LoginConstants.StatusOk, player);
         }
 
         public override void Save(Player player)
         {
-            var filePath = GameConstants.CharacterFolder + player.Username + ".json";
+            dynamic playerObject = new JObject();
 
-            var serializer = new JsonSerializer
-            {
-                Formatting = Formatting.Indented,
-                NullValueHandling = NullValueHandling.Ignore
-            };
+            playerObject.Password = player.Password;
+            playerObject.Rights = player.Rights;
 
-            using (StreamWriter sw = new StreamWriter(filePath))
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            dynamic positionObject = new JObject();
+            positionObject.X = player.Position.X;
+            positionObject.Y = player.Position.Y;
+            positionObject.Height = player.Position.Height;
+            playerObject.Position = positionObject;
+
+            foreach (var column in _columns)
+                column.Save(playerObject, player);
+
+            var path = GameConstants.CharacterFolder + player.Username + ".json";
+            using (var stream = new StreamWriter(path))
             {
-                serializer.Serialize(writer, player);
+                using (JsonWriter writer = new JsonTextWriter(stream))
+                {
+                    writer.Formatting = Formatting.Indented;
+                    playerObject.WriteTo(writer);
+                }
             }
         }
     }

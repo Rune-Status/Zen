@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json;
 using Zen.Fs;
 using Zen.Fs.Definition;
 using Zen.Game.Model;
+using Zen.Util;
+using static Zen.Game.Model.EquipmentDefinition;
 
 namespace Zen.Core.Tools
 {
@@ -10,18 +14,49 @@ namespace Zen.Core.Tools
     {
         public static void Dump(Cache cache)
         {
-            using (var writer = new BinaryWriter(File.Open(@"../Data/Equipment.bin", FileMode.Create)))
+            var nextEquipmentId = 0;
+            var definitions = new Dictionary<int, EquipmentDefinition>();
+
+            for (var id = 0; id < ItemDefinition.Count; id++)
             {
-                for (var id = 0; id < ItemDefinition.Count; id++)
+                var def = ItemDefinition.ForId(id);
+                if (def == null) continue;
+                if (!IsEquipment(def)) continue;
+
+                int flags = 0, slot = GetSlot(def);
+                if (IsTwoHanded(def)) flags |= FlagTwoHanded;
+                if (IsFullHelm(def)) flags |= FlagFullHelm;
+                if (IsFullMask(def)) flags |= FlagFullMask;
+                if (IsFullBody(def)) flags |= FlagFullBody;
+
+                var definition = new EquipmentDefinition
                 {
-                    var def = ItemDefinition.ForId(id);
-                    if (def == null) continue;
-                    else if (!IsEquipment(def)) continue;
+                    Id = id,
+                    EquipmentId = nextEquipmentId++,
+                    Slot = slot,
+                    TwoHanded = (flags & FlagTwoHanded) != 0,
+                    FullHelm = (flags & FlagFullHelm) != 0,
+                    FullMask = (flags & FlagFullMask) != 0,
+                    FullBody = (flags & FlagFullBody) != 0
+                };
 
-                    WriteShort(writer, id);
-
-                    int flags = 0, slot = GetSlot(def);
+                if (slot == Equipment.Weapon)
+                {
+                    definition.Stance = GetStance(def);
+                    definition.Class = GetWeaponClass(def);
                 }
+
+                definitions[id] = definition;
+            }
+
+            using (var writer = File.CreateText(@"../Data/Equipment.json"))
+            {
+                var serializer = new JsonSerializer
+                {
+                    Formatting = Formatting.Indented,
+                    
+                };
+                serializer.Serialize(writer, definitions);
             }
         }
 
@@ -75,9 +110,8 @@ namespace Zen.Core.Tools
             if (name.Contains("helm")) return Equipment.Head;
             if (name.Contains("mask")) return Equipment.Head;
             if (name.Contains("hood")) return Equipment.Head;
-            if (name.Contains("coif")) return Equipment.Head;
 
-            return Equipment.Weapon;
+            return name.Contains("coif") ? Equipment.Head : Equipment.Weapon;
         }
 
         private static bool IsEquipment(ItemDefinition def)
@@ -86,12 +120,79 @@ namespace Zen.Core.Tools
                    def.FemaleWearModel2 >= 0;
         }
 
-        public static void WriteByte(BinaryWriter writer, int value) => writer.BaseStream.WriteByte((byte) value);
-
-        public static void WriteShort(BinaryWriter writer, int value)
+        private static bool IsTwoHanded(ItemDefinition def)
         {
-            WriteByte(writer, value >> 8);
-            WriteByte(writer, value);
+            if (def.Name == null) return false;
+            var name = def.Name.ToLower();
+
+            return name.Contains("2h") || name.Contains(" bow") || name.Contains("godsword") ||
+                   name.Contains("claws") || name.Contains("spear") || name.Contains("maul");
+        }
+
+        private static bool IsFullBody(ItemDefinition def)
+        {
+            if (def.Name == null) return false;
+            if (GetSlot(def) != Equipment.Body) return false;
+
+            var name = def.Name.ToLower();
+            return name.Contains("platebody") || name.Contains("robe");
+        }
+
+        private static bool IsFullHelm(ItemDefinition def)
+        {
+            if (def.Name == null) return false;
+            if (GetSlot(def) != Equipment.Head) return false;
+
+            var name = def.Name.ToLower();
+            return name.Contains("full");
+        }
+
+        private static bool IsFullMask(ItemDefinition def)
+        {
+            if (def.Name == null) return false;
+            if (GetSlot(def) != Equipment.Head) return false;
+
+            var name = def.Name.ToLower();
+            return IsFullHelm(def) && name.Contains("mask");
+        }
+
+        private static WeaponClass GetWeaponClass(ItemDefinition def)
+        {
+            if (def.Name == null) return WeaponClass.Sword;
+            var name = def.Name.ToLower();
+
+            if (name.Contains("scythe")) return WeaponClass.Scythe;
+            if (name.Contains("pickaxe")) return WeaponClass.Pickaxe;
+            if (name.Contains("axe")) return WeaponClass.Axe;
+            if (name.Contains("godsword")) return WeaponClass.Godsword;
+            if (name.Contains("claws")) return WeaponClass.Claws;
+            if (name.Contains("longsword")) return WeaponClass.Sword;
+            if (name.Contains("scimitar")) return WeaponClass.Sword;
+            if (name.Contains("2h sword")) return WeaponClass.Sword;
+            if (name.Contains("sword")) return WeaponClass.Dagger;
+            if (name.Contains("dagger")) return WeaponClass.Dagger;
+            if (name.Contains("mace")) return WeaponClass.Mace;
+            if (name.Contains("maul")) return WeaponClass.Maul;
+            if (name.Contains("whip")) return WeaponClass.Whip;
+            if (name.Contains("longbow")) return WeaponClass.Longbow;
+            if (name.Contains("bow")) return WeaponClass.Bow;
+            if (name.Contains("staff")) return WeaponClass.Staff;
+            if (name.Contains("spear")) return WeaponClass.Spear;
+
+            return name.Contains("dart") ? WeaponClass.Thrown : WeaponClass.Sword;
+        }
+
+        private static int GetStance(ItemDefinition def)
+        {
+            if (def.Name == null) return 1426;
+
+            var name = def.Name.ToLower();
+            if (name.Contains("scimitar") || name.Contains("sword"))
+                return 1381;
+            if (name.Contains("whip"))
+                return 620;
+
+            return name.Contains("maul") ? 27 : 1426;
         }
     }
 }

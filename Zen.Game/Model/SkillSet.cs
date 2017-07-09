@@ -1,14 +1,11 @@
 ﻿using System;
-using Newtonsoft.Json;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Model
 {
-    [JsonObject(MemberSerialization.OptIn)]
     public class SkillSet
     {
-        [JsonProperty]
-        private SkillMetadata[] _metadata;
+        private readonly SkillMetadata[] _metadata;
         private readonly Player _player;
 
         public SkillSet(Player player)
@@ -63,10 +60,8 @@ namespace Zen.Game.Model
             return 99;
         }
 
-        public void Refresh(SkillMetadata metadata)
-        {
-            _player.Send(new SkillMessage(metadata));
-        }
+        public void Refresh(SkillMetadata metadata) => _player.Send(new SkillMessage(metadata));
+        public void SetMetadata(int id, SkillMetadata metadata) => _metadata[id] = metadata;
 
         public void RefreshAll()
         {
