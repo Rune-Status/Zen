@@ -9,7 +9,7 @@ RuneScape Emulator written in C#
 | Issue  | Summary  | Status  | Priority  | Assignee  |
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | Framework redesign | Refactor solution to include 5 sub-projects (Core, Net, Game, Filestore, Util) | HIGH | In Development | Tom  |
-| Player updating  | Player update block, appearance, etc  | HIGH  | Not started  | N/A   |
+| Player updating  | Player update block, appearance, etc  | HIGH  | Completed  | Tom   |
 | Equipment  | Player equipment |  HIGH  | In Development  |  Tom  |
 | Entity List  | Dynamic list for entities (players, npcs) |  HIGH  | Completed  |  William  |
 | Serialization  | Serialize character files via JSON, Binary, etc |  HIGH  | In Development  |  William  |
