@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Zen.Game.IO;
+using Zen.Game.IO.Serializers;
 
 namespace Zen.Net.Service
 {
     public class ServiceManager
     {
-        public LoginService LoginService { get; } = new LoginService(new DummyPlayerSerializer());
+        public LoginService LoginService { get; } = new LoginService(new JsonPlayerSerializer());
         public UpdateService UpdateService { get; } = new UpdateService();
 
         public void StartAll()

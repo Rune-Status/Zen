@@ -69,9 +69,10 @@
   <ItemGroup>
     <Compile Include="GameServer.cs" />
     <Compile Include="GameWorld.cs" />
-    <Compile Include="IO\DummyPlayerSerializer.cs" />
+    <Compile Include="IO\Serializers\DummyPlayerSerializer.cs" />
     <Compile Include="IO\LandscapeKeyTable.cs" />
     <Compile Include="IO\PlayerSerializer.cs" />
+    <Compile Include="IO\Serializers\JsonPlayerSerializer.cs" />
     <Compile Include="Model\Animation.cs" />
     <Compile Include="Model\Appearance.cs" />
     <Compile Include="Model\Direction.cs" />

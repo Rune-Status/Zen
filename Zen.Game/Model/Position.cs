@@ -1,4 +1,6 @@
-﻿namespace Zen.Game.Model
+﻿using Newtonsoft.Json;
+
+namespace Zen.Game.Model
 {
     public class Position
     {
@@ -9,14 +11,18 @@
             Height = height;
         }
 
+        [JsonIgnore]
         public int CentralRegionX => X / 8;
+        [JsonIgnore]
         public int CentralRegionY => Y / 8;
 
         public int X { get; }
         public int Y { get; }
         public int Height { get; }
 
+        [JsonIgnore]
         public int LocalX => GetLocalX(CentralRegionX);
+        [JsonIgnore]
         public int LocalY => GetLocalY(CentralRegionY);
 
         public int GetLocalX(int centralRegionX) => X - (centralRegionX - 6) * 8;

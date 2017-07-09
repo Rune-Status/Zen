@@ -14,5 +14,9 @@ namespace Zen.Shared
 
         public const int MaxPlayers = 2048;
         public const int MaxNpcs = 5000;
+
+        public const string CacheFolder = @"../Data/Cache";
+        public const string LandscapeFolder = @"../Data/Landscape/";
+        public const string CharacterFolder = @"../Data/Characters/";
     }
 }

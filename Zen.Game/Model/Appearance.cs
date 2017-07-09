@@ -1,4 +1,6 @@
-﻿namespace Zen.Game.Model
+﻿using Newtonsoft.Json;
+
+namespace Zen.Game.Model
 {
     public class Appearance
     {
@@ -16,6 +18,7 @@
             Colors = colors;
         }
 
+        [JsonIgnore]
         public int TicketId { get; private set; } = NextTicketId();
         public Gender Gender { get; }
         public int[] Colors { get; }

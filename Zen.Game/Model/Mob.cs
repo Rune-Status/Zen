@@ -1,4 +1,6 @@
-﻿namespace Zen.Game.Model
+﻿using Newtonsoft.Json;
+
+namespace Zen.Game.Model
 {
     public abstract class Mob : Entity
     {
@@ -9,10 +11,8 @@
 
         public int Id { get; set; }
         public bool Active => Id != 0;
-
         public Animation Animation { get; private set; }
         public SpotAnimation SpotAnimation { get; private set; }
-
         public Direction FirstDirection { get; private set; } = Direction.None;
         public Direction SecondDirection { get; private set; } = Direction.None;
         public Direction MostRecentDirection { get; private set; } = Direction.South;

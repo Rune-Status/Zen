@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Zen.Game.Model
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class ItemContainer
     {
         public enum StackMode
@@ -11,7 +13,8 @@ namespace Zen.Game.Model
             StackableOnly
         }
 
-        private readonly Item[] _items;
+        [JsonProperty]
+        private Item[] _items;
         private readonly StackMode _stackMode;
 
         protected ItemContainer(int slots, StackMode stackMode = StackMode.StackableOnly)
@@ -22,6 +25,7 @@ namespace Zen.Game.Model
 
         public int FreeSlots => _items.Count(t => t == null);
         public bool Empty => _items.All(t => t == null);
+
         public void Reset(int slot) => Set(slot, null);
         public bool IsStackable(Item item) => _stackMode == StackMode.Always || item.Definition.Stackable;
         public bool Contains(int id) => SlotOf(id) != -1;
