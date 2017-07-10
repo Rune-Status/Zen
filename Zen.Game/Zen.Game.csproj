@@ -116,6 +116,7 @@
     <Compile Include="Msg\Encoder\InterfaceResetItemsMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceRootMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceSlottedItemsMessageEncoder.cs" />
+    <Compile Include="Msg\Encoder\InterfaceTextMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\PlayerUpdateMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\RegionChangeMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\SkillMessageEncoder.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Msg\Impl\InterfaceResetItemsMessage.cs" />
     <Compile Include="Msg\Impl\InterfaceRootMessage.cs" />
     <Compile Include="Msg\Impl\InterfaceSlottedItemsMessage.cs" />
+    <Compile Include="Msg\Impl\InterfaceTextMessage.cs" />
     <Compile Include="Msg\Impl\PlayerUpdateMessage.cs" />
     <Compile Include="Msg\Impl\RegionChangeMessage.cs" />
     <Compile Include="Msg\Impl\SkillMessage.cs" />

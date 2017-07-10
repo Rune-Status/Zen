@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Zen.Fs;
 using Zen.Fs.Definition;
 using Zen.Game.Model;
+using Zen.Shared;
 using Zen.Util;
 using static Zen.Game.Model.EquipmentDefinition;
 
@@ -14,8 +16,8 @@ namespace Zen.Core.Tools
     {
         public static void Dump(Cache cache)
         {
-            var nextEquipmentId = 0;
-            var definitions = new Dictionary<int, EquipmentDefinition>();
+            const string path = GameConstants.WorkingDirectory + "Equipment.json";
+            var definitions = new JArray();
 
             for (var id = 0; id < ItemDefinition.Count; id++)
             {
@@ -23,41 +25,35 @@ namespace Zen.Core.Tools
                 if (def == null) continue;
                 if (!IsEquipment(def)) continue;
 
+                dynamic definitionObject = new JObject();
+
                 int flags = 0, slot = GetSlot(def);
                 if (IsTwoHanded(def)) flags |= FlagTwoHanded;
                 if (IsFullHelm(def)) flags |= FlagFullHelm;
                 if (IsFullMask(def)) flags |= FlagFullMask;
                 if (IsFullBody(def)) flags |= FlagFullBody;
 
-                var definition = new EquipmentDefinition
-                {
-                    Id = id,
-                    EquipmentId = nextEquipmentId++,
-                    Slot = slot,
-                    TwoHanded = (flags & FlagTwoHanded) != 0,
-                    FullHelm = (flags & FlagFullHelm) != 0,
-                    FullMask = (flags & FlagFullMask) != 0,
-                    FullBody = (flags & FlagFullBody) != 0
-                };
+                definitionObject.Id = id;
+                definitionObject.Flags = flags;
+                definitionObject.Slot = slot;
 
                 if (slot == Equipment.Weapon)
                 {
-                    definition.Stance = GetStance(def);
-                    definition.Class = GetWeaponClass(def);
+                    definitionObject.Stance = GetStance(def);
+                    definitionObject.WeaponClass = GetWeaponClass(def);
                 }
 
-                definitions[id] = definition;
+                definitions.Add(definitionObject);
             }
 
-            using (var writer = File.CreateText(@"../Data/Equipment.json"))
+            using (var writer = new JsonTextWriter(new StreamWriter(path)))
             {
-                var serializer = new JsonSerializer
-                {
-                    Formatting = Formatting.Indented,
-                    
-                };
-                serializer.Serialize(writer, definitions);
+                writer.Formatting = Formatting.Indented;
+                definitions.WriteTo(writer);
             }
+
+
+            Console.WriteLine("Successfully dumped equipment data.");
         }
 
         private static int GetSlot(ItemDefinition def)

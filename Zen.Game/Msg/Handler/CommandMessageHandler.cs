@@ -29,6 +29,14 @@ namespace Zen.Game.Msg.Handler
                 for (var id = 0; id < 24; id++)
                     player.SkillSet.SetLevelAndExperience((Skill) id, random.Next(1, 99));
             }
+
+            if (name.Equals("equip"))
+            {
+                var id = int.Parse(arguments[0]);
+                var slot = int.Parse(arguments[1]);
+
+                player.Equipment.Set(slot, new Item(id));
+            }
         }
     }
 }

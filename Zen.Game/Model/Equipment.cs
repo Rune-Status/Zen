@@ -41,10 +41,33 @@ namespace Zen.Game.Model
         {
         }
 
+        public void OpenAttackTab()
+        {
+            var weapon = Get(Weapon);
+
+            string name;
+            EquipmentDefinition.WeaponClass weaponClass;
+            if (weapon != null)
+            {
+                name = weapon.Definition.Name;
+                weaponClass = weapon.EquipmentDefinition.Class;
+            }
+            else
+            {
+                name = "Unarmed";
+                weaponClass = EquipmentDefinition.WeaponClass.Unarmed;
+            }
+
+            var tab = (int) weaponClass;
+            _player.InterfaceSet.OpenTab(InterfaceSet.Tabs.Attack, tab);
+            _player.Send(new InterfaceTextMessage(tab, 0, name));
+        }
+
         public override void FireItemChanged(int slot, Item item)
         {
             var items = new[] {new SlottedItem(slot, item)};
             _player.Send(new InterfaceSlottedItemsMessage(387, 28, 94, items));
+            _player.Appearance.ResetTicketId();
         }
 
         public override void FireItemsChanged()
@@ -58,6 +81,7 @@ namespace Zen.Game.Model
                 var items = ToArray();
                 _player.Send(new InterfaceItemsMessage(387, 28, 94, items));
             }
+            _player.Appearance.ResetTicketId();
         }
 
         public override void FireCapacityExceeded()

@@ -16,7 +16,7 @@ namespace Zen.Game.IO.Serializers
 
         public override SerializeResult Load(string username, string password)
         {
-            var path = GameConstants.CharacterFolder + username + ".json";
+            var path = GameConstants.CharacterDirectory + username + ".json";
             var player = new Player(username, password) {Position = new Position(3093, 3493)};
             if (!File.Exists(path))
                 return new SerializeResult(LoginConstants.StatusOk, player);
@@ -63,7 +63,7 @@ namespace Zen.Game.IO.Serializers
             foreach (var column in _columns)
                 column.Save(playerObject, player);
 
-            var path = GameConstants.CharacterFolder + player.Username + ".json";
+            var path = GameConstants.CharacterDirectory + player.Username + ".json";
             using (var stream = new StreamWriter(path))
             {
                 using (JsonWriter writer = new JsonTextWriter(stream))

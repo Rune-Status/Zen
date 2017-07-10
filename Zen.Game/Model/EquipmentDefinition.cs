@@ -1,7 +1,10 @@
-﻿using NLog;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Zen.Util;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NLog;
+using Zen.Shared;
 
 namespace Zen.Game.Model
 {
@@ -30,62 +33,80 @@ namespace Zen.Game.Model
             Whip = InterfaceSet.Interfaces.Whip
         }
 
-        private static readonly Dictionary<int, EquipmentDefinition> definitions = new Dictionary<int, EquipmentDefinition>();
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-
         public const int FlagTwoHanded = 0x1;
         public const int FlagFullHelm = 0x2;
         public const int FlagFullMask = 0x4;
         public const int FlagFullBody = 0x8;
 
-        public int Id { get; set; }
-        public int EquipmentId { get; set; }
-        public int Slot { get; set; }
-        public bool TwoHanded { get; set; }
-        public bool FullHelm { get; set; }
-        public bool FullMask { get; set; }
-        public bool FullBody { get; set; }
-        public int Stance { get; set; }
-        public WeaponClass Class { get; set; }
+        private static readonly Dictionary<int, EquipmentDefinition> Definitions =
+            new Dictionary<int, EquipmentDefinition>();
+
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
+        public EquipmentDefinition(int equipmentId, int slot, bool twoHanded, bool fullHelm, bool fullMask,
+            bool fullBody, int stance, WeaponClass weaponClass)
+        {
+            EquipmentId = equipmentId;
+            Slot = slot;
+            TwoHanded = twoHanded;
+            FullHelm = fullHelm;
+            FullMask = fullMask;
+            FullBody = fullBody;
+            Stance = stance;
+            Class = weaponClass;
+        }
+
+        public int EquipmentId { get; }
+        public int Slot { get; }
+        public bool TwoHanded { get; }
+        public bool FullHelm { get; }
+        public bool FullMask { get; }
+        public bool FullBody { get; }
+        public int Stance { get; }
+        public WeaponClass Class { get; }
 
         public static void Load()
         {
-            using (var reader = new BinaryReader(File.Open(@"../Data/Equipment.dat", FileMode.Open)))
+            const string path = GameConstants.WorkingDirectory + "Equipment.json";
+            if (!File.Exists(path)) throw new FileNotFoundException();
+
+            JArray definitions;
+            using (var reader = new JsonTextReader(File.OpenText(path)))
+                definitions = JToken.ReadFrom(reader) as JArray;
+
+            if (definitions == null) throw new ArgumentException();
+            var nextEquipmentId = 0;
+
+            foreach (dynamic definition in definitions)
             {
-                int id, nextEquipmentId = 0;
-                while ((id = reader.ReadShort()) !=  -1)
+                int id = definition.Id;
+                int flags = definition.Flags;
+                int slot = definition.Slot;
+
+                int stance = 0, weaponClass = 0;
+                if (slot == Equipment.Weapon)
                 {
-                    var flags = reader.ReadByte() & 0xFF;
-                    var slot = reader.ReadByte() & 0xFF;
-                    int stance = 0, weaponClass = 0;
-                    if (slot == Equipment.Weapon)
-                    {
-                        stance = reader.ReadShort() & 0xFFFF;
-                        weaponClass = reader.ReadByte() & 0xFF;
-                    }
-
-                    var equipment = new EquipmentDefinition
-                    {
-                        Id = id,
-                        EquipmentId = nextEquipmentId++,
-                        Slot = slot,
-                        TwoHanded = (flags & FlagTwoHanded) != 0,
-                        FullHelm = (flags & FlagFullHelm) != 0,
-                        FullMask = (flags & FlagFullMask) != 0,
-                        FullBody = (flags & FlagFullBody) != 0
-                    };
-
-                    if (slot == Equipment.Weapon)
-                    {
-                        equipment.Stance = stance;
-                        equipment.Class = (WeaponClass)weaponClass;
-                    }
-
-                    definitions[id] = equipment;
+                    stance = definition.Stance;
+                    weaponClass = definition.WeaponClass;
                 }
 
-                logger.Info($"Loaded {definitions.Count} equipment definitions");
+                var twoHanded = (flags & FlagTwoHanded) != 0;
+                var fullHelm = (flags & FlagFullHelm) != 0;
+                var fullMask = (flags & FlagFullMask) != 0;
+                var fullBody = (flags & FlagFullBody) != 0;
+
+                Definitions[id] = new EquipmentDefinition(nextEquipmentId++, slot, twoHanded, fullHelm, fullMask,
+                    fullBody, stance,
+                    (WeaponClass) weaponClass);
             }
+
+            Logger.Info($"Loaded {Definitions.Count} item definitions.");
+        }
+
+        public static EquipmentDefinition ForId(int id)
+        {
+            if (id < 0 || !Definitions.ContainsKey(id)) return null;
+            return Definitions[id];
         }
     }
 }

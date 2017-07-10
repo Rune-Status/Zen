@@ -15,6 +15,7 @@ namespace Zen.Game.Model
         }
 
         public ItemDefinition Definition => ItemDefinition.ForId(Id);
+        public EquipmentDefinition EquipmentDefinition => EquipmentDefinition.ForId(Id);
 
         public int Amount { get; }
         public int Id { get; }

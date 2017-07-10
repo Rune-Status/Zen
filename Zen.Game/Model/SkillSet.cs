@@ -60,6 +60,22 @@ namespace Zen.Game.Model
             return 99;
         }
 
+        public int GetCombatLevel()
+        {
+            var defence = GetLevelForExperience(Skill.Defence);
+            var hitpoints = GetLevelForExperience(Skill.Hitpoints);
+            var prayer = GetLevelForExperience(Skill.Prayer);
+            var attack = GetLevelForExperience(Skill.Attack);
+            var strength = GetLevelForExperience(Skill.Strength);
+            var magic = GetLevelForExperience(Skill.Magic);
+            var ranged = GetLevelForExperience(Skill.Range);
+            var summoning = GetLevelForExperience(Skill.Summoning);
+
+            var @base = 1.3 * Math.Max(Math.Max(attack + strength, 1.5 * magic), 1.5 * ranged);
+            return (int) Math.Floor((defence + hitpoints + Math.Floor(prayer / 2.0) + Math.Floor(summoning / 2.0) +
+                                     @base) / 4.0);
+        }
+
         public void Refresh(SkillMetadata metadata) => _player.Send(new SkillMessage(metadata));
         public void SetMetadata(int id, SkillMetadata metadata) => _metadata[id] = metadata;
 

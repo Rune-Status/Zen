@@ -46,6 +46,13 @@ namespace Zen.Game.Model
             ChatMessage = null;
         }
 
+        public int GetStance()
+        {
+            var weapon = Equipment.Get(Equipment.Weapon);
+            return weapon == null ? 1426 : weapon.EquipmentDefinition.Stance;
+        }
+
+        public int Stance => Equipment.Get(Equipment.Weapon)?.EquipmentDefinition.Stance ?? 1426;
         public Task Send(Message message) => Session.Send(message);
         public bool IsChatUpdated() => ChatMessage != null;
         public void UpdateChatMessage(ChatMessage message) => ChatMessage = message;

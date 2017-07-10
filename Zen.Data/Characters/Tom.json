@@ -1,0 +1,174 @@
+{
+  "Password": "trustno1",
+  "Rights": 2,
+  "Position": {
+    "X": 3086,
+    "Y": 3493,
+    "Height": 0
+  },
+  "Appearance": {
+    "Gender": 0,
+    "Style": [
+      0,
+      10,
+      18,
+      26,
+      33,
+      36,
+      42
+    ],
+    "Colors": [
+      2,
+      5,
+      8,
+      11,
+      14
+    ]
+  },
+  "Skills": [
+    {
+      "Id": 0,
+      "Level": 58,
+      "Experience": 224466.0
+    },
+    {
+      "Id": 1,
+      "Level": 6,
+      "Experience": 512.0
+    },
+    {
+      "Id": 2,
+      "Level": 8,
+      "Experience": 801.0
+    },
+    {
+      "Id": 3,
+      "Level": 55,
+      "Experience": 166636.0
+    },
+    {
+      "Id": 4,
+      "Level": 78,
+      "Experience": 1629200.0
+    },
+    {
+      "Id": 5,
+      "Level": 81,
+      "Experience": 2192818.0
+    },
+    {
+      "Id": 6,
+      "Level": 72,
+      "Experience": 899257.0
+    },
+    {
+      "Id": 7,
+      "Level": 15,
+      "Experience": 2411.0
+    },
+    {
+      "Id": 8,
+      "Level": 77,
+      "Experience": 1475581.0
+    },
+    {
+      "Id": 9,
+      "Level": 35,
+      "Experience": 22406.0
+    },
+    {
+      "Id": 10,
+      "Level": 34,
+      "Experience": 20224.0
+    },
+    {
+      "Id": 11,
+      "Level": 85,
+      "Experience": 3258594.0
+    },
+    {
+      "Id": 12,
+      "Level": 69,
+      "Experience": 668051.0
+    },
+    {
+      "Id": 13,
+      "Level": 64,
+      "Experience": 407015.0
+    },
+    {
+      "Id": 14,
+      "Level": 4,
+      "Experience": 276.0
+    },
+    {
+      "Id": 15,
+      "Level": 83,
+      "Experience": 2673114.0
+    },
+    {
+      "Id": 16,
+      "Level": 59,
+      "Experience": 247886.0
+    },
+    {
+      "Id": 17,
+      "Level": 52,
+      "Experience": 123660.0
+    },
+    {
+      "Id": 18,
+      "Level": 76,
+      "Experience": 1336443.0
+    },
+    {
+      "Id": 19,
+      "Level": 45,
+      "Experience": 61512.0
+    },
+    {
+      "Id": 20,
+      "Level": 98,
+      "Experience": 11805606.0
+    },
+    {
+      "Id": 21,
+      "Level": 91,
+      "Experience": 5902831.0
+    },
+    {
+      "Id": 22,
+      "Level": 92,
+      "Experience": 6517253.0
+    },
+    {
+      "Id": 23,
+      "Level": 66,
+      "Experience": 496254.0
+    }
+  ],
+  "Inventory": [
+    {
+      "Slot": 0,
+      "Id": 4151,
+      "Amount": 1
+    },
+    {
+      "Slot": 1,
+      "Id": 11694,
+      "Amount": 1
+    },
+    {
+      "Slot": 2,
+      "Id": 1048,
+      "Amount": 1
+    }
+  ],
+  "Equipment": [
+    {
+      "Slot": 3,
+      "Id": 4151,
+      "Amount": 1
+    }
+  ]
+}
