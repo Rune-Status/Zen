@@ -18,6 +18,6 @@ namespace Zen.Game.IO.Json
         }
 
         public override void Save(dynamic playerObject, Player player) => playerObject.Inventory = CreateArray(player);
-        public override ItemContainer GetContainer(Player player) => player.Inventory;
+        public override Container GetContainer(Player player) => player.Inventory;
     }
 }

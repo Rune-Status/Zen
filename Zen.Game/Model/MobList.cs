@@ -1,18 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zen.Shared;
 
 namespace Zen.Game.Model
 {
     public class MobList<T> : ICollection<T> where T : Mob
     {
+        private readonly int _capacity;
 
         private readonly T[] _entities;
         private readonly HashSet<int> _indicies = new HashSet<int>();
-        private readonly int _capacity;
         private int _currentIndex = 1;
 
         public MobList(int capacity)
@@ -33,22 +31,6 @@ namespace Zen.Game.Model
             set { _entities[index] = value; }
         }
 
-        public void Add(T entity, int index)
-        {
-            if (_entities[_currentIndex] != null)
-            {
-                IncreaseIndex();
-                Add(entity, _currentIndex);
-            }
-            else
-            {
-                _entities[_currentIndex] = entity;
-                entity.Id = index;
-                _indicies.Add(_currentIndex);
-                IncreaseIndex();
-            }
-        }
-
         public void Add(T entity) => Add(entity, _currentIndex);
 
         public bool Remove(T entity)
@@ -57,15 +39,6 @@ namespace Zen.Game.Model
             _indicies.Remove(entity.Id);
             DecreaseIndex();
             return true;
-        }
-
-        public T Remove(int index)
-        {
-            var temp = _entities[index];
-            _entities[index] = null;
-            _indicies.Remove(index);
-            DecreaseIndex();
-            return temp;
         }
 
         public void Clear()
@@ -82,18 +55,6 @@ namespace Zen.Game.Model
                 Add(entity, index);
         }
 
-        public int IndexOf(T entity)
-        {
-            foreach (var index in _indicies)
-            {
-                if (_entities[index].Equals(entity))
-                {
-                    return index;
-                }
-            }
-            return -1;
-        }
-
         public int Count => _indicies.Count();
 
         public bool IsReadOnly => throw new NotImplementedException();
@@ -103,18 +64,49 @@ namespace Zen.Game.Model
             return new MobListEnumerator<T>(_entities, _indicies, this);
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return _entities.GetEnumerator();
+        }
+
+        public void Add(T entity, int index)
+        {
+            if (_entities[_currentIndex] != null)
+            {
+                IncreaseIndex();
+                Add(entity, _currentIndex);
+            }
+            else
+            {
+                _entities[_currentIndex] = entity;
+                entity.Id = index;
+                _indicies.Add(_currentIndex);
+                IncreaseIndex();
+            }
+        }
+
+        public T Remove(int index)
+        {
+            var temp = _entities[index];
+            _entities[index] = null;
+            _indicies.Remove(index);
+            DecreaseIndex();
+            return temp;
+        }
+
+        public int IndexOf(T entity)
+        {
+            foreach (var index in _indicies)
+                if (_entities[index].Equals(entity))
+                    return index;
+            return -1;
         }
 
         private void IncreaseIndex()
         {
             _currentIndex++;
             if (_currentIndex >= _capacity)
-            {
                 _currentIndex = 1;
-            }
         }
 
         private void DecreaseIndex()

@@ -2,16 +2,17 @@
 using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
 using Zen.Util;
+using static Zen.Shared.EquipmentConstants;
 
 namespace Zen.Game.Update
 {
     public class AppearancePlayerBlock : PlayerBlock
     {
         private readonly Appearance _appearance;
-        private readonly Equipment _equipment;
-        private readonly string _username;
-        private readonly int _stance;
         private readonly int _combatLevel;
+        private readonly Container _equipment;
+        private readonly int _stance;
+        private readonly string _username;
 
         public AppearancePlayerBlock(Player player) : base(0x4)
         {
@@ -42,32 +43,32 @@ namespace Zen.Game.Update
                     propertiesBuilder.Put(DataType.Byte, 0);
             }
 
-            item = _equipment.Get(Equipment.Body);
+            item = _equipment.Get(Body);
             if (item != null)
                 propertiesBuilder.Put(DataType.Short, 0x8000 | item.EquipmentDefinition.EquipmentId);
             else
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[2]);
 
-            item = _equipment.Get(Equipment.Shield);
+            item = _equipment.Get(Shield);
             if (item != null)
                 propertiesBuilder.Put(DataType.Short, 0x8000 | item.EquipmentDefinition.EquipmentId);
             else
                 propertiesBuilder.Put(DataType.Byte, 0);
 
-            item = _equipment.Get(Equipment.Body);
+            item = _equipment.Get(Body);
             var fullBody = item?.EquipmentDefinition.FullBody ?? false;
             if (!fullBody)
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[3]);
             else
                 propertiesBuilder.Put(DataType.Byte, 0);
 
-            item = _equipment.Get(Equipment.Legs);
+            item = _equipment.Get(Legs);
             if (item != null)
                 propertiesBuilder.Put(DataType.Short, 0x8000 | item.EquipmentDefinition.EquipmentId);
             else
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[5]);
 
-            item = _equipment.Get(Equipment.Head);
+            item = _equipment.Get(Head);
             var fullHelm = item?.EquipmentDefinition.FullHelm ?? false;
             var fullMask = item?.EquipmentDefinition.FullMask ?? false;
             if (!fullHelm && !fullMask)
@@ -75,19 +76,19 @@ namespace Zen.Game.Update
             else
                 propertiesBuilder.Put(DataType.Byte, 0);
 
-            item = _equipment.Get(Equipment.Hands);
+            item = _equipment.Get(Hands);
             if (item != null)
                 propertiesBuilder.Put(DataType.Short, 0x8000 | item.EquipmentDefinition.EquipmentId);
             else
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[4]);
 
-            item = _equipment.Get(Equipment.Feet);
+            item = _equipment.Get(Feet);
             if (item != null)
                 propertiesBuilder.Put(DataType.Short, 0x8000 | item.EquipmentDefinition.EquipmentId);
             else
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[6]);
 
-            item = _equipment.Get(Equipment.Head);
+            item = _equipment.Get(Head);
             if (gender == Gender.Male && !fullMask && !fullHelm)
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[1]);
             else

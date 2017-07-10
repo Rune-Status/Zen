@@ -1,5 +1,4 @@
-﻿using System;
-using Zen.Game.Model;
+﻿using Zen.Game.Model;
 
 namespace Zen.Game.Msg.Impl
 {

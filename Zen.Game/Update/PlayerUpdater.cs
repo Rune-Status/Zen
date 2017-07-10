@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
 

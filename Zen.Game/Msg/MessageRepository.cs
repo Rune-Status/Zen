@@ -19,6 +19,9 @@ namespace Zen.Game.Msg
             Bind(new ChatMessageDecoder());
             Bind(new ButtonMessageDecoder(10));
             Bind(new ButtonMessageDecoder(155));
+            Bind(new SwapItemsMessageDecoder());
+            Bind(new EquipItemMessageDecoder());
+            Bind(new RemoveItemMessageDecoder());
 
             Bind(new RegionChangeMessageEncoder(keyTable));
             Bind(new InterfaceRootMessageEncoder());
@@ -36,6 +39,9 @@ namespace Zen.Game.Msg
             Bind(new CommandMessageHandler());
             Bind(new ChatMessageHandler());
             Bind(new ButtonMessageHandler());
+            Bind(new SwapItemsMessageHandler());
+            Bind(new EquipItemMessageHandler());
+            Bind(new RemoveItemMessageHandler());
         }
 
         public Dictionary<int, object> InCodecs { get; } = new Dictionary<int, object>();

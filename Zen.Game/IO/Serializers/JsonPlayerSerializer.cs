@@ -24,7 +24,9 @@ namespace Zen.Game.IO.Serializers
             dynamic playerObject;
             using (var stream = File.OpenText(path))
             using (JsonReader reader = new JsonTextReader(stream))
+            {
                 playerObject = JToken.ReadFrom(reader) as JObject;
+            }
 
             if (playerObject == null)
                 return new SerializeResult(LoginConstants.StatusErrorLoadingProfile);

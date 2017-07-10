@@ -37,7 +37,7 @@ namespace Zen.Game.Model
             OpenChatboxInterface(Interfaces.ChatboxBar, 8);
 
             /* Open Game Tabs. */
-            _player.Equipment.OpenAttackTab();
+            Equipment.OpenAttackTab(_player);
             OpenTab(Tabs.Skills, Interfaces.Skills);
             OpenTab(Tabs.Quest, Interfaces.Quests);
             OpenTab(Tabs.Inventory, Interfaces.Inventory);

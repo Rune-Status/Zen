@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace Zen.Game.Model
+﻿namespace Zen.Game.Model
 {
     public class Position
     {

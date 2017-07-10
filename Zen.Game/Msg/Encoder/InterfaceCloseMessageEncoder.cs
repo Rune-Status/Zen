@@ -8,7 +8,7 @@ namespace Zen.Game.Msg.Encoder
     {
         public override GameFrame Encode(IByteBufferAllocator alloc, InterfaceCloseMessage message)
         {
-            return new GameFrameBuilder(alloc, 0)
+            return new GameFrameBuilder(alloc, 149)
                 .Put(DataType.Short, 0)
                 .Put(DataType.Int, (message.Interface.Parent.Id << 16) | message.Interface.Slot)
                 .ToGameFrame();

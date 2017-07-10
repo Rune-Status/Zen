@@ -1,12 +1,11 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Zen.Game.Model;
 
 namespace Zen.Game.IO.Json
 {
     public abstract class ItemColumn : Column
     {
-        public abstract ItemContainer GetContainer(Player player);
+        public abstract Container GetContainer(Player player);
 
         public JArray CreateArray(Player player)
         {

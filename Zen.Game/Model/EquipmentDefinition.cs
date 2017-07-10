@@ -72,7 +72,9 @@ namespace Zen.Game.Model
 
             JArray definitions;
             using (var reader = new JsonTextReader(File.OpenText(path)))
+            {
                 definitions = JToken.ReadFrom(reader) as JArray;
+            }
 
             if (definitions == null) throw new ArgumentException();
             var nextEquipmentId = 0;
@@ -84,7 +86,7 @@ namespace Zen.Game.Model
                 int slot = definition.Slot;
 
                 int stance = 0, weaponClass = 0;
-                if (slot == Equipment.Weapon)
+                if (slot == EquipmentConstants.Weapon)
                 {
                     stance = definition.Stance;
                     weaponClass = definition.WeaponClass;

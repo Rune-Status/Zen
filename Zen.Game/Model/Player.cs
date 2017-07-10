@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Zen.Game.Msg;
 using Zen.Game.Msg.Impl;
+using Zen.Shared;
 
 namespace Zen.Game.Model
 {
@@ -12,7 +13,7 @@ namespace Zen.Game.Model
         {
             Username = username;
             Password = password;
-            UpdateMembers();
+            Init();
         }
 
         public string Username { get; }
@@ -28,15 +29,25 @@ namespace Zen.Game.Model
         public InterfaceSet InterfaceSet { get; private set; }
         public ChatMessage ChatMessage { get; private set; }
         public SkillSet SkillSet { get; private set; }
-        public Inventory Inventory { get; private set; }
-        public Equipment Equipment { get; private set; }
+        public Container Inventory { get; } = new Container(28);
+        public Container Equipment { get; } = new Container(14);
 
-        private void UpdateMembers()
+        public int Stance => Equipment.Get(EquipmentConstants.Weapon)?.EquipmentDefinition.Stance ?? 1426;
+
+
+        private void Init()
         {
+            /* Initialize members with instances of this player. */
             InterfaceSet = new InterfaceSet(this);
             SkillSet = new SkillSet(this);
-            Inventory = new Inventory(this);
-            Equipment = new Equipment(this);
+
+            /* Register container listeners. */
+            Inventory.AddListener(new ContainerMessageListener(this, 149, 0, 93));
+            Inventory.AddListener(new ContainerFullListener(this, "inventory"));
+
+            Equipment.AddListener(new ContainerMessageListener(this, 387, 28, 94));
+            Equipment.AddListener(new ContainerFullListener(this, "equipment"));
+            Equipment.AddListener(new ContainerAppearanceListener(this));
         }
 
         public new void Reset()
@@ -46,13 +57,6 @@ namespace Zen.Game.Model
             ChatMessage = null;
         }
 
-        public int GetStance()
-        {
-            var weapon = Equipment.Get(Equipment.Weapon);
-            return weapon == null ? 1426 : weapon.EquipmentDefinition.Stance;
-        }
-
-        public int Stance => Equipment.Get(Equipment.Weapon)?.EquipmentDefinition.Stance ?? 1426;
         public Task Send(Message message) => Session.Send(message);
         public bool IsChatUpdated() => ChatMessage != null;
         public void UpdateChatMessage(ChatMessage message) => ChatMessage = message;

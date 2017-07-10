@@ -12,8 +12,8 @@ using Zen.Game;
 using Zen.Net;
 using Zen.Net.Handshake;
 using Zen.Net.Service;
-using Zen.Util;
 using Zen.Shared;
+using Zen.Util;
 
 namespace Zen.Core
 {

@@ -4,8 +4,8 @@
     {
         public static readonly Appearance DefaultAppearance = new Appearance(
             Gender.Male,
-            new[] {0, 10, 18, 26, 33, 36, 42},
-            new[] {2, 5, 8, 11, 14});
+            new[] {3, 14, 18, 26, 34, 38, 42},
+            new[] {3, 16, 16, 0, 0});
 
         private static int _ticketCounter;
 

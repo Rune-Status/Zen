@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using NLog;
+﻿using NLog;
 using Zen.Game.Model;
 using Zen.Game.Update;
 using Zen.Shared;
@@ -31,14 +28,10 @@ namespace Zen.Game
             var slotId = _players.IndexOf(player);
 
             if (slotId != -1)
-            {
-                Logger.Info($"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
-            }
+                Logger.Info(
+                    $"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
             else
-            {
                 Logger.Info($"Could not register Player [Username={player.Username}, Id={player.Id}]");
-
-            }
             return true;
         }
 
@@ -49,18 +42,15 @@ namespace Zen.Game
             if (!_players.Remove(player))
                 return;
 
-            Logger.Info($"Unregistered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
+            Logger.Info(
+                $"Unregistered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
         }
 
         public Player GetPlayer(string username)
         {
             foreach (var player in _players)
-            {
                 if (player != null && player.Username.Equals(username))
-                {
                     return player;
-                }
-            }
             return null;
         }
 

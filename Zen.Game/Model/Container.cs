@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Zen.Game.Model
 {
-    public abstract class ItemContainer
+    public class Container
     {
         public enum StackMode
         {
@@ -12,9 +14,10 @@ namespace Zen.Game.Model
         }
 
         private readonly Item[] _items;
+        private readonly List<IContainerListener> _listeners = new List<IContainerListener>();
         private readonly StackMode _stackMode;
 
-        protected ItemContainer(int slots, StackMode stackMode = StackMode.StackableOnly)
+        public Container(int slots, StackMode stackMode = StackMode.StackableOnly)
         {
             _stackMode = stackMode;
             _items = new Item[slots];
@@ -26,12 +29,29 @@ namespace Zen.Game.Model
         public void Reset(int slot) => Set(slot, null);
         public bool IsStackable(Item item) => _stackMode == StackMode.Always || item.Definition.Stackable;
         public bool Contains(int id) => SlotOf(id) != -1;
-        public void FireItemChanged(int slot) => FireItemChanged(slot, _items[slot]);
         public void Refresh() => FireItemsChanged();
 
-        public abstract void FireItemChanged(int slot, Item item);
-        public abstract void FireItemsChanged();
-        public abstract void FireCapacityExceeded();
+        public void AddListener(IContainerListener listener) => _listeners.Add(listener);
+        public void RemoveListener(IContainerListener listener) => _listeners.Remove(listener);
+        public void RemoveListeners() => _listeners.Clear();
+
+        private void FireItemChanged(int slot)
+        {
+            foreach (var listener in _listeners)
+                listener.ItemChanged(this, slot, _items[slot]);
+        }
+
+        private void FireItemsChanged()
+        {
+            foreach (var listener in _listeners)
+                listener.ItemsChanged(this);
+        }
+
+        public void FireCapacityExceeded()
+        {
+            foreach (var listener in _listeners)
+                listener.CapacityExceeded(this);
+        }
 
         public Item Get(int slot)
         {
@@ -90,7 +110,7 @@ namespace Zen.Game.Model
                 return item;
             }
             {
-                var single = new Item(id, 1);
+                var single = new Item(id);
                 var remaining = item.Amount;
 
                 if (remaining == 0)
@@ -236,6 +256,7 @@ namespace Zen.Game.Model
             return array;
         }
 
+        [SuppressMessage("ReSharper", "UnusedParameter.Local")]
         private void CheckSlot(int slot)
         {
             if (slot < 0 || slot >= _items.Length)

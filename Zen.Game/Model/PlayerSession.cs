@@ -7,8 +7,8 @@ namespace Zen.Game.Model
 {
     public class PlayerSession
     {
-        private readonly Queue<Message> _messages = new Queue<Message>();
         private readonly IChannel _channel;
+        private readonly Queue<Message> _messages = new Queue<Message>();
 
         private readonly Player _player;
         private readonly MessageRepository _repository;

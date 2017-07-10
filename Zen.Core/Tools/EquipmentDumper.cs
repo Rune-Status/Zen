@@ -5,10 +5,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Zen.Fs;
 using Zen.Fs.Definition;
-using Zen.Game.Model;
 using Zen.Shared;
-using Zen.Util;
 using static Zen.Game.Model.EquipmentDefinition;
+using static Zen.Shared.EquipmentConstants;
 
 namespace Zen.Core.Tools
 {
@@ -18,6 +17,24 @@ namespace Zen.Core.Tools
         {
             const string path = GameConstants.WorkingDirectory + "Equipment.json";
             var definitions = new JArray();
+
+            var stances = new Dictionary<int, int>();
+            using (var reader = new StreamReader(GameConstants.WorkingDirectory + "Misc/Stances.txt"))
+            {
+                var id = 0;
+                string line;
+
+                while ((line = reader.ReadLine()) != null)
+                    if (line.Contains("itemId:"))
+                    {
+                        id = int.Parse(line.Substring(8));
+                    }
+                    else if (line.Contains("renderEmote"))
+                    {
+                        var animation = int.Parse(line.Substring(12));
+                        stances[id] = animation;
+                    }
+            }
 
             for (var id = 0; id < ItemDefinition.Count; id++)
             {
@@ -37,9 +54,9 @@ namespace Zen.Core.Tools
                 definitionObject.Flags = flags;
                 definitionObject.Slot = slot;
 
-                if (slot == Equipment.Weapon)
+                if (slot == Weapon)
                 {
-                    definitionObject.Stance = GetStance(def);
+                    definitionObject.Stance = stances.ContainsKey(id) ? stances[id] : 1426;
                     definitionObject.WeaponClass = GetWeaponClass(def);
                 }
 
@@ -58,56 +75,56 @@ namespace Zen.Core.Tools
 
         private static int GetSlot(ItemDefinition def)
         {
-            if (def.Name == null) return Equipment.Weapon;
+            if (def.Name == null) return Weapon;
             var name = def.Name.ToLower();
 
-            if (name.Contains("claws")) return Equipment.Weapon;
-            if (name.Contains("sword")) return Equipment.Weapon;
-            if (name.Contains("dagger")) return Equipment.Weapon;
-            if (name.Contains("mace")) return Equipment.Weapon;
-            if (name.Contains("whip")) return Equipment.Weapon;
-            if (name.Contains("bow")) return Equipment.Weapon;
-            if (name.Contains("staff")) return Equipment.Weapon;
-            if (name.Contains("dart")) return Equipment.Weapon;
+            if (name.Contains("claws")) return Weapon;
+            if (name.Contains("sword")) return Weapon;
+            if (name.Contains("dagger")) return Weapon;
+            if (name.Contains("mace")) return Weapon;
+            if (name.Contains("whip")) return Weapon;
+            if (name.Contains("bow")) return Weapon;
+            if (name.Contains("staff")) return Weapon;
+            if (name.Contains("dart")) return Weapon;
 
-            if (name.Contains("glove")) return Equipment.Hands;
-            if (name.Contains("vamb")) return Equipment.Hands;
-            if (name.Contains("gaunt")) return Equipment.Hands;
+            if (name.Contains("glove")) return Hands;
+            if (name.Contains("vamb")) return Hands;
+            if (name.Contains("gaunt")) return Hands;
 
-            if (name.Contains("ring")) return Equipment.Ring;
-            if (name.Contains("bracelet")) return Equipment.Ring;
+            if (name.Contains("ring")) return Ring;
+            if (name.Contains("bracelet")) return Ring;
 
-            if (name.Contains("amulet")) return Equipment.Neck;
-            if (name.Contains("necklace")) return Equipment.Neck;
-            if (name.Contains("scarf")) return Equipment.Neck;
+            if (name.Contains("amulet")) return Neck;
+            if (name.Contains("necklace")) return Neck;
+            if (name.Contains("scarf")) return Neck;
 
-            if (name.Contains("leg")) return Equipment.Legs;
-            if (name.Contains("bottom")) return Equipment.Legs;
-            if (name.Contains("skirt")) return Equipment.Legs;
+            if (name.Contains("leg")) return Legs;
+            if (name.Contains("bottom")) return Legs;
+            if (name.Contains("skirt")) return Legs;
 
-            if (name.Contains("body")) return Equipment.Body;
-            if (name.Contains("top")) return Equipment.Body;
-            if (name.Contains("chest")) return Equipment.Body;
-            if (name.Contains("chainmail")) return Equipment.Body;
+            if (name.Contains("body")) return Body;
+            if (name.Contains("top")) return Body;
+            if (name.Contains("chest")) return Body;
+            if (name.Contains("chainmail")) return Body;
 
-            if (name.Contains("arrow")) return Equipment.Ammo;
-            if (name.Contains("bolt")) return Equipment.Ammo;
+            if (name.Contains("arrow")) return Ammo;
+            if (name.Contains("bolt")) return Ammo;
 
-            if (name.Contains("shield")) return Equipment.Shield;
-            if (name.Contains("defender")) return Equipment.Shield;
-            if (name.Contains("book")) return Equipment.Shield;
+            if (name.Contains("shield")) return Shield;
+            if (name.Contains("defender")) return Shield;
+            if (name.Contains("book")) return Shield;
 
-            if (name.Contains("cape")) return Equipment.Cape;
-            if (name.Contains("cloak")) return Equipment.Cape;
+            if (name.Contains("cape")) return Cape;
+            if (name.Contains("cloak")) return Cape;
 
-            if (name.Contains("boot")) return Equipment.Feet;
+            if (name.Contains("boot")) return Feet;
 
-            if (name.Contains("hat")) return Equipment.Head;
-            if (name.Contains("helm")) return Equipment.Head;
-            if (name.Contains("mask")) return Equipment.Head;
-            if (name.Contains("hood")) return Equipment.Head;
+            if (name.Contains("hat")) return Head;
+            if (name.Contains("helm")) return Head;
+            if (name.Contains("mask")) return Head;
+            if (name.Contains("hood")) return Head;
 
-            return name.Contains("coif") ? Equipment.Head : Equipment.Weapon;
+            return name.Contains("coif") ? Head : Weapon;
         }
 
         private static bool IsEquipment(ItemDefinition def)
@@ -128,7 +145,7 @@ namespace Zen.Core.Tools
         private static bool IsFullBody(ItemDefinition def)
         {
             if (def.Name == null) return false;
-            if (GetSlot(def) != Equipment.Body) return false;
+            if (GetSlot(def) != Body) return false;
 
             var name = def.Name.ToLower();
             return name.Contains("platebody") || name.Contains("robe");
@@ -137,7 +154,7 @@ namespace Zen.Core.Tools
         private static bool IsFullHelm(ItemDefinition def)
         {
             if (def.Name == null) return false;
-            if (GetSlot(def) != Equipment.Head) return false;
+            if (GetSlot(def) != Head) return false;
 
             var name = def.Name.ToLower();
             return name.Contains("full");
@@ -146,7 +163,7 @@ namespace Zen.Core.Tools
         private static bool IsFullMask(ItemDefinition def)
         {
             if (def.Name == null) return false;
-            if (GetSlot(def) != Equipment.Head) return false;
+            if (GetSlot(def) != Head) return false;
 
             var name = def.Name.ToLower();
             return IsFullHelm(def) && name.Contains("mask");
@@ -176,19 +193,6 @@ namespace Zen.Core.Tools
             if (name.Contains("spear")) return WeaponClass.Spear;
 
             return name.Contains("dart") ? WeaponClass.Thrown : WeaponClass.Sword;
-        }
-
-        private static int GetStance(ItemDefinition def)
-        {
-            if (def.Name == null) return 1426;
-
-            var name = def.Name.ToLower();
-            if (name.Contains("scimitar") || name.Contains("sword"))
-                return 1381;
-            if (name.Contains("whip"))
-                return 620;
-
-            return name.Contains("maul") ? 27 : 1426;
         }
     }
 }

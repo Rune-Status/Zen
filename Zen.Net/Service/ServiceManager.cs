@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Zen.Game.IO;
 using Zen.Game.IO.Serializers;
 
 namespace Zen.Net.Service

@@ -563,7 +563,7 @@
     "Id": 667,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 292,
     "WeaponClass": 89
   },
   {
@@ -659,14 +659,14 @@
     "Id": 767,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 772,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -936,21 +936,21 @@
     "Id": 837,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 839,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 176,
     "WeaponClass": 79
   },
   {
     "Id": 841,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 176,
     "WeaponClass": 77
   },
   {
@@ -1818,98 +1818,98 @@
     "Id": 1237,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1239,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1241,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1243,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1245,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1247,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1249,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1251,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1253,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1255,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1257,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1259,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1261,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 1263,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -2063,49 +2063,49 @@
     "Id": 1307,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1309,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1311,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1313,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1315,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1317,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 1319,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
@@ -2161,49 +2161,49 @@
     "Id": 1335,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1337,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1339,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1341,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1343,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1345,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
     "Id": 1347,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1430,
     "WeaponClass": 82
   },
   {
@@ -2315,119 +2315,119 @@
     "Id": 1379,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1381,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1383,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1385,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1387,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1272,
     "WeaponClass": 85
   },
   {
     "Id": 1389,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1391,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1393,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1395,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1397,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1399,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1401,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1403,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1405,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1407,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1409,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 1419,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1271,
     "WeaponClass": 86
   },
   {
@@ -3640,14 +3640,14 @@
     "Id": 3053,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 3054,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -3783,49 +3783,49 @@
     "Id": 3170,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3171,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3172,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3173,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3174,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3175,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 3176,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -3839,56 +3839,56 @@
     "Id": 3190,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3192,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3194,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3196,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3198,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3200,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3202,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 3204,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -4088,7 +4088,7 @@
     "Id": 3695,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 792,
     "WeaponClass": 82
   },
   {
@@ -4373,14 +4373,14 @@
     "Id": 4037,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 4039,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
@@ -4397,7 +4397,7 @@
     "Id": 4068,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -4454,7 +4454,7 @@
     "Id": 4084,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1119,
     "WeaponClass": 82
   },
   {
@@ -4616,14 +4616,14 @@
     "Id": 4158,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4159,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -4663,7 +4663,7 @@
     "Id": 4170,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -5159,7 +5159,7 @@
     "Id": 4503,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -5190,7 +5190,7 @@
     "Id": 4508,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -5265,21 +5265,21 @@
     "Id": 4580,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4582,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4584,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -5340,7 +5340,7 @@
     "Id": 4675,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -5378,7 +5378,7 @@
     "Id": 4710,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -5400,7 +5400,7 @@
     "Id": 4718,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
@@ -5422,7 +5422,7 @@
     "Id": 4726,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -5444,7 +5444,7 @@
     "Id": 4734,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
@@ -5488,7 +5488,7 @@
     "Id": 4755,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
@@ -5582,35 +5582,35 @@
     "Id": 4862,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 4863,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 4864,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 4865,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 4866,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -5692,35 +5692,35 @@
     "Id": 4886,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
     "Id": 4887,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
     "Id": 4888,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
     "Id": 4889,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
     "Id": 4890,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 75
   },
   {
@@ -5802,35 +5802,35 @@
     "Id": 4910,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4911,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4912,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4913,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 4914,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -5912,35 +5912,35 @@
     "Id": 4934,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
     "Id": 4935,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
     "Id": 4936,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
     "Id": 4937,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
     "Id": 4938,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 372,
     "WeaponClass": 77
   },
   {
@@ -6132,35 +6132,35 @@
     "Id": 4982,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
     "Id": 4983,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
     "Id": 4984,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
     "Id": 4985,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
     "Id": 4986,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 373,
     "WeaponClass": 82
   },
   {
@@ -6227,7 +6227,7 @@
     "Id": 5016,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -6624,7 +6624,7 @@
     "Id": 5614,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 191,
     "WeaponClass": 82
   },
   {
@@ -7037,98 +7037,98 @@
     "Id": 5704,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5706,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5708,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5710,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5712,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5714,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5716,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5718,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5720,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5722,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5724,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5726,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5728,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5730,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -7142,14 +7142,14 @@
     "Id": 5734,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 5736,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -7221,7 +7221,7 @@
     "Id": 6082,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 284,
     "WeaponClass": 82
   },
   {
@@ -8017,7 +8017,7 @@
     "Id": 6526,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -8031,7 +8031,7 @@
     "Id": 6528,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 27,
     "WeaponClass": 82
   },
   {
@@ -8060,14 +8060,14 @@
     "Id": 6562,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 6563,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -8148,7 +8148,7 @@
     "Id": 6599,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -8162,7 +8162,7 @@
     "Id": 6603,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -8183,7 +8183,7 @@
     "Id": 6609,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
@@ -8362,7 +8362,7 @@
     "Id": 6721,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
@@ -8439,21 +8439,21 @@
     "Id": 6760,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 6762,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 6764,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -8465,49 +8465,49 @@
     "Id": 6773,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6774,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6775,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6776,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6777,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6778,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 6779,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
@@ -8554,14 +8554,14 @@
     "Id": 6817,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
     "Id": 6818,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 28,
     "WeaponClass": 89
   },
   {
@@ -8635,28 +8635,28 @@
     "Id": 6908,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 6910,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 6912,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 6914,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -8863,7 +8863,7 @@
     "Id": 7158,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
@@ -8875,7 +8875,7 @@
     "Id": 7170,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 234,
     "WeaponClass": 82
   },
   {
@@ -9164,77 +9164,77 @@
     "Id": 7421,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7422,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7423,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7424,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7425,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7426,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7427,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7428,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7429,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7430,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
     "Id": 7431,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 618,
     "WeaponClass": 82
   },
   {
@@ -9262,7 +9262,7 @@
     "Id": 7439,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 124,
     "WeaponClass": 82
   },
   {
@@ -9297,7 +9297,7 @@
     "Id": 7449,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 134,
     "WeaponClass": 82
   },
   {
@@ -9444,77 +9444,77 @@
     "Id": 7639,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7640,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7641,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7642,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7643,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7644,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7645,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7646,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7647,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7648,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7668,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 27,
     "WeaponClass": 82
   },
   {
@@ -9531,7 +9531,7 @@
     "Id": 7675,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -9718,7 +9718,7 @@
     "Id": 7758,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -9751,14 +9751,14 @@
     "Id": 7804,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 7806,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -9779,7 +9779,7 @@
     "Id": 7809,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -9885,112 +9885,112 @@
     "Id": 8650,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8652,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8654,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8656,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8658,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8660,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8662,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8664,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8666,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8668,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8670,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8672,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8674,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8676,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8678,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8680,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
@@ -10623,7 +10623,7 @@
     "Id": 8871,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 822,
     "WeaponClass": 82
   },
   {
@@ -10658,7 +10658,7 @@
     "Id": 8880,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
@@ -10877,42 +10877,42 @@
     "Id": 8966,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8967,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8968,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8969,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8970,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
     "Id": 8971,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 131,
     "WeaponClass": 82
   },
   {
@@ -10992,7 +10992,7 @@
     "Id": 9013,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -11006,28 +11006,28 @@
     "Id": 9044,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 9046,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 9048,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 9050,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -11113,7 +11113,7 @@
     "Id": 9084,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -11162,21 +11162,21 @@
     "Id": 9091,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 9092,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 9093,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -11241,49 +11241,49 @@
     "Id": 9174,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9176,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9177,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9179,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9181,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9183,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 9185,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
@@ -11581,7 +11581,7 @@
     "Id": 9703,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -12229,7 +12229,7 @@
     "Id": 10010,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -12260,14 +12260,14 @@
     "Id": 10033,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 234,
     "WeaponClass": 82
   },
   {
     "Id": 10034,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 234,
     "WeaponClass": 82
   },
   {
@@ -12432,35 +12432,35 @@
     "Id": 10146,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1277,
     "WeaponClass": 82
   },
   {
     "Id": 10147,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1277,
     "WeaponClass": 82
   },
   {
     "Id": 10148,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1277,
     "WeaponClass": 82
   },
   {
     "Id": 10149,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1277,
     "WeaponClass": 82
   },
   {
     "Id": 10150,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1279,
     "WeaponClass": 82
   },
   {
@@ -12495,7 +12495,7 @@
     "Id": 10156,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
@@ -12521,21 +12521,21 @@
     "Id": 10280,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 77
   },
   {
     "Id": 10282,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 77
   },
   {
     "Id": 10284,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 77
   },
   {
@@ -12975,21 +12975,21 @@
     "Id": 10440,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 10442,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 10444,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -13097,7 +13097,7 @@
     "Id": 10487,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1171,
     "WeaponClass": 82
   },
   {
@@ -14018,7 +14018,7 @@
     "Id": 10735,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1383,
     "WeaponClass": 86
   },
   {
@@ -14322,7 +14322,7 @@
     "Id": 10858,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 89
   },
   {
@@ -14855,14 +14855,14 @@
     "Id": 11165,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
     "Id": 11167,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
@@ -14949,14 +14949,14 @@
     "Id": 11235,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 303,
     "WeaponClass": 77
   },
   {
     "Id": 11259,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
@@ -15264,210 +15264,210 @@
     "Id": 11367,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11369,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11371,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11373,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11375,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11377,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11379,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11381,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11382,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11384,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11386,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11388,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11389,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11391,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11393,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11395,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11396,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11398,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11400,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11402,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11403,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11405,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11407,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11409,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11410,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11412,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11414,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11416,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11417,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 11419,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -15567,35 +15567,35 @@
     "Id": 11694,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 81
   },
   {
     "Id": 11696,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 81
   },
   {
     "Id": 11698,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 81
   },
   {
     "Id": 11700,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 81
   },
   {
     "Id": 11716,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1581,
     "WeaponClass": 87
   },
   {
@@ -15634,7 +15634,7 @@
     "Id": 11730,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 124,
     "WeaponClass": 89
   },
   {
@@ -15646,14 +15646,14 @@
     "Id": 11736,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 11738,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -15894,7 +15894,7 @@
     "Id": 12570,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1157,
     "WeaponClass": 82
   },
   {
@@ -16135,42 +16135,42 @@
     "Id": 12844,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 593,
     "WeaponClass": 82
   },
   {
     "Id": 12845,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 370,
     "WeaponClass": 82
   },
   {
     "Id": 12846,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 370,
     "WeaponClass": 82
   },
   {
     "Id": 12847,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 370,
     "WeaponClass": 82
   },
   {
     "Id": 12848,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 370,
     "WeaponClass": 82
   },
   {
     "Id": 12849,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 370,
     "WeaponClass": 82
   },
   {
@@ -16204,7 +16204,7 @@
     "Id": 12860,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -16826,7 +16826,7 @@
     "Id": 13081,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 175,
     "WeaponClass": 77
   },
   {
@@ -16894,210 +16894,210 @@
     "Id": 13117,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13118,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13119,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13120,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13121,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13122,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13123,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13124,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13125,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13126,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13127,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13128,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13129,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13130,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13131,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13132,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13133,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13134,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13135,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13136,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13137,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13138,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13139,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13140,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13141,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13142,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13143,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13144,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13145,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
     "Id": 13146,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 712,
     "WeaponClass": 82
   },
   {
@@ -17364,7 +17364,7 @@
     "Id": 13290,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 89
   },
   {
@@ -17695,6 +17695,126 @@
     "WeaponClass": 82
   },
   {
+    "Id": 13405,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13406,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 85
+  },
+  {
+    "Id": 13407,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13408,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13409,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13410,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13411,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13412,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13413,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13414,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13415,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13416,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13417,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13418,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13419,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13420,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13421,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13422,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13423,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13424,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13425,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13430,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
     "Id": 13431,
     "Flags": 0,
     "Slot": 3,
@@ -17707,6 +17827,648 @@
     "Slot": 3,
     "Stance": 1426,
     "WeaponClass": 82
+  },
+  {
+    "Id": 13442,
+    "Flags": 0,
+    "Slot": 2
+  },
+  {
+    "Id": 13443,
+    "Flags": 0,
+    "Slot": 1
+  },
+  {
+    "Id": 13444,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 93
+  },
+  {
+    "Id": 13445,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 76
+  },
+  {
+    "Id": 13449,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13450,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 81
+  },
+  {
+    "Id": 13451,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 81
+  },
+  {
+    "Id": 13452,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 81
+  },
+  {
+    "Id": 13453,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 81
+  },
+  {
+    "Id": 13454,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13455,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13456,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13457,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13458,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13459,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13460,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13461,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13462,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13465,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13466,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13467,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13468,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13469,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 75
+  },
+  {
+    "Id": 13470,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 75
+  },
+  {
+    "Id": 13471,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 75
+  },
+  {
+    "Id": 13472,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 75
+  },
+  {
+    "Id": 13473,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13474,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13475,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13476,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13477,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13478,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13479,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 88
+  },
+  {
+    "Id": 13480,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 83
+  },
+  {
+    "Id": 13481,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13482,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13483,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13484,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13485,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13486,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13487,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13488,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13489,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13490,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13491,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13492,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13493,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13494,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13495,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13496,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13497,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13498,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13499,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13500,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13501,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13502,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13503,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13504,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13505,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13506,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13507,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13508,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13509,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13510,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13511,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13512,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13513,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13514,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13515,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13516,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13517,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13518,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13519,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13520,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13521,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13522,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13523,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 79
+  },
+  {
+    "Id": 13524,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13525,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 79
+  },
+  {
+    "Id": 13526,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13527,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 79
+  },
+  {
+    "Id": 13528,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13529,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13530,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13531,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13532,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13533,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13534,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13535,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13536,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13537,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13538,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13539,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13540,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13541,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13542,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13543,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 77
+  },
+  {
+    "Id": 13544,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13545,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13546,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13547,
+    "Flags": 0,
+    "Slot": 9
+  },
+  {
+    "Id": 13548,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13549,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13550,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13551,
+    "Flags": 0,
+    "Slot": 2
+  },
+  {
+    "Id": 13552,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13553,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13554,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13555,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13556,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13557,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13558,
+    "Flags": 0,
+    "Slot": 0
   },
   {
     "Id": 13559,
@@ -17852,140 +18614,140 @@
     "Id": 13629,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13630,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13631,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13632,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13633,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13634,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13635,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13636,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13637,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13638,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13639,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13640,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13641,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13642,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13643,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 13644,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 13645,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 13646,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 13647,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
     "Id": 13648,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 82
   },
   {
@@ -18019,7 +18781,7 @@
     "Id": 13661,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1096,
     "WeaponClass": 82
   },
   {
@@ -18047,7 +18809,7 @@
     "Id": 13666,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 326,
     "WeaponClass": 82
   },
   {
@@ -18078,7 +18840,7 @@
     "Id": 13671,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 327,
     "WeaponClass": 82
   },
   {
@@ -18105,7 +18867,7 @@
     "Id": 13676,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 328,
     "WeaponClass": 82
   },
   {
@@ -18364,7 +19126,7 @@
     "Id": 13719,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 176,
     "WeaponClass": 77
   },
   {
@@ -18415,6 +19177,453 @@
   },
   {
     "Id": 13744,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13763,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13764,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 78
+  },
+  {
+    "Id": 13765,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13766,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13767,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13768,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13769,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13770,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13771,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13772,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13773,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13774,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13775,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13776,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 87
+  },
+  {
+    "Id": 13777,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 89
+  },
+  {
+    "Id": 13778,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13779,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13780,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 88
+  },
+  {
+    "Id": 13781,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13782,
+    "Flags": 0,
+    "Slot": 10
+  },
+  {
+    "Id": 13783,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13784,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13785,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13786,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13787,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13788,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13789,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13790,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13791,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13792,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13793,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13794,
+    "Flags": 0,
+    "Slot": 4
+  },
+  {
+    "Id": 13795,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13796,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13797,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13798,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13799,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13800,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13801,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13802,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13803,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13804,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13805,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13806,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13807,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13808,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13809,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13810,
+    "Flags": 0,
+    "Slot": 0
+  },
+  {
+    "Id": 13811,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13812,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13813,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13814,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13815,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13816,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13817,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13818,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13819,
+    "Flags": 0,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 82
+  },
+  {
+    "Id": 13820,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13821,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13822,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13823,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13824,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13825,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13826,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13827,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13828,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13829,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13830,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13831,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13832,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13833,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13834,
+    "Flags": 0,
+    "Slot": 5
+  },
+  {
+    "Id": 13835,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 13836,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13837,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 13838,
+    "Flags": 2,
+    "Slot": 0
+  },
+  {
+    "Id": 13839,
     "Flags": 0,
     "Slot": 5
   },
@@ -18517,14 +19726,14 @@
     "Id": 13867,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13869,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -18565,28 +19774,28 @@
     "Id": 13879,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1381,
     "WeaponClass": 82
   },
   {
     "Id": 13880,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1381,
     "WeaponClass": 82
   },
   {
     "Id": 13881,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1381,
     "WeaponClass": 82
   },
   {
     "Id": 13882,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1381,
     "WeaponClass": 82
   },
   {
@@ -18650,14 +19859,14 @@
     "Id": 13899,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 13901,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
@@ -18678,14 +19887,14 @@
     "Id": 13905,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 13907,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -18742,14 +19951,14 @@
     "Id": 13923,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 13925,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
@@ -18770,14 +19979,14 @@
     "Id": 13929,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 13931,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
@@ -18814,14 +20023,14 @@
     "Id": 13941,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 13943,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -19017,21 +20226,21 @@
     "Id": 13988,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 13990,
     "Flags": 1,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 87
   },
   {
     "Id": 14057,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 1072,
     "WeaponClass": 82
   },
   {
@@ -19133,7 +20342,7 @@
     "Id": 14097,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
@@ -19159,7 +20368,7 @@
     "Id": 14102,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
@@ -19206,7 +20415,7 @@
     "Id": 14110,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
@@ -19249,7 +20458,7 @@
     "Id": 14117,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -19375,35 +20584,35 @@
     "Id": 14152,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
     "Id": 14154,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
     "Id": 14156,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
     "Id": 14158,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
     "Id": 14160,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 158,
     "WeaponClass": 82
   },
   {
@@ -19445,35 +20654,35 @@
     "Id": 14287,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 14289,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 14291,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 14293,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
     "Id": 14295,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1381,
+    "Stance": 1426,
     "WeaponClass": 82
   },
   {
@@ -19700,35 +20909,35 @@
     "Id": 14377,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 14379,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 14381,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 14383,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
     "Id": 14385,
     "Flags": 0,
     "Slot": 3,
-    "Stance": 1426,
+    "Stance": 28,
     "WeaponClass": 85
   },
   {
@@ -19860,7 +21069,19 @@
     "Slot": 4
   },
   {
+    "Id": 14481,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
     "Id": 14484,
+    "Flags": 1,
+    "Slot": 3,
+    "Stance": 1426,
+    "WeaponClass": 78
+  },
+  {
+    "Id": 14486,
     "Flags": 1,
     "Slot": 3,
     "Stance": 1426,
@@ -19960,6 +21181,21 @@
     "Slot": 3,
     "Stance": 1426,
     "WeaponClass": 82
+  },
+  {
+    "Id": 14592,
+    "Flags": 0,
+    "Slot": 7
+  },
+  {
+    "Id": 14593,
+    "Flags": 8,
+    "Slot": 4
+  },
+  {
+    "Id": 14594,
+    "Flags": 2,
+    "Slot": 0
   },
   {
     "Id": 14595,

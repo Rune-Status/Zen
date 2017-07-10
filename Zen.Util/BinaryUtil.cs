@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace Zen.Util
 {
     public static class BinaryUtil
     {
-        public static void WriteByte(this BinaryWriter writer, int value) => writer.BaseStream.WriteByte((byte)value);
+        public static void WriteByte(this BinaryWriter writer, int value) => writer.BaseStream.WriteByte((byte) value);
 
         public static void WriteShort(this BinaryWriter writer, int value)
         {

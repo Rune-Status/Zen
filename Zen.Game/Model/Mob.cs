@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace Zen.Game.Model
+﻿namespace Zen.Game.Model
 {
     public abstract class Mob : Entity
     {
