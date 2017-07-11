@@ -1,4 +1,5 @@
-﻿using Zen.Game.Msg.Impl;
+﻿using System;
+using Zen.Game.Msg.Impl;
 using static Zen.Shared.EquipmentConstants;
 
 namespace Zen.Game.Model

@@ -4,7 +4,9 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
+using Zen.Fs.Definition;
 using Zen.Shared;
+using Zen.Util;
 
 namespace Zen.Game.Model
 {
@@ -97,7 +99,9 @@ namespace Zen.Game.Model
                 var fullMask = (flags & FlagFullMask) != 0;
                 var fullBody = (flags & FlagFullBody) != 0;
 
-                Definitions[id] = new EquipmentDefinition(nextEquipmentId++, slot, twoHanded, fullHelm, fullMask,
+                var invisible = ItemDefinition.ForId(id).Name.ContainsWord("Ring");
+                Definitions[id] = new EquipmentDefinition(invisible ? -1 : nextEquipmentId++, slot, twoHanded, fullHelm,
+                    fullMask,
                     fullBody, stance,
                     (WeaponClass) weaponClass);
             }

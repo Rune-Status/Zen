@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using Zen.Fs;
 using Zen.Fs.Definition;
 using Zen.Shared;
+using Zen.Util;
 using static Zen.Game.Model.EquipmentDefinition;
 using static Zen.Shared.EquipmentConstants;
 
@@ -13,8 +14,11 @@ namespace Zen.Core.Tools
 {
     public class EquipmentDumper
     {
-        public static void Dump(Cache cache)
+        public static void Main()
         {
+            var cache = new Cache(FileStore.Open(GameConstants.CacheDirectory));
+            ItemDefinition.Load(cache);
+
             const string path = GameConstants.WorkingDirectory + "Equipment.json";
             var definitions = new JArray();
 
@@ -71,6 +75,7 @@ namespace Zen.Core.Tools
 
 
             Console.WriteLine("Successfully dumped equipment data.");
+            Console.ReadLine();
         }
 
         private static int GetSlot(ItemDefinition def)
@@ -129,7 +134,11 @@ namespace Zen.Core.Tools
 
         private static bool IsEquipment(ItemDefinition def)
         {
-            return def.MaleWearModel1 >= 0 || def.MaleWearModel2 >= 0 || def.FemaleWearModel1 >= 0 ||
+            if (def.Name != null && def.Name.ContainsWord("Ring"))
+                return true;
+
+            return def.MaleWearModel1 >= 0 || def.MaleWearModel2 >= 0 ||
+                   def.FemaleWearModel1 >= 0 ||
                    def.FemaleWearModel2 >= 0;
         }
 
@@ -148,7 +157,7 @@ namespace Zen.Core.Tools
             if (GetSlot(def) != Body) return false;
 
             var name = def.Name.ToLower();
-            return name.Contains("platebody") || name.Contains("robe");
+            return name.Contains("platebody") || name.Contains("robe") || name.Contains("chestplate");
         }
 
         private static bool IsFullHelm(ItemDefinition def)
@@ -166,7 +175,7 @@ namespace Zen.Core.Tools
             if (GetSlot(def) != Head) return false;
 
             var name = def.Name.ToLower();
-            return IsFullHelm(def) && name.Contains("mask");
+            return IsFullHelm(def) || name.Contains("mask") || name.Equals("slayer helmet");
         }
 
         private static WeaponClass GetWeaponClass(ItemDefinition def)

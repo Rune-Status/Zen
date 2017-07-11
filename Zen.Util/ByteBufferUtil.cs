@@ -96,5 +96,7 @@ namespace Zen.Util
         public static int ReadTriByte(this IByteBuffer buffer) => ((buffer.ReadByte() & 0xff) << 16) |
                                                                   ((buffer.ReadByte() & 0xff) << 8) |
                                                                   (buffer.ReadByte() & 0xff);
+
+        public static int ReadUnsignedByte(this IByteBuffer buffer) => buffer.ReadByte() & 0xFF;
     }
 }

@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Zen.Core.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetty.Buffers, Version=0.4.5.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29">
       <HintPath>..\packages\DotNetty.Buffers.0.4.5\lib\net45\DotNetty.Buffers.dll</HintPath>

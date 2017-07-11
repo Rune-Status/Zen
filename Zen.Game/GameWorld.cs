@@ -1,5 +1,7 @@
-﻿using NLog;
+﻿using System.Linq;
+using NLog;
 using Zen.Game.Model;
+using Zen.Game.Plugin;
 using Zen.Game.Update;
 using Zen.Shared;
 
@@ -18,6 +20,8 @@ namespace Zen.Game
             _updater = new PlayerUpdater(this);
         }
 
+        public PluginRepository Repository { get; } = new PluginRepository();
+
         public bool AddPlayer(Player player)
         {
             if (player == null || _players.Contains(player))
@@ -27,11 +31,10 @@ namespace Zen.Game
 
             var slotId = _players.IndexOf(player);
 
-            if (slotId != -1)
-                Logger.Info(
-                    $"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
-            else
-                Logger.Info($"Could not register Player [Username={player.Username}, Id={player.Id}]");
+            Logger.Info(
+                slotId != -1
+                    ? $"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]"
+                    : $"Could not register Player [Username={player.Username}, Id={player.Id}]");
             return true;
         }
 
@@ -48,10 +51,7 @@ namespace Zen.Game
 
         public Player GetPlayer(string username)
         {
-            foreach (var player in _players)
-                if (player != null && player.Username.Equals(username))
-                    return player;
-            return null;
+            return _players.FirstOrDefault(player => player != null && player.Username.Equals(username));
         }
 
         public void Tick()
