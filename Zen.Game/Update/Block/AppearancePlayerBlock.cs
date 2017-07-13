@@ -4,7 +4,7 @@ using Zen.Game.Msg.Impl;
 using Zen.Util;
 using static Zen.Shared.EquipmentConstants;
 
-namespace Zen.Game.Update
+namespace Zen.Game.Update.Block
 {
     public class AppearancePlayerBlock : PlayerBlock
     {

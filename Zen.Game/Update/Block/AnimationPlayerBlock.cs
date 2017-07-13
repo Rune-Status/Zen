@@ -2,7 +2,7 @@
 using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
 
-namespace Zen.Game.Update
+namespace Zen.Game.Update.Block
 {
     public class AnimationPlayerBlock : PlayerBlock
     {

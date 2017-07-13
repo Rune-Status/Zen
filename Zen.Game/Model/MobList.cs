@@ -1,119 +1,113 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Zen.Game.Model
 {
-    public class MobList<T> : ICollection<T> where T : Mob
+    public class MobList<T> : IList<T> where T : Mob
     {
-        private readonly int _capacity;
-
-        private readonly T[] _entities;
-        private readonly HashSet<int> _indicies = new HashSet<int>();
-        private int _currentIndex = 1;
+        private readonly T[] _mobs;
 
         public MobList(int capacity)
         {
-            _entities = new T[capacity];
-            _capacity = capacity;
+            _mobs = new T[capacity];
         }
 
-        public MobList(IEnumerable<T> collection)
-        {
-            foreach (var entity in collection)
-                Add(entity);
-        }
+        public IEnumerator<T> GetEnumerator() => new MobListEnumerator(_mobs);
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-        public T this[int index]
+        public void Add(T mob)
         {
-            get { return _entities[index]; }
-            set { _entities[index] = value; }
-        }
+            for (var id = 0; id < _mobs.Length; id++)
+            {
+                if (_mobs[id] != null)
+                    continue;
 
-        public void Add(T entity) => Add(entity, _currentIndex);
+                _mobs[id] = mob;
+                Count++;
 
-        public bool Remove(T entity)
-        {
-            _entities[entity.Id] = null;
-            _indicies.Remove(entity.Id);
-            DecreaseIndex();
-            return true;
+                mob.Id = id + 1;
+                break;
+            }
         }
 
         public void Clear()
         {
-            foreach (var entity in _entities)
-                Remove(entity);
+            foreach (var t in _mobs)
+                Remove(t);
         }
 
-        public bool Contains(T entity) => _entities.Contains(entity);
+        public bool Contains(T mob) => IndexOf(mob) != -1;
 
-        public void CopyTo(T[] entities, int index)
+        public bool Remove(T mob)
         {
-            foreach (var entity in entities)
-                Add(entity, index);
+            var id = mob.Id;
+            if (id == 0) return false;
+
+            id--;
+            if (_mobs[id] != mob) return false;
+
+            _mobs[id] = null;
+            Count--;
+
+            mob.ResetId();
+            return true;
         }
 
-        public int Count => _indicies.Count();
+        public int Count { get; private set; }
+        public bool IsReadOnly => false;
 
-        public bool IsReadOnly => throw new NotImplementedException();
-
-        public IEnumerator<T> GetEnumerator()
+        public int IndexOf(T mob)
         {
-            return new MobListEnumerator<T>(_entities, _indicies, this);
-        }
+            for (var id = 0; id < _mobs.Length; id++)
+                if (_mobs[id] != null && _mobs[id].Id == mob.Id)
+                    return id;
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return _entities.GetEnumerator();
-        }
-
-        public void Add(T entity, int index)
-        {
-            if (_entities[_currentIndex] != null)
-            {
-                IncreaseIndex();
-                Add(entity, _currentIndex);
-            }
-            else
-            {
-                _entities[_currentIndex] = entity;
-                entity.Id = index;
-                _indicies.Add(_currentIndex);
-                IncreaseIndex();
-            }
-        }
-
-        public T Remove(int index)
-        {
-            var temp = _entities[index];
-            _entities[index] = null;
-            _indicies.Remove(index);
-            DecreaseIndex();
-            return temp;
-        }
-
-        public int IndexOf(T entity)
-        {
-            foreach (var index in _indicies)
-                if (_entities[index].Equals(entity))
-                    return index;
             return -1;
         }
 
-        private void IncreaseIndex()
+        public void Insert(int index, T item) => throw new NotImplementedException();
+        public void RemoveAt(int index) => throw new NotImplementedException();
+        public void CopyTo(T[] array, int arrayIndex) => throw new NotImplementedException();
+
+        public T this[int index]
         {
-            _currentIndex++;
-            if (_currentIndex >= _capacity)
-                _currentIndex = 1;
+            get => _mobs[index];
+            set => _mobs[index] = value;
         }
 
-        private void DecreaseIndex()
+        private class MobListEnumerator : IEnumerator<T>
         {
-            _currentIndex--;
-            if (_currentIndex <= _capacity)
-                _currentIndex = 1;
+            private readonly T[] _mobs;
+            private int _index;
+
+            public MobListEnumerator(T[] mobs)
+            {
+                _mobs = mobs;
+            }
+
+            public bool MoveNext()
+            {
+                for (; _index < _mobs.Length; _index++)
+                {
+                    if (_mobs[_index] == null)
+                        continue;
+
+                    Current = _mobs[_index++];
+                    return true;
+                }
+                return false;
+            }
+
+            public void Reset()
+            {
+                Current = default(T);
+                _index = 0;
+            }
+
+            public void Dispose() => Reset();
+            public T Current { get; private set; }
+            object IEnumerator.Current => Current;
         }
     }
 }

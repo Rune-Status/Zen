@@ -1,5 +1,5 @@
 {
-  "Password": "trustno1",
+  "Password": "test",
   "Rights": 2,
   "Position": {
     "X": 3088,
@@ -147,73 +147,6 @@
       "Experience": 0.0
     }
   ],
-  "Inventory": [
-    {
-      "Slot": 0,
-      "Id": 4710,
-      "Amount": 1
-    },
-    {
-      "Slot": 1,
-      "Id": 13263,
-      "Amount": 1
-    },
-    {
-      "Slot": 2,
-      "Id": 6731,
-      "Amount": 1
-    },
-    {
-      "Slot": 3,
-      "Id": 2552,
-      "Amount": 1
-    }
-  ],
-  "Equipment": [
-    {
-      "Slot": 0,
-      "Id": 4708,
-      "Amount": 1
-    },
-    {
-      "Slot": 1,
-      "Id": 2412,
-      "Amount": 1
-    },
-    {
-      "Slot": 2,
-      "Id": 6585,
-      "Amount": 1
-    },
-    {
-      "Slot": 3,
-      "Id": 4170,
-      "Amount": 1
-    },
-    {
-      "Slot": 4,
-      "Id": 4712,
-      "Amount": 1
-    },
-    {
-      "Slot": 5,
-      "Id": 13744,
-      "Amount": 1
-    },
-    {
-      "Slot": 7,
-      "Id": 4714,
-      "Amount": 1
-    },
-    {
-      "Slot": 9,
-      "Id": 6922,
-      "Amount": 1
-    },
-    {
-      "Slot": 10,
-      "Id": 6920,
-      "Amount": 1
-    }
-  ]
+  "Inventory": [],
+  "Equipment": []
 }

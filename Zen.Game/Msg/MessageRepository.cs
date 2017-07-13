@@ -34,6 +34,8 @@ namespace Zen.Game.Msg
             Bind(new InterfaceResetItemsMessageEncoder());
             Bind(new InterfaceSlottedItemsMessageEncoder());
             Bind(new InterfaceTextMessageEncoder());
+            Bind(new ResetMinimapFlagMessageEncoder());
+            Bind(new NpcUpdateMessageEncoder());
 
             Bind(new WalkMessageHandler());
             Bind(new CommandMessageHandler());

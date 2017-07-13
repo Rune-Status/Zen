@@ -4,7 +4,7 @@ using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
 using Zen.Util;
 
-namespace Zen.Game.Update
+namespace Zen.Game.Update.Block
 {
     public class ChatPlayerBlock : PlayerBlock
     {

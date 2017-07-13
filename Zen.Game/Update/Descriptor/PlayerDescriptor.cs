@@ -4,8 +4,9 @@ using System.Linq;
 using Zen.Builder;
 using Zen.Game.Model;
 using Zen.Game.Msg.Impl;
+using Zen.Game.Update.Block;
 
-namespace Zen.Game.Update
+namespace Zen.Game.Update.Descriptor
 {
     public abstract class PlayerDescriptor
     {

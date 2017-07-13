@@ -11,7 +11,6 @@ namespace Zen.Game
     {
         public static readonly GameWorld Instance = new GameWorld();
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        private readonly MobList<Player> _players = new MobList<Player>(GameConstants.MaxPlayers);
 
         private readonly PlayerUpdater _updater;
 
@@ -20,51 +19,51 @@ namespace Zen.Game
             _updater = new PlayerUpdater(this);
         }
 
+        public MobList<Player> Players { get; } = new MobList<Player>(GameConstants.MaxPlayers);
+        public MobList<Npc> Npcs { get; } = new MobList<Npc>(GameConstants.MaxNpcs);
         public PluginRepository Repository { get; } = new PluginRepository();
 
         public bool AddPlayer(Player player)
         {
-            if (player == null || _players.Contains(player))
+            if (player == null || Players.Contains(player))
                 return false;
 
-            _players.Add(player);
-
-            var slotId = _players.IndexOf(player);
+            Players.Add(player);
+            var slotId = Players.IndexOf(player);
 
             Logger.Info(
                 slotId != -1
-                    ? $"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]"
+                    ? $"Registered Player [Username={player.Username}, Id={player.Id}, Total Online={Players.Count}]"
                     : $"Could not register Player [Username={player.Username}, Id={player.Id}]");
             return true;
         }
 
+        public bool AddNpc(Npc npc)
+        {
+            if (npc == null || Npcs.Contains(npc))
+                return false;
+
+            Npcs.Add(npc);
+            return Npcs.IndexOf(npc) != -1;
+        }
+
         public void RemovePlayer(Player player)
         {
-            if (!_players.Contains(player))
+            if (!Players.Contains(player) || !Players.Remove(player))
                 return;
-            if (!_players.Remove(player))
-                return;
-
             Logger.Info(
-                $"Unregistered Player [Username={player.Username}, Id={player.Id}, Total Online={_players.Count}]");
+                $"Unregistered Player [Username={player.Username}, Id={player.Id}, Total Online={Players.Count}]");
         }
 
-        public Player GetPlayer(string username)
-        {
-            return _players.FirstOrDefault(player => player != null && player.Username.Equals(username));
-        }
+        public Player GetPlayer(string username) => Players.FirstOrDefault(
+            player => player != null && player.Username.Equals(username));
 
         public void Tick()
         {
-            foreach (var player in _players)
+            foreach (var player in Players)
                 player.Session?.ProcessMessageQueue();
 
             _updater.Tick();
-        }
-
-        public MobList<Player> GetPlayers()
-        {
-            return _players;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Zen.Game.Model
         public Appearance Appearance { get; } = Appearance.DefaultAppearance;
         public int[] AppearanceTickets { get; } = new int[2500];
         public List<Player> LocalPlayers { get; } = new List<Player>();
+        public List<Npc> LocalNpcs { get; } = new List<Npc>();
         public bool RegionChanging { get; private set; }
         public Position LastKnownRegion { get; private set; }
         public InterfaceSet InterfaceSet { get; private set; }
@@ -33,7 +34,6 @@ namespace Zen.Game.Model
         public Container Equipment { get; } = new Container(14);
 
         public int Stance => Equipment.Get(EquipmentConstants.Weapon)?.EquipmentDefinition.Stance ?? 1426;
-
 
         private void Init()
         {

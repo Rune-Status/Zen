@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Zen.Game.Model;
-using Zen.Game.Update;
+using Zen.Game.Update.Descriptor;
 
 namespace Zen.Game.Msg.Impl
 {

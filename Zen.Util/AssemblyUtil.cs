@@ -8,18 +8,12 @@ namespace Zen.Util
 {
     public class AssemblyUtil
     {
-        public static Dictionary<object, MethodInfo> GetMethodsWithAttribute<T>(Assembly parentAssembly = null)
-            where T : Attribute
+        public static IEnumerable<Type> GetTypesWithInterface<T>() where T : class
         {
-            var assembly = parentAssembly ?? Assembly.GetCallingAssembly();
+            var typeOf = typeof(T);
+            var assembly = Assembly.GetCallingAssembly();
 
-            return assembly.GetTypes().SelectMany(x => x.GetMethods())
-                .Where(y => y.GetCustomAttributes(typeof(T), true).Length > 0)
-                .ToDictionary(z =>
-                {
-                    Debug.Assert(z.DeclaringType != null, "z.DeclaringType != null");
-                    return Activator.CreateInstance(z.DeclaringType);
-                });
+            return assembly.GetTypes().Where(x => !x.IsInterface && typeOf.IsAssignableFrom(x)).ToList();
         }
     }
 }

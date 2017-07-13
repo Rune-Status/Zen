@@ -1,7 +1,7 @@
 ﻿using Zen.Builder;
 using Zen.Game.Msg.Impl;
 
-namespace Zen.Game.Update
+namespace Zen.Game.Update.Block
 {
     public abstract class PlayerBlock
     {

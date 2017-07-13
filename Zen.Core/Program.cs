@@ -39,6 +39,12 @@ namespace Zen.Core
                 {
                     Condition = ConditionParser.ParseExpression("level == LogLevel.Error"),
                     ForegroundColor = ConsoleOutputColor.Red
+                },
+
+                new ConsoleRowHighlightingRule
+                {
+                    Condition = ConditionParser.ParseExpression("level == LogLevel.Debug"),
+                    ForegroundColor = ConsoleOutputColor.DarkCyan
                 }
             };
 
