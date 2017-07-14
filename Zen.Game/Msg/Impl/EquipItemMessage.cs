@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class EquipItemMessage : Message
+    public class EquipItemMessage : IMessage
     {
         public EquipItemMessage(int id, int slot, int itemSlot, int itemId)
         {

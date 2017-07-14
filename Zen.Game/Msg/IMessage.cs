@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg
 {
-    public abstract class Message
+    public interface IMessage
     {
     }
 }

@@ -7,7 +7,7 @@ namespace Zen.Game.Msg.Handler
     {
         public override void Handle(Player player, EquipItemMessage message)
         {
-            if (message.Id != InterfaceSet.Interfaces.Inventory || message.Slot != 0) return;
+            if (message.Id != Interfaces.Inventory || message.Slot != 0) return;
             var item = player.Inventory.Get(message.ItemSlot);
             if (item == null || item.Id != message.ItemId)
                 return;

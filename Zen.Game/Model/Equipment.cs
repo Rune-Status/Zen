@@ -1,5 +1,4 @@
-﻿using System;
-using Zen.Game.Msg.Impl;
+﻿using Zen.Game.Msg.Impl;
 using static Zen.Shared.EquipmentConstants;
 
 namespace Zen.Game.Model
@@ -122,7 +121,7 @@ namespace Zen.Game.Model
             }
 
             var tab = (int) weaponClass;
-            player.InterfaceSet.OpenTab(InterfaceSet.Tabs.Attack, tab);
+            player.InterfaceSet.OpenTab(Tabs.Attack, tab);
             player.Send(new InterfaceTextMessage(tab, 0, name));
         }
     }

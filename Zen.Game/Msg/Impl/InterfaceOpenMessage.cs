@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceOpenMessage : Message
+    public class InterfaceOpenMessage : IMessage
     {
         public InterfaceOpenMessage(int id, int bitpackedId, bool transparent)
         {

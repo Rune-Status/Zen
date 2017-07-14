@@ -3,7 +3,7 @@ using Zen.Game.Model;
 
 namespace Zen.Game.Msg
 {
-    public abstract class MessageHandler<T> where T : Message
+    public abstract class MessageHandler<T> where T : IMessage
     {
         public Type MessageType => typeof(T);
 

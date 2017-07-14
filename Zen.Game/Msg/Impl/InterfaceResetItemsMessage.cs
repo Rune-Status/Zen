@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceResetItemsMessage : Message
+    public class InterfaceResetItemsMessage : IMessage
     {
         public InterfaceResetItemsMessage(int id, int slot)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class RemoveItemMessage : Message
+    public class RemoveItemMessage : IMessage
     {
         public RemoveItemMessage(int id, int slot, int itemSlot, int itemId)
         {

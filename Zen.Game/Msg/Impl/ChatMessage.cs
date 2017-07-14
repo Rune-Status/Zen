@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class ChatMessage : Message
+    public class ChatMessage : IMessage
     {
         public ChatMessage(int color, int effects, string text)
         {

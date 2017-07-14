@@ -4,7 +4,7 @@ using Zen.Builder;
 
 namespace Zen.Game.Msg
 {
-    public abstract class MessageEncoder<T> where T : Message
+    public abstract class MessageEncoder<T> where T : IMessage
     {
         public Type MessageType => typeof(T);
 

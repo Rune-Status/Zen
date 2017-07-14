@@ -23,6 +23,7 @@ namespace Zen.Game.Msg
             Bind(new EquipItemMessageDecoder());
             Bind(new RemoveItemMessageDecoder());
             Bind(new InterfaceClosedMessageDecoder());
+            Bind(new DisplayMessageDecoder());
 
             Bind(new RegionChangeMessageEncoder(keyTable));
             Bind(new InterfaceRootMessageEncoder());
@@ -38,6 +39,7 @@ namespace Zen.Game.Msg
             Bind(new ResetMinimapFlagMessageEncoder());
             Bind(new NpcUpdateMessageEncoder());
             Bind(new ConfigMessageEncoder());
+            Bind(new LogoutMessageEncoder());
 
             Bind(new WalkMessageHandler());
             Bind(new CommandMessageHandler());
@@ -47,17 +49,18 @@ namespace Zen.Game.Msg
             Bind(new EquipItemMessageHandler());
             Bind(new RemoveItemMessageHandler());
             Bind(new InterfaceClosedMessageHandler());
+            Bind(new DisplayMessageHandler());
         }
 
         public Dictionary<int, object> InCodecs { get; } = new Dictionary<int, object>();
         public Dictionary<Type, object> OutCodecs { get; } = new Dictionary<Type, object>();
         public Dictionary<Type, object> Handlers { get; } = new Dictionary<Type, object>();
 
-        public void Bind<T>(MessageDecoder<T> decoder) where T : Message => InCodecs[decoder.Opcode] = decoder;
-        public void Bind<T>(MessageEncoder<T> encoder) where T : Message => OutCodecs[encoder.MessageType] = encoder;
-        public void Bind<T>(MessageHandler<T> handler) where T : Message => Handlers[handler.MessageType] = handler;
+        public void Bind<T>(MessageDecoder<T> decoder) where T : IMessage => InCodecs[decoder.Opcode] = decoder;
+        public void Bind<T>(MessageEncoder<T> encoder) where T : IMessage => OutCodecs[encoder.MessageType] = encoder;
+        public void Bind<T>(MessageHandler<T> handler) where T : IMessage => Handlers[handler.MessageType] = handler;
 
-        public void Handle(Player player, Message message)
+        public void Handle(Player player, IMessage message)
         {
             Handlers.TryGetValue(message.GetType(), out dynamic handler);
             handler?.Handle(player, (dynamic) message);

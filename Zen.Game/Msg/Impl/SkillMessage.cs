@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg.Impl
 {
-    public class SkillMessage : Message
+    public class SkillMessage : IMessage
     {
         public SkillMessage(SkillSet.SkillMetadata metadata)
         {

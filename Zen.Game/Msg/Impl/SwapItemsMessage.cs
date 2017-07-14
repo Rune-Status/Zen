@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class SwapItemsMessage : Message
+    public class SwapItemsMessage : IMessage
     {
         public SwapItemsMessage(int id, int slot, int source, int destination, int type)
         {

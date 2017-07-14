@@ -6,7 +6,7 @@ using Zen.Game.Msg;
 
 namespace Zen.Net.Game
 {
-    public class GameMessageEncoder : MessageToMessageEncoder<Message>
+    public class GameMessageEncoder : MessageToMessageEncoder<IMessage>
     {
         private readonly MessageRepository _repository;
 
@@ -15,7 +15,7 @@ namespace Zen.Net.Game
             _repository = repository;
         }
 
-        protected override void Encode(IChannelHandlerContext context, Message message, List<object> output)
+        protected override void Encode(IChannelHandlerContext context, IMessage message, List<object> output)
         {
             _repository.OutCodecs.TryGetValue(message.GetType(), out dynamic encoder);
             if (encoder == null) return;

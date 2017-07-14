@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg.Impl
 {
-    public class RegionChangeMessage : Message
+    public class RegionChangeMessage : IMessage
     {
         public RegionChangeMessage(Player player)
         {

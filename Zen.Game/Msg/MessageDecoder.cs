@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg
 {
-    public abstract class MessageDecoder<T> where T : Message
+    public abstract class MessageDecoder<T> where T : IMessage
     {
         protected MessageDecoder(int opcode)
         {

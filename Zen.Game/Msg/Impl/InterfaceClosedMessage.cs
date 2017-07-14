@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceClosedMessage : Message
+    public class InterfaceClosedMessage : IMessage
     {
     }
 }

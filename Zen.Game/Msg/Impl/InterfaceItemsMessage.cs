@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceItemsMessage : Message
+    public class InterfaceItemsMessage : IMessage
     {
         public InterfaceItemsMessage(int id, int slot, int type, Item[] items)
         {

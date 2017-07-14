@@ -8,7 +8,7 @@ namespace Zen.Game.Model
     public class PlayerSession
     {
         private readonly IChannel _channel;
-        private readonly Queue<Message> _messages = new Queue<Message>();
+        private readonly Queue<IMessage> _messages = new Queue<IMessage>();
 
         private readonly Player _player;
         private readonly MessageRepository _repository;
@@ -20,7 +20,7 @@ namespace Zen.Game.Model
             _repository = repository;
         }
 
-        public void Enqueue(Message msg)
+        public void Enqueue(IMessage msg)
         {
             lock (_messages)
             {
@@ -32,12 +32,13 @@ namespace Zen.Game.Model
         {
             lock (_messages)
             {
-                Message message;
+                IMessage message;
                 while (_messages.Count > 0 && (message = _messages.Dequeue()) != null)
                     _repository.Handle(_player, message);
             }
         }
 
-        public Task Send(Message message) => _channel.WriteAndFlushAsync(message);
+        public Task Send(IMessage message) => _channel.WriteAndFlushAsync(message);
+        public Task Close() => _channel.CloseAsync();
     }
 }

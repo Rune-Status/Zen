@@ -14,25 +14,25 @@ namespace Zen.Game.Model
     {
         public enum WeaponClass
         {
-            Axe = InterfaceSet.Interfaces.Axe,
-            Maul = InterfaceSet.Interfaces.Maul,
-            Bow = InterfaceSet.Interfaces.Bow,
-            Claws = InterfaceSet.Interfaces.Claws,
-            Longbow = InterfaceSet.Interfaces.Longbow,
-            FixedDevice = InterfaceSet.Interfaces.FixedDevice,
-            Godsword = InterfaceSet.Interfaces.Godsword,
-            Sword = InterfaceSet.Interfaces.Sword,
-            Pickaxe = InterfaceSet.Interfaces.Pickaxe,
-            Halberd = InterfaceSet.Interfaces.Halberd,
-            Staff = InterfaceSet.Interfaces.Staff,
-            Scythe = InterfaceSet.Interfaces.Scythe,
-            Spear = InterfaceSet.Interfaces.Spear,
-            Mace = InterfaceSet.Interfaces.Mace,
-            Dagger = InterfaceSet.Interfaces.Dagger,
-            MagicStaff = InterfaceSet.Interfaces.MagicStaff,
-            Thrown = InterfaceSet.Interfaces.Thrown,
-            Unarmed = InterfaceSet.Interfaces.Unarmed,
-            Whip = InterfaceSet.Interfaces.Whip
+            Axe = Interfaces.Axe,
+            Maul = Interfaces.Maul,
+            Bow = Interfaces.Bow,
+            Claws = Interfaces.Claws,
+            Longbow = Interfaces.Longbow,
+            FixedDevice = Interfaces.FixedDevice,
+            Godsword = Interfaces.Godsword,
+            Sword = Interfaces.Sword,
+            Pickaxe = Interfaces.Pickaxe,
+            Halberd = Interfaces.Halberd,
+            Staff = Interfaces.Staff,
+            Scythe = Interfaces.Scythe,
+            Spear = Interfaces.Spear,
+            Mace = Interfaces.Mace,
+            Dagger = Interfaces.Dagger,
+            MagicStaff = Interfaces.MagicStaff,
+            Thrown = Interfaces.Thrown,
+            Unarmed = Interfaces.Unarmed,
+            Whip = Interfaces.Whip
         }
 
         public const int FlagTwoHanded = 0x1;

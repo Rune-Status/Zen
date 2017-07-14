@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceTextMessage : Message
+    public class InterfaceTextMessage : IMessage
     {
         public InterfaceTextMessage(int id, int slot, string text)
         {

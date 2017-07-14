@@ -60,7 +60,13 @@ namespace Zen.Game.Model
             ChatMessage = null;
         }
 
-        public Task Send(Message message) => Session.Send(message);
+        public void Logout()
+        {
+            var future = Send(new LogoutMessage());
+            future?.ContinueWith(delegate { Session.Close(); });
+        }
+
+        public Task Send(IMessage message) => Session.Send(message);
         public bool IsChatUpdated() => ChatMessage != null;
         public void UpdateChatMessage(ChatMessage message) => ChatMessage = message;
         public void SendGameMessage(string text) => Send(new GameMessage(text));

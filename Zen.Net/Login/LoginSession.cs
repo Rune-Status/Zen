@@ -17,7 +17,7 @@ namespace Zen.Net.Login
 
         private readonly long _serverSessionKey = Random.NextLong();
         private readonly LoginService _service;
-        private bool _resizable;
+        private int _displayMode;
 
         public LoginSession(ServiceManager serviceManager, GameServer server, IChannel channel) : base(serviceManager,
             server, channel)
@@ -54,7 +54,7 @@ namespace Zen.Net.Login
                 return;
             }
 
-            _resizable = request.DisplayMode != 0 && request.DisplayMode != 1;
+            _displayMode = request.DisplayMode;
             _service.AddLoginRequest(this, request);
         }
 
@@ -101,7 +101,7 @@ namespace Zen.Net.Login
                 new GameMessageDecoder(Server.Repository)
             );
 
-            session.Init(_resizable);
+            session.Init(_displayMode);
         }
     }
 }

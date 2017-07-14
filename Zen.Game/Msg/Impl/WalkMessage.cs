@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class WalkMessage : Message
+    public class WalkMessage : IMessage
     {
         public WalkMessage(Step[] steps, bool running)
         {

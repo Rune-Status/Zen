@@ -24,19 +24,19 @@ namespace Zen.Net.Game
 
         public override void MessageReceived(object message)
         {
-            var msg = message as Message;
+            var msg = message as IMessage;
             if (msg == null)
                 return;
 
             _playerSession.Enqueue(msg);
         }
 
-        public void Init(bool resizable)
+        public void Init(int displayMode)
         {
             _player.Session = _playerSession;
 
             _player.Send(new RegionChangeMessage(_player));
-            _player.InterfaceSet.OnLogin(resizable);
+            _player.InterfaceSet.OnLogin(displayMode);
             _player.SendGameMessage($"Welcome to {GameConstants.Title}.");
 
             _player.SkillSet.RefreshAll();

@@ -10,7 +10,7 @@ namespace Zen.Game.Plugin.Buttons
 
         public void Initiate(PluginRepository repository)
         {
-            repository.Register(this, InterfaceSet.Interfaces.Settings);
+            repository.Register(this, Interfaces.Settings);
         }
 
         public void OnButtonClick(Player player, int id, int slot, int parameter)
@@ -34,10 +34,10 @@ namespace Zen.Game.Plugin.Buttons
                     settings.ToggleAcceptingAid();
                     break;
                 case 16:
-                    player.InterfaceSet.OpenInterface(InterfaceSet.Interfaces.DisplaySettings);
+                    player.InterfaceSet.OpenInterface(Interfaces.DisplaySettings);
                     break;
                 case 18:
-                    player.InterfaceSet.OpenInterface(InterfaceSet.Interfaces.AudioSettings);
+                    player.InterfaceSet.OpenInterface(Interfaces.AudioSettings);
                     break;
                 default:
                     Logger.Debug($"Unhandled Settings Click (Slot={slot}).");

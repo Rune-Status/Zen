@@ -4,7 +4,7 @@ using Zen.Game.Update.Descriptor;
 
 namespace Zen.Game.Msg.Impl
 {
-    public class PlayerUpdateMessage : Message
+    public class PlayerUpdateMessage : IMessage
     {
         public PlayerUpdateMessage(Position lastKnownRegion, Position position, int localPlayerCount,
             PlayerDescriptor selfDescriptor, List<PlayerDescriptor> descriptors)

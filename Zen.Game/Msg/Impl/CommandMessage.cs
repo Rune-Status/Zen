@@ -2,7 +2,7 @@
 
 namespace Zen.Game.Msg.Impl
 {
-    public class CommandMessage : Message
+    public class CommandMessage : IMessage
     {
         public CommandMessage(string keyword)
         {

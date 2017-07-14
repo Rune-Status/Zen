@@ -7,7 +7,10 @@ namespace Zen.Game.Msg.Handler
     {
         public override void Handle(Player player, InterfaceClosedMessage message)
         {
+            if (player.InterfaceSet.InterfaceOpen)
+                player.InterfaceSet.RemoveOpenInterface();
 
+            player.WalkingQueue.Reset();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class InterfaceCloseMessage : Message
+    public class InterfaceCloseMessage : IMessage
     {
         public InterfaceCloseMessage(int bitpackedId)
         {

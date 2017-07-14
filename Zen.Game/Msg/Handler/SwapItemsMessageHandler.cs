@@ -7,7 +7,7 @@ namespace Zen.Game.Msg.Handler
     {
         public override void Handle(Player player, SwapItemsMessage message)
         {
-            if (message.Id == InterfaceSet.Interfaces.Inventory && message.Slot == 0)
+            if (message.Id == Interfaces.Inventory && message.Slot == 0)
                 player.Inventory.Swap(message.Source, message.Destination);
         }
     }

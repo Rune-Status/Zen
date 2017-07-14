@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class ButtonMessage : Message
+    public class ButtonMessage : IMessage
     {
         public ButtonMessage(int id, int slot, int parameter)
         {

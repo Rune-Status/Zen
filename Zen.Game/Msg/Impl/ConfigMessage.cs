@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Msg.Impl
 {
-    public class ConfigMessage : Message
+    public class ConfigMessage : IMessage
     {
         public ConfigMessage(int id, int value)
         {

@@ -4,7 +4,7 @@ using Zen.Game.Update.Descriptor;
 
 namespace Zen.Game.Msg.Impl
 {
-    public class NpcUpdateMessage : Message
+    public class NpcUpdateMessage : IMessage
     {
         public NpcUpdateMessage(Position lastKnownRegion, Position position, int localNpcCount,
             List<NpcDescriptor> descriptors)
