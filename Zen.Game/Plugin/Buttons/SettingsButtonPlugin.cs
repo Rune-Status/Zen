@@ -39,9 +39,6 @@ namespace Zen.Game.Plugin.Buttons
                 case 18:
                     player.InterfaceSet.OpenInterface(Interfaces.AudioSettings);
                     break;
-                default:
-                    Logger.Debug($"Unhandled Settings Click (Slot={slot}).");
-                    break;
             }
         }
     }

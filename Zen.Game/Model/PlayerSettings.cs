@@ -4,13 +4,13 @@ namespace Zen.Game.Model
 {
     public class PlayerSettings
     {
-        public bool AutoRetaliating { get; private set; } = true;
-        public bool Running { get; private set; }
-        public bool TwoButtonMouse { get; private set; } = true;
-        public bool ChatFancy { get; private set; } = true;
-        public bool SplitPrivateChat { get; private set; }
-        public bool AcceptingAid { get; private set; }
-        public int AttackStyle { get; private set; }
+        public bool AutoRetaliating { get; set; } = true;
+        public bool Running { get; set; }
+        public bool TwoButtonMouse { get; set; } = true;
+        public bool ChatFancy { get; set; } = true;
+        public bool SplitPrivateChat { get; set; }
+        public bool AcceptingAid { get; set; }
+        public int AttackStyle { get; set; }
 
         private readonly Player _player;
 
@@ -78,6 +78,6 @@ namespace Zen.Game.Model
         private void RefreshTwoButtonMouse() => _player.Send(new ConfigMessage(170, TwoButtonMouse ? 0 : 1));
         private void RefreshChatFancy() => _player.Send(new ConfigMessage(171, ChatFancy ? 0 : 1));
         private void RefreshSplitPrivateChat() => _player.Send(new ConfigMessage(287, SplitPrivateChat ? 1 : 0));
-        private void RefreshAcceptingAid() => _player.Send(new ConfigMessage(472, AcceptingAid ? 1 : 0));
+        private void RefreshAcceptingAid() => _player.Send(new ConfigMessage(427, AcceptingAid ? 1 : 0));
     }
 }

@@ -73,8 +73,13 @@ namespace Zen.Game.Model
                 firstDirection = GetDirectionBetween(position, next);
                 position = next;
 
-                if (RunningQueue)
+                var player = _mob as Player;
+                var running = (player != null ? player.Settings.Running || RunningQueue : RunningQueue);
+
+                if (running)
                 {
+                    // TODO Decrease Run Energy.
+
                     next = _points.RemoveFirst();
                     if (next != null)
                     {

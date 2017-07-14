@@ -77,6 +77,7 @@
     <Compile Include="IO\Json\AppearanceColumn.cs" />
     <Compile Include="IO\Json\EquipmentColumn.cs" />
     <Compile Include="IO\Json\InventoryColumn.cs" />
+    <Compile Include="IO\Json\SettingsColumn.cs" />
     <Compile Include="IO\Json\SkillColumn.cs" />
     <Compile Include="IO\Serializers\JsonPlayerSerializer.cs" />
     <Compile Include="IO\Json\Column.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Msg\MessageRepository.cs" />
     <Compile Include="Plugin\Buttons\EmoteButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\LogoutButtonPlugin.cs" />
+    <Compile Include="Plugin\Buttons\RunOrbButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />

@@ -11,7 +11,11 @@ namespace Zen.Game.IO.Serializers
     {
         private readonly Column[] _columns =
         {
-            new AppearanceColumn(), new SkillColumn(), new InventoryColumn(), new EquipmentColumn()
+            new AppearanceColumn(),
+            new SkillColumn(),
+            new InventoryColumn(),
+            new EquipmentColumn(),
+            new SettingsColumn(),
         };
 
         public override SerializeResult Load(string username, string password)

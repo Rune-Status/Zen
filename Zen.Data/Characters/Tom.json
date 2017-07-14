@@ -2,8 +2,8 @@
   "Password": "trustno1",
   "Rights": 2,
   "Position": {
-    "X": 3222,
-    "Y": 3214,
+    "X": 3225,
+    "Y": 3221,
     "Height": 0
   },
   "Appearance": {
@@ -148,5 +148,14 @@
     }
   ],
   "Inventory": [],
-  "Equipment": []
+  "Equipment": [],
+  "Settings": {
+    "AutoRetaliating": true,
+    "AttackStyle": 0,
+    "ChatFancy": true,
+    "Running": true,
+    "TwoButtonMouse": true,
+    "SplitPrivateChat": false,
+    "AcceptingAid": false
+  }
 }
