@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Zen.Game.Msg;
 using Zen.Game.Msg.Impl;
-using Zen.Shared;
+using static Zen.Shared.EquipmentConstants;
+using static Zen.Shared.GameConstants;
 
 namespace Zen.Game.Model
 {
     public class Player : Mob
     {
-        public Player(string username, string password)
+        public Player(string username, string password) : base(new Position(SpawnX, SpawnY))
         {
             Username = username;
             Password = password;
@@ -32,14 +33,16 @@ namespace Zen.Game.Model
         public SkillSet SkillSet { get; private set; }
         public Container Inventory { get; } = new Container(28);
         public Container Equipment { get; } = new Container(14);
+        public PlayerSettings Settings { get; private set; }
 
-        public int Stance => Equipment.Get(EquipmentConstants.Weapon)?.EquipmentDefinition.Stance ?? 1426;
+        public int Stance => Equipment.Get(Weapon)?.EquipmentDefinition.Stance ?? 1426;
 
         private void Init()
         {
             /* Initialize members with instances of this player. */
             InterfaceSet = new InterfaceSet(this);
             SkillSet = new SkillSet(this);
+            Settings = new PlayerSettings(this);
 
             /* Register container listeners. */
             Inventory.AddListener(new ContainerMessageListener(this, 149, 0, 93));

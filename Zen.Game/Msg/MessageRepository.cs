@@ -22,6 +22,7 @@ namespace Zen.Game.Msg
             Bind(new SwapItemsMessageDecoder());
             Bind(new EquipItemMessageDecoder());
             Bind(new RemoveItemMessageDecoder());
+            Bind(new InterfaceClosedMessageDecoder());
 
             Bind(new RegionChangeMessageEncoder(keyTable));
             Bind(new InterfaceRootMessageEncoder());
@@ -36,6 +37,7 @@ namespace Zen.Game.Msg
             Bind(new InterfaceTextMessageEncoder());
             Bind(new ResetMinimapFlagMessageEncoder());
             Bind(new NpcUpdateMessageEncoder());
+            Bind(new ConfigMessageEncoder());
 
             Bind(new WalkMessageHandler());
             Bind(new CommandMessageHandler());
@@ -44,6 +46,7 @@ namespace Zen.Game.Msg
             Bind(new SwapItemsMessageHandler());
             Bind(new EquipItemMessageHandler());
             Bind(new RemoveItemMessageHandler());
+            Bind(new InterfaceClosedMessageHandler());
         }
 
         public Dictionary<int, object> InCodecs { get; } = new Dictionary<int, object>();

@@ -1,14 +1,12 @@
-﻿using Zen.Game.Model;
-
-namespace Zen.Game.Msg.Impl
+﻿namespace Zen.Game.Msg.Impl
 {
     public class InterfaceRootMessage : Message
     {
-        public InterfaceRootMessage(InterfaceSet.Interface @interface)
+        public InterfaceRootMessage(int id)
         {
-            Interface = @interface;
+            Id = id;
         }
 
-        public InterfaceSet.Interface Interface { get; }
+        public int Id { get; }
     }
 }

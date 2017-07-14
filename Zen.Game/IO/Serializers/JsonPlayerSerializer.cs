@@ -17,7 +17,7 @@ namespace Zen.Game.IO.Serializers
         public override SerializeResult Load(string username, string password)
         {
             var path = GameConstants.CharacterDirectory + username + ".json";
-            var player = new Player(username, password) {Position = new Position(3093, 3493)};
+            var player = new Player(username, password);
             if (!File.Exists(path))
                 return new SerializeResult(LoginConstants.StatusOk, player);
 

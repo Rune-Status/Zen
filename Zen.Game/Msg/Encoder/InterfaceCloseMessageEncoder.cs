@@ -10,7 +10,7 @@ namespace Zen.Game.Msg.Encoder
         {
             return new GameFrameBuilder(alloc, 149)
                 .Put(DataType.Short, 0)
-                .Put(DataType.Int, (message.Interface.Parent.Id << 16) | message.Interface.Slot)
+                .Put(DataType.Int, message.BitpackedId)
                 .ToGameFrame();
         }
     }

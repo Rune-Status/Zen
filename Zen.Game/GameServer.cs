@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using System;
+using NLog;
 using Zen.Fs;
 using Zen.Fs.Definition;
 using Zen.Game.IO;

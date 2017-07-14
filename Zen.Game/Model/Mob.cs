@@ -1,14 +1,16 @@
 ﻿namespace Zen.Game.Model
 {
-    public abstract class Mob : Entity
+    public abstract class Mob : IEntity
     {
-        protected Mob()
+        protected Mob(Position position)
         {
+            Position = position;
             WalkingQueue = new WalkingQueue(this);
         }
 
         public int Id { get; set; }
         public bool Active => Id != 0;
+        public Position Position { get; set; }
         public Animation Animation { get; private set; }
         public SpotAnimation SpotAnimation { get; private set; }
         public Direction FirstDirection { get; private set; } = Direction.None;

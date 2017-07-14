@@ -1,14 +1,12 @@
-﻿using Zen.Game.Model;
-
-namespace Zen.Game.Msg.Impl
+﻿namespace Zen.Game.Msg.Impl
 {
     public class InterfaceCloseMessage : Message
     {
-        public InterfaceCloseMessage(InterfaceSet.Interface @interface)
+        public InterfaceCloseMessage(int bitpackedId)
         {
-            Interface = @interface;
+            BitpackedId = bitpackedId;
         }
 
-        public InterfaceSet.Interface Interface { get; }
+        public int BitpackedId { get; }
     }
 }

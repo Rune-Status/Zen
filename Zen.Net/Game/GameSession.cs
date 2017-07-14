@@ -4,6 +4,7 @@ using Zen.Game.Model;
 using Zen.Game.Msg;
 using Zen.Game.Msg.Impl;
 using Zen.Net.Service;
+using Zen.Shared;
 
 namespace Zen.Net.Game
 {
@@ -36,11 +37,12 @@ namespace Zen.Net.Game
 
             _player.Send(new RegionChangeMessage(_player));
             _player.InterfaceSet.OnLogin(resizable);
-            _player.SendGameMessage("Welcome to Zen.");
+            _player.SendGameMessage($"Welcome to {GameConstants.Title}.");
 
             _player.SkillSet.RefreshAll();
             _player.Inventory.Refresh();
             _player.Equipment.Refresh();
+            _player.Settings.RefreshAll();
         }
 
         public override void Unregister()

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Zen.Game.Msg.Impl;
 
@@ -7,7 +6,7 @@ namespace Zen.Game.Model
 {
     public class InterfaceSet
     {
-        private readonly List<Interface> _interfaces = new List<Interface>();
+        private readonly Dictionary<int, int> _interfaces = new Dictionary<int, int>();
         private readonly Player _player;
 
         public InterfaceSet(Player player)
@@ -15,26 +14,26 @@ namespace Zen.Game.Model
             _player = player;
         }
 
-        public Interface Root { get; private set; }
+        public int Root { get; private set; }
         public bool Resizable { get; private set; }
 
         public void OnLogin(bool resizable)
         {
             /* Open Root Interface. */
             Resizable = resizable;
-            OpenRootInterface(new Interface(resizable ? Interfaces.Resizable : Interfaces.Fixed));
+            OpenRootInterface(resizable ? Interfaces.Resizable : Interfaces.Fixed);
 
             /* Setup Chatbox. */
-            OpenInterface(Interfaces.Chatbox, resizable ? 70 : 75);
-            OpenInterface(Interfaces.ChatboxOptions, resizable ? 23 : 14);
-            OpenInterface(Interfaces.PrivateChat, resizable ? 71 : 10);
+            OpenWindowInterface(Interfaces.Chatbox, resizable ? 70 : 75);
+            OpenWindowInterface(Interfaces.ChatboxOptions, resizable ? 23 : 14);
+            OpenWindowInterface(Interfaces.PrivateChat, resizable ? 71 : 10);
+            Open(Interfaces.ChatboxBar, Interfaces.Chatbox, 8);
 
             /* Open Game Orbs. */
-            OpenInterface(Orbs.Hitpoints, resizable ? 13 : 70);
-            OpenInterface(Orbs.Prayer, resizable ? 14 : 71);
-            OpenInterface(Orbs.Energy, resizable ? 15 : 72);
-            OpenInterface(Orbs.Summoning, resizable ? 16 : 73);
-            OpenChatboxInterface(Interfaces.ChatboxBar, 8);
+            OpenWindowInterface(Orbs.Hitpoints, resizable ? 13 : 70);
+            OpenWindowInterface(Orbs.Prayer, resizable ? 14 : 71);
+            OpenWindowInterface(Orbs.Energy, resizable ? 15 : 72);
+            OpenWindowInterface(Orbs.Summoning, resizable ? 16 : 73);
 
             /* Open Game Tabs. */
             Equipment.OpenAttackTab(_player);
@@ -53,199 +52,38 @@ namespace Zen.Game.Model
             OpenTab(Tabs.Logout, Interfaces.Logout);
         }
 
-        public bool OpenChatboxInterface(int id, int slot, bool transparent = true)
+        public void Open(int id, int parent, int parentChild, bool transparent = true)
         {
-            var chatbox = GetOpenInterface(Interfaces.Chatbox);
-            if (chatbox == null) return false;
+            var bitpackedId = ToBitpackedId(parent, parentChild);
+            if (_interfaces.ContainsKey(bitpackedId))
+                ClearChildren(_interfaces[bitpackedId]);
 
-            OpenInterface(new Interface(id, chatbox, slot, transparent));
-            return true;
+            _interfaces[bitpackedId] = id;
+            _player.Send(new InterfaceOpenMessage(id, bitpackedId, transparent));
         }
 
-        public bool OpenInterface(int id, bool transparent = true)
+        public void OpenRootInterface(int root)
         {
-            if (Root == null || Root.Id != Interfaces.Fixed && Root.Id != Interfaces.Resizable)
-                return false;
-
-            OpenInterface(new Interface(id, Root,
-                Resizable ? Slots.ResizableInterface : Slots.FixedInterface, transparent));
-            return true;
-        }
-
-        public bool OpenInterface(int id, int slot, bool transparent = true)
-        {
-            if (Root == null || Root.Id != Interfaces.Fixed && Root.Id != Interfaces.Resizable)
-                return false;
-
-            OpenInterface(new Interface(id, Root, slot, transparent));
-            return true;
-        }
-
-        public void OpenTab(int tab, int id)
-        {
-            if (Root == null || Root.Id != Interfaces.Fixed && Root.Id != Interfaces.Resizable)
-                return;
-
-            var slot = (Resizable ? Slots.ResizableTab : Slots.FixedTab) + tab;
-            OpenInterface(new Interface(id, Root, slot, true));
-        }
-
-        private void OpenRootInterface(Interface root)
-        {
-            if (!root.Root) throw new ArgumentException();
-            if (Root != null) CloseInterface(Root);
-            if (!AddInterface(root)) throw new Exception("Could not add interface.");
-
             Root = root;
             _player.Send(new InterfaceRootMessage(root));
         }
 
-        private bool AddInterface(Interface @interface)
+        private void ClearChildren(int parent)
         {
-            if (Opened(@interface)) return false;
-            _interfaces.Add(@interface);
-            return true;
+            foreach (var key in _interfaces.Keys.Where(x => x >> 16 == parent))
+                _interfaces.Remove(key);
         }
 
-        private bool RemoveInterface(Interface @interface)
-        {
-            if (!Opened(@interface)) return false;
-            _interfaces.Remove(@interface);
-            return true;
-        }
+        public void OpenWindowInterface(int id, int child) => Open(id, Root, child);
+        public void OpenTab(int tab, int id) => Open(id, Root, (Resizable ? Slots.ResizableTab : Slots.FixedTab) + tab);
 
-        private bool Opened(Interface @interface) => _interfaces.Contains(@interface);
+        public void OpenChatboxInterface(int id, int child) => Open(id,
+            Resizable ? Slots.ResizableChatbox : Slots.FixedChatbox, child);
 
-        private void OpenInterface(Interface @interface)
-        {
-            if (@interface.Root) return;
-            if (Opened(@interface)) CloseInterface(@interface);
-            if (@interface.Parent.SlotUsed(@interface.Slot))
-                CloseInterface(@interface.Parent.GetChild(@interface.Slot));
-            if (!AddInterface(@interface))
-                throw new Exception("Could not add interface.");
+        public void OpenInterface(int id) => Open(id, Root, Resizable ? Slots.ResizableInterface : Slots.FixedInterface,
+            false);
 
-            @interface.Parent.AddChild(@interface, @interface.Slot);
-            _player.Send(new InterfaceOpenMessage(@interface));
-        }
-
-        private void CloseInterface(Interface @interface)
-        {
-            if (!Opened(@interface)) return;
-            if (!RemoveInterface(@interface)) return;
-
-            var children = @interface.GetChildren();
-            foreach (var child in children)
-                CloseInterface(child);
-
-            @interface.Parent?.RemoveChild(@interface.Slot);
-
-            if (@interface.Root) Root = null;
-            else _player.Send(new InterfaceCloseMessage(@interface));
-        }
-
-        private Interface GetOpenInterface(int id)
-        {
-            return (from @interface in _interfaces
-                where @interface.Id == id
-                select Opened(@interface) ? @interface : null).FirstOrDefault();
-        }
-
-        public class Interface
-        {
-            private readonly Dictionary<int, Interface> _children = new Dictionary<int, Interface>();
-
-            public Interface(int id)
-            {
-                Id = id;
-                Root = true;
-            }
-
-            public Interface(int id, Interface parent, int slot, bool transparent)
-            {
-                Id = id;
-                Parent = parent;
-                Slot = slot;
-                Transparent = transparent;
-                Root = false;
-            }
-
-            public int Slot { get; }
-            public Interface Parent { get; }
-            public bool Root { get; }
-            public bool Transparent { get; }
-            public int Id { get; }
-
-            public void AddChild(Interface child, int slot)
-            {
-                lock (_children)
-                {
-                    if (!SlotUsed(slot))
-                    {
-                        _children.Add(slot, child);
-                    }
-                    else
-                    {
-                        _children.Remove(slot);
-                        _children.Add(slot, child);
-                    }
-                }
-            }
-
-            public void RemoveChild(int slot)
-            {
-                lock (_children)
-                {
-                    if (!SlotUsed(slot)) return;
-                    _children.Remove(slot);
-                }
-            }
-
-            public List<Interface> GetChildren()
-            {
-                lock (_children)
-                {
-                    return new List<Interface>(_children.Values);
-                }
-            }
-
-            public Interface GetChild(int slot)
-            {
-                lock (_children)
-                {
-                    return !SlotUsed(slot) ? null : _children[slot];
-                }
-            }
-
-            public bool SlotUsed(int slot)
-            {
-                lock (_children)
-                {
-                    return _children.ContainsKey(slot);
-                }
-            }
-
-            protected bool Equals(Interface other)
-            {
-                return Slot == other.Slot && Id == other.Id;
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (ReferenceEquals(null, obj)) return false;
-                if (ReferenceEquals(this, obj)) return true;
-                if (obj.GetType() != GetType()) return false;
-                return Equals((Interface) obj);
-            }
-
-            public override int GetHashCode()
-            {
-                unchecked
-                {
-                    return (Slot * 397) ^ Id;
-                }
-            }
-        }
+        private static int ToBitpackedId(int parent, int child) => (parent << 16) | child;
 
         public class Interfaces
         {
@@ -291,6 +129,9 @@ namespace Zen.Game.Model
             public const int Thrown = 91;
             public const int Unarmed = 92;
             public const int Whip = 93;
+
+            public const int DisplaySettings = 742;
+            public const int AudioSettings = 743;
         }
 
         public class Slots
@@ -300,6 +141,9 @@ namespace Zen.Game.Model
 
             public const int FixedTab = 83;
             public const int ResizableTab = 93;
+
+            public const int FixedChatbox = 75;
+            public const int ResizableChatbox = 70;
         }
 
         public class Orbs

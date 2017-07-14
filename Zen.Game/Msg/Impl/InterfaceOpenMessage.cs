@@ -4,11 +4,15 @@ namespace Zen.Game.Msg.Impl
 {
     public class InterfaceOpenMessage : Message
     {
-        public InterfaceOpenMessage(InterfaceSet.Interface @interface)
+        public InterfaceOpenMessage(int id, int bitpackedId, bool transparent)
         {
-            Interface = @interface;
+            Id = id;
+            BitpackedId = bitpackedId;
+            Transparent = transparent;
         }
 
-        public InterfaceSet.Interface Interface { get; }
+        public bool Transparent { get; }
+        public int BitpackedId { get; }
+        public int Id { get; }
     }
 }

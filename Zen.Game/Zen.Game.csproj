@@ -46,14 +46,14 @@
       <HintPath>..\packages\DotNetty.Transport.0.4.5\lib\net45\DotNetty.Transport.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.1\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
@@ -89,7 +90,7 @@
     <Compile Include="Model\ContainerMessageListener.cs" />
     <Compile Include="Model\IContainerListener.cs" />
     <Compile Include="Model\Direction.cs" />
-    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\IEntity.cs" />
     <Compile Include="Model\ContainerFullListener.cs" />
     <Compile Include="Model\Equipment.cs" />
     <Compile Include="Model\EquipmentDefinition.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Model\Npc.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\PlayerSession.cs" />
+    <Compile Include="Model\PlayerSettings.cs" />
     <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Skill.cs" />
     <Compile Include="Model\SkillSet.cs" />
@@ -112,9 +114,11 @@
     <Compile Include="Msg\Decoder\ChatMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\CommandMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\EquipItemMessageDecoder.cs" />
+    <Compile Include="Msg\Decoder\InterfaceClosedMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\RemoveItemMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\SwapItemsMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\WalkMessageDecoder.cs" />
+    <Compile Include="Msg\Encoder\ConfigMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\GameMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceCloseMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceItemsMessageEncoder.cs" />
@@ -132,14 +136,17 @@
     <Compile Include="Msg\Handler\ChatMessageHandler.cs" />
     <Compile Include="Msg\Handler\CommandMessageHandler.cs" />
     <Compile Include="Msg\Handler\EquipItemMessageHandler.cs" />
+    <Compile Include="Msg\Handler\InterfaceClosedMessageHandler.cs" />
     <Compile Include="Msg\Handler\RemoveItemMessageHandler.cs" />
     <Compile Include="Msg\Handler\SwapItemsMessageHandler.cs" />
     <Compile Include="Msg\Handler\WalkMessageHandler.cs" />
     <Compile Include="Msg\Impl\ButtonMessage.cs" />
     <Compile Include="Msg\Impl\ChatMessage.cs" />
     <Compile Include="Msg\Impl\CommandMessage.cs" />
+    <Compile Include="Msg\Impl\ConfigMessage.cs" />
     <Compile Include="Msg\Impl\EquipItemMessage.cs" />
     <Compile Include="Msg\Impl\GameMessage.cs" />
+    <Compile Include="Msg\Impl\InterfaceClosedMessage.cs" />
     <Compile Include="Msg\Impl\InterfaceCloseMessage.cs" />
     <Compile Include="Msg\Impl\InterfaceItemsMessage.cs" />
     <Compile Include="Msg\Impl\InterfaceOpenMessage.cs" />
@@ -161,6 +168,7 @@
     <Compile Include="Msg\MessageHandler.cs" />
     <Compile Include="Msg\MessageRepository.cs" />
     <Compile Include="Plugin\Buttons\EmoteButtonPlugin.cs" />
+    <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />
     <Compile Include="Plugin\Type\IPlugin.cs" />
@@ -188,6 +196,7 @@
     <Compile Include="Update\Descriptor\WalkPlayerDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
