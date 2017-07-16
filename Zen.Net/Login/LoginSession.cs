@@ -4,7 +4,7 @@ using DotNetty.Handlers.Timeout;
 using DotNetty.Transport.Channels;
 using Org.BouncyCastle.Security;
 using Zen.Game;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Net.Game;
 using Zen.Net.Service;
 using Zen.Shared;

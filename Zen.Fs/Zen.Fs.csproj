@@ -68,7 +68,6 @@
     <Compile Include="Cache.cs" />
     <Compile Include="ChecksumTable.cs" />
     <Compile Include="Container.cs" />
-    <Compile Include="Definition\ItemDefinition.cs" />
     <Compile Include="FileStore.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

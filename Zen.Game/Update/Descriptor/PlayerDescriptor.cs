@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Zen.Builder;
-using Zen.Game.Model;
+using Zen.Game.Model.Mob;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 using Zen.Game.Update.Block;
 

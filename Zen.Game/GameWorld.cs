@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using NLog;
-using Zen.Game.Model;
+using Zen.Game.Model.Mob;
+using Zen.Game.Model.Npc;
+using Zen.Game.Model.Player;
 using Zen.Game.Plugin;
 using Zen.Game.Update;
 using Zen.Shared;

@@ -1,16 +1,13 @@
-﻿using NLog;
-using Zen.Game.Model;
+﻿using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
 
 namespace Zen.Game.Plugin.Buttons
 {
     public class SettingsButtonPlugin : IButtonPlugin
     {
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-
         public void Initiate(PluginRepository repository)
         {
-            repository.Register(this, Interfaces.Settings);
+            repository.Register(this, Interface.Settings);
         }
 
         public void OnButtonClick(Player player, int id, int slot, int parameter)
@@ -34,10 +31,10 @@ namespace Zen.Game.Plugin.Buttons
                     settings.ToggleAcceptingAid();
                     break;
                 case 16:
-                    player.InterfaceSet.OpenInterface(Interfaces.DisplaySettings);
+                    player.InterfaceSet.OpenInterface(Interface.DisplaySettings);
                     break;
                 case 18:
-                    player.InterfaceSet.OpenInterface(Interfaces.AudioSettings);
+                    player.InterfaceSet.OpenInterface(Interface.AudioSettings);
                     break;
             }
         }

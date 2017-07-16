@@ -1,6 +1,6 @@
 ﻿using DotNetty.Transport.Channels;
 using Zen.Game;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg;
 using Zen.Game.Msg.Impl;
 using Zen.Net.Service;

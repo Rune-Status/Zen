@@ -1,6 +1,4 @@
-﻿using Zen.Game.Model;
-
-namespace Zen.Game.Msg.Impl
+﻿namespace Zen.Game.Msg.Impl
 {
     public class InterfaceOpenMessage : IMessage
     {

@@ -1,4 +1,5 @@
-﻿using Zen.Game.Model;
+﻿using Zen.Game.Model.Item;
+using Zen.Game.Model.Player;
 
 namespace Zen.Game.IO.Json
 {
@@ -18,6 +19,6 @@ namespace Zen.Game.IO.Json
         }
 
         public override void Save(dynamic playerObject, Player player) => playerObject.Equipment = CreateArray(player);
-        public override Container GetContainer(Player player) => player.Equipment;
+        public override ItemContainer GetContainer(Player player) => player.Equipment;
     }
 }

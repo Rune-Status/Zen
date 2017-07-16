@@ -1,4 +1,4 @@
-﻿using Zen.Game.Model;
+﻿using Zen.Game.Model.Player;
 
 namespace Zen.Game.IO.Json
 {

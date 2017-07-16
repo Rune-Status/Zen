@@ -1,4 +1,4 @@
-﻿using Zen.Game.Model;
+﻿using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Msg.Handler
@@ -7,7 +7,7 @@ namespace Zen.Game.Msg.Handler
     {
         public override void Handle(Player player, RemoveItemMessage message)
         {
-            if (message.Id != Interfaces.Equipment || message.Slot != 28) return;
+            if (message.Id != Interface.Equipment || message.Slot != 28) return;
             var item = player.Equipment.Get(message.ItemSlot);
             if (item == null || item.Id != message.ItemId)
                 return;

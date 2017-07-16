@@ -4,10 +4,10 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Zen.Fs;
-using Zen.Fs.Definition;
+using Zen.Game.Definition;
 using Zen.Shared;
 using Zen.Util;
-using static Zen.Game.Model.EquipmentDefinition;
+using static Zen.Game.Model.Player.EquipmentDefinition;
 using static Zen.Shared.EquipmentConstants;
 
 namespace Zen.Core.Tools

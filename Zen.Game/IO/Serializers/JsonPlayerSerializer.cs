@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Zen.Game.IO.Json;
 using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Shared;
 
 namespace Zen.Game.IO.Serializers
@@ -15,7 +16,7 @@ namespace Zen.Game.IO.Serializers
             new SkillColumn(),
             new InventoryColumn(),
             new EquipmentColumn(),
-            new SettingsColumn(),
+            new SettingsColumn()
         };
 
         public override SerializeResult Load(string username, string password)
@@ -45,7 +46,7 @@ namespace Zen.Game.IO.Serializers
             int x = positionObject.X;
             int y = positionObject.Y;
             int height = positionObject.Height;
-            player.Position = new Position(x, y, height);
+            player.SetPosition(new Position(x, y, height));
 
             foreach (var column in _columns)
                 column.Load(playerObject, player);

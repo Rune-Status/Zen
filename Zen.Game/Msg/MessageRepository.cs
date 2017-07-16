@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Zen.Game.IO;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Decoder;
 using Zen.Game.Msg.Encoder;
 using Zen.Game.Msg.Handler;

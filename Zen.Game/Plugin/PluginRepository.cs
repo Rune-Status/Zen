@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
 using Zen.Util;
 

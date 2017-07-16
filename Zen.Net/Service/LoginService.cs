@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Zen.Game;
 using Zen.Game.IO;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Net.Login;
 using Zen.Shared;
 

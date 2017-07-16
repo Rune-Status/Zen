@@ -1,5 +1,7 @@
 ﻿using Zen.Builder;
 using Zen.Game.Model;
+using Zen.Game.Model.Mob;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Update.Descriptor

@@ -1,4 +1,4 @@
-﻿using Zen.Game.Model;
+﻿using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
 
 namespace Zen.Game.Plugin.Buttons
@@ -7,7 +7,7 @@ namespace Zen.Game.Plugin.Buttons
     {
         public void Initiate(PluginRepository repository)
         {
-            repository.Register(this, Orbs.Energy);
+            repository.Register(this, Orb.Energy);
         }
 
         public void OnButtonClick(Player player, int id, int slot, int parameter)

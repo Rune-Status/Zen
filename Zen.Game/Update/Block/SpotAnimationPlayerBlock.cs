@@ -1,5 +1,5 @@
 ﻿using Zen.Builder;
-using Zen.Game.Model;
+using Zen.Game.Model.Mob;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Update.Block
@@ -8,7 +8,7 @@ namespace Zen.Game.Update.Block
     {
         private readonly SpotAnimation _spotAnimation;
 
-        public SpotAnimationPlayerBlock(Player player) : base(0x100)
+        public SpotAnimationPlayerBlock(Mob player) : base(0x100)
         {
             _spotAnimation = player.SpotAnimation;
         }

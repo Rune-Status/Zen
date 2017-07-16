@@ -1,5 +1,6 @@
 ﻿using Zen.Builder;
-using Zen.Game.Model;
+using Zen.Game.Model.Item;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 using Zen.Util;
 using static Zen.Shared.EquipmentConstants;
@@ -10,7 +11,7 @@ namespace Zen.Game.Update.Block
     {
         private readonly Appearance _appearance;
         private readonly int _combatLevel;
-        private readonly Container _equipment;
+        private readonly ItemContainer _equipment;
         private readonly int _stance;
         private readonly string _username;
 
@@ -88,7 +89,6 @@ namespace Zen.Game.Update.Block
             else
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[6]);
 
-            item = _equipment.Get(Head);
             if (gender == Gender.Male && !fullMask && !fullHelm)
                 propertiesBuilder.Put(DataType.Short, 0x100 | _appearance.Style[1]);
             else

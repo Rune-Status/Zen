@@ -1,6 +1,6 @@
 ﻿using System;
 using Zen.Builder;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 using Zen.Util;
 

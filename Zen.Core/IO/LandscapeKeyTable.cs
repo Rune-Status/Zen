@@ -12,7 +12,7 @@ namespace Zen.Core.IO
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static readonly int[] EmptyKeys = new int[4];
 
-        private readonly Dictionary<int, int[]> keys = new Dictionary<int, int[]>();
+        private readonly Dictionary<int, int[]> _keys = new Dictionary<int, int[]>();
 
         public static LandscapeKeyTable Open(string directory)
         {
@@ -32,11 +32,11 @@ namespace Zen.Core.IO
                     continue;
 
                 var region = int.Parse(name.Substring(0, name.Length - 4));
-                table.keys[region] = ReadKeys($"{directory}{name}");
+                table._keys[region] = ReadKeys($"{directory}{name}");
             }
 
 
-            Logger.Info($"Loaded {table.keys.Count} landscape keys.");
+            Logger.Info($"Loaded {table._keys.Count} landscape keys.");
             return table;
         }
 
@@ -57,6 +57,6 @@ namespace Zen.Core.IO
             }
         }
 
-        public int[] GetKeys(int x, int y) => keys[(x << 8) | y] ?? EmptyKeys;
+        public int[] GetKeys(int x, int y) => _keys[(x << 8) | y] ?? EmptyKeys;
     }
 }

@@ -1,15 +1,17 @@
 ﻿using Zen.Builder;
 using Zen.Game.Model;
+using Zen.Game.Model.Mob;
+using Zen.Game.Model.Npc;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Update.Descriptor
 {
     public class AddNpcDescriptor : NpcDescriptor
     {
-        private readonly int _id;
-        private readonly int _type;
         private readonly Direction _direction;
+        private readonly int _id;
         private readonly Position _position;
+        private readonly int _type;
 
         public AddNpcDescriptor(Npc npc) : base(npc)
         {

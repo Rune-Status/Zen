@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="AssemblyUtil.cs" />
     <Compile Include="Base37Util.cs" />
-    <Compile Include="BinaryUtil.cs" />
     <Compile Include="ByteBufferUtil.cs" />
     <Compile Include="ChatUtil.cs" />
     <Compile Include="CollectionUtil.cs" />

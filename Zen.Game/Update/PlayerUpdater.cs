@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Zen.Game.Model;
+using Zen.Game.Model.Npc;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 using Zen.Game.Update.Descriptor;
 
@@ -40,9 +41,7 @@ namespace Zen.Game.Update
         private void Preprocess(Player player)
         {
             if (player.WalkingQueue.MinimapFlagReset)
-            {
                 player.Send(new ResetMinimapFlagMessage());
-            }
 
             if (IsRegionChangeRequired(player))
                 player.Send(new RegionChangeMessage(player));

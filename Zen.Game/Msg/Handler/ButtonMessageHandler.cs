@@ -1,5 +1,5 @@
 ﻿using NLog;
-using Zen.Game.Model;
+using Zen.Game.Model.Player;
 using Zen.Game.Msg.Impl;
 
 namespace Zen.Game.Msg.Handler
@@ -16,7 +16,6 @@ namespace Zen.Game.Msg.Handler
 
             if (!GameWorld.Instance.Repository.OnButtonClick(player, id, slot, parameter))
                 Logger.Debug($"Unhandled Button Click (Id={id}, Slot={slot}, Parameter={parameter}).");
-            
         }
     }
 }

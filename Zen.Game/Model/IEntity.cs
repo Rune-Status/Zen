@@ -2,6 +2,6 @@
 {
     public interface IEntity
     {
-        Position Position { get; set; }
+        Position Position { get; }
     }
 }

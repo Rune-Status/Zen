@@ -1,4 +1,4 @@
-﻿using Zen.Game.Model;
+﻿using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
 
 namespace Zen.Game.Plugin.Buttons
@@ -7,15 +7,13 @@ namespace Zen.Game.Plugin.Buttons
     {
         public void Initiate(PluginRepository repository)
         {
-            repository.Register(this, Interfaces.Logout);
+            repository.Register(this, Interface.Logout);
         }
 
         public void OnButtonClick(Player player, int id, int slot, int parameter)
         {
             if (slot == 6)
-            {
                 player.Logout();
-            }
         }
     }
 }

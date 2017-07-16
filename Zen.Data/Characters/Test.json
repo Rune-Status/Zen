@@ -2,8 +2,8 @@
   "Password": "test",
   "Rights": 2,
   "Position": {
-    "X": 3224,
-    "Y": 3218,
+    "X": 3255,
+    "Y": 3226,
     "Height": 0
   },
   "Appearance": {
@@ -148,5 +148,14 @@
     }
   ],
   "Inventory": [],
-  "Equipment": []
+  "Equipment": [],
+  "Settings": {
+    "AutoRetaliating": true,
+    "AttackStyle": 0,
+    "ChatFancy": true,
+    "Running": true,
+    "TwoButtonMouse": true,
+    "SplitPrivateChat": false,
+    "AcceptingAid": false
+  }
 }

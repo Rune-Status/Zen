@@ -6,7 +6,7 @@ namespace Zen.Util.Crypto
     {
         protected internal const int R = 10;
 
-        private const string sbox =
+        private const string Sbox =
             "\u1823\uc6E8\u87B8\u014F\u36A6\ud2F5\u796F\u9152" +
             "\u60Bc\u9B8E\uA30c\u7B35\u1dE0\ud7c2\u2E4B\uFE57" +
             "\u1577\u37E5\u9FF0\u4AdA\u58c9\u290A\uB1A0\u6B85" +
@@ -44,7 +44,7 @@ namespace Zen.Util.Crypto
         {
             for (var x = 0; x < 256; x++)
             {
-                var c = sbox[x / 2];
+                var c = Sbox[x / 2];
                 long v1 = (x & 1) == 0 ? (int) ((uint) c >> 8) : c & 0xff;
                 var v2 = v1 << 1;
                 if (v2 >= 0x100L)
