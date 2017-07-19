@@ -1,7 +1,10 @@
 ﻿using System.Linq;
 using NLog;
+using Zen.Game.Definition;
+using Zen.Game.Model.Map;
 using Zen.Game.Model.Mob;
 using Zen.Game.Model.Npc;
+using Zen.Game.Model.Object;
 using Zen.Game.Model.Player;
 using Zen.Game.Plugin;
 using Zen.Game.Update;
@@ -19,11 +22,15 @@ namespace Zen.Game
         private GameWorld()
         {
             _updater = new PlayerUpdater(this);
+            GroundObjects.AddListener(new ObjectDataListener(TraversalMap));
         }
 
         public MobList<Player> Players { get; } = new MobList<Player>(GameConstants.MaxPlayers);
         public MobList<Npc> Npcs { get; } = new MobList<Npc>(GameConstants.MaxNpcs);
         public PluginRepository Repository { get; } = new PluginRepository();
+        public GroundObjectList GroundObjects { get; } = new GroundObjectList();
+        public TraversalMap TraversalMap { get; } = new TraversalMap();
+        public MapLoader MapLoader { get; set; }
 
         public bool AddPlayer(Player player)
         {

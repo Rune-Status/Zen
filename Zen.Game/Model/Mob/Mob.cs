@@ -18,7 +18,7 @@
         public bool Teleporting { get; private set; }
         public WalkingQueue WalkingQueue { get; }
         public int LastRegionId { get; set; }
-        public Position Position { get; private set; }
+        public Position Position { get; set; }
 
         public void SetDirections(Direction firstDirection, Direction secondDirection)
         {
@@ -37,6 +37,14 @@
         public bool IsAnimationUpdated() => Animation != null;
         public bool IsSpotAnimationUpdated() => SpotAnimation != null;
 
+        public void StopActions(bool cancelMoving)
+        {
+            PlayAnimation(new Animation(-1));
+            PlaySpotAnimation(new SpotAnimation(-1));
+            if (cancelMoving)
+                WalkingQueue.Reset();
+        }
+
         public void Teleport(Position position)
         {
             Position = position;
@@ -50,11 +58,6 @@
             SpotAnimation = null;
             Teleporting = false;
             WalkingQueue.MinimapFlagReset = false;
-        }
-
-        public void SetPosition(Position position)
-        {
-            Position = position;
         }
     }
 }

@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\CacheTests.cs" />
     <Compile Include="Tools\EquipmentDumper.cs" />
   </ItemGroup>
   <ItemGroup>

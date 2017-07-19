@@ -57,6 +57,10 @@ namespace Zen.Game.IO
             }
         }
 
-        public int[] GetKeys(int x, int y) => _keys[(x << 8) | y] ?? EmptyKeys;
+        public int[] GetKeys(int x, int y)
+        {
+            var key = (x << 8) | y;
+            return !_keys.ContainsKey(key) ? EmptyKeys : _keys[key];
+        }
     }
 }

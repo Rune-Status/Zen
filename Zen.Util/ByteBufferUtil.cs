@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using DotNetty.Buffers;
 using ICSharpCode.SharpZipLib.Checksums;
@@ -16,6 +17,24 @@ namespace Zen.Util
             '\u201C', '\u201D', '\u2022', '\u2013', '\u2014', '\u02DC',
             '\u2122', '\u0161', '\u203A', '\u0153', '\0', '\u017E', '\u0178'
         };
+
+        public static int ReadSmart(this IByteBuffer buffer)
+        {
+            var peek = buffer.PeekByte();
+            if (peek < 128)
+                return buffer.ReadByte() & 0xFF;
+
+            return (buffer.ReadShort() & 0xFFFF) - 32768;
+        }
+
+        public static int PeekByte(this IByteBuffer buffer)
+        {
+            buffer.MarkReaderIndex();
+            var peek = buffer.ReadByte();
+            buffer.ResetReaderIndex();
+
+            return peek;
+        }
 
         public static int GetCrcChecksum(IByteBuffer buffer)
         {

@@ -46,7 +46,7 @@ namespace Zen.Game.IO.Serializers
             int x = positionObject.X;
             int y = positionObject.Y;
             int height = positionObject.Height;
-            player.SetPosition(new Position(x, y, height));
+            player.Position = new Position(x, y, height);
 
             foreach (var column in _columns)
                 column.Load(playerObject, player);
