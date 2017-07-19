@@ -50,9 +50,9 @@
             return result;
         }
 
-        public override string ToString()
-        {
-            return $"Position [X={X}, Y={Y}, Height={Height}]";
-        }
+        public override string ToString() => $"Position [X={X}, Y={Y}, Height={Height}]";
+
+        public Position Translate(int deltaX, int deltaY, int deltaHeight) =>
+            new Position(X + deltaX, Y + deltaY, Height + deltaHeight);
     }
 }

@@ -90,7 +90,7 @@ namespace Zen.Game.Model.Mob
             }
 
             _mob.SetDirections(firstDirection, secondDirection);
-            _mob.SetPosition(position);
+            _mob.Position = position;
         }
 
         private static Direction GetDirectionBetween(Position cur, Position next)

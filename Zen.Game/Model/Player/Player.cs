@@ -60,6 +60,15 @@ namespace Zen.Game.Model.Player
             ChatMessage = null;
         }
 
+        public new void StopActions(bool cancelMoving)
+        {
+            base.StopActions(cancelMoving);
+            if (InterfaceSet.InterfaceOpen)
+            {
+                InterfaceSet.RemoveOpenInterface();
+            }
+        }
+
         public void Logout()
         {
             var future = Send(new LogoutMessage());
@@ -74,6 +83,7 @@ namespace Zen.Game.Model.Player
         public void SetLastKnownRegion(Position lastKnownRegion)
         {
             LastKnownRegion = lastKnownRegion;
+            GameWorld.Instance.MapLoader.Load(LastKnownRegion.RegionX, LastKnownRegion.RegionY);
             RegionChanging = true;
         }
     }

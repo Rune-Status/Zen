@@ -1,6 +1,6 @@
 ﻿namespace Zen.Game.Model.Object
 {
-    public enum ObjecType
+    public enum ObjectType
     {
         #region Identified Object Types
 

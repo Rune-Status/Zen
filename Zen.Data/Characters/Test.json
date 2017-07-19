@@ -2,8 +2,8 @@
   "Password": "test",
   "Rights": 2,
   "Position": {
-    "X": 3255,
-    "Y": 3226,
+    "X": 3095,
+    "Y": 3502,
     "Height": 0
   },
   "Appearance": {
@@ -153,7 +153,7 @@
     "AutoRetaliating": true,
     "AttackStyle": 0,
     "ChatFancy": true,
-    "Running": true,
+    "Running": false,
     "TwoButtonMouse": true,
     "SplitPrivateChat": false,
     "AcceptingAid": false

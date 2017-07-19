@@ -72,7 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Definition\EnumDefinition.cs" />
     <Compile Include="Definition\ItemDefinition.cs" />
+    <Compile Include="Definition\ObjectDefinition.cs" />
     <Compile Include="GameServer.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="IO\Json\AppearanceColumn.cs" />
@@ -86,13 +88,31 @@
     <Compile Include="IO\Serializers\DummyPlayerSerializer.cs" />
     <Compile Include="IO\LandscapeKeyTable.cs" />
     <Compile Include="IO\PlayerSerializer.cs" />
+    <Compile Include="Model\Map\Flag.cs" />
+    <Compile Include="Model\Map\MapDataListener.cs" />
+    <Compile Include="Model\Map\MapListener.cs" />
+    <Compile Include="Model\Map\MapListenerAdapter.cs" />
+    <Compile Include="Model\Map\MapLoader.cs" />
+    <Compile Include="Model\Map\ObjectDataListener.cs" />
+    <Compile Include="Model\Map\Tile.cs" />
+    <Compile Include="Model\Map\TraversalMap.cs" />
     <Compile Include="Model\Mob\Animation.cs" />
+    <Compile Include="Model\Mob\Direction.cs" />
+    <Compile Include="Model\Mob\WalkingQueue.cs" />
+    <Compile Include="Model\Object\GroundObject.cs" />
+    <Compile Include="Model\Object\GroundObjectList.cs" />
+    <Compile Include="Model\Object\GroundObjectListener.cs" />
+    <Compile Include="Model\Object\GroundObjectListenerAdapter.cs" />
+    <Compile Include="Model\Object\GroundObjectPopulator.cs" />
+    <Compile Include="Model\Object\ObjectExtensions.cs" />
+    <Compile Include="Model\Object\ObjectGroup.cs" />
+    <Compile Include="Model\Object\ObjectOrientation.cs" />
+    <Compile Include="Model\Object\ObjectType.cs" />
     <Compile Include="Model\Player\Appearance.cs" />
     <Compile Include="Model\Item\ContainerAppearanceListener.cs" />
     <Compile Include="Model\Item\ContainerMessageListener.cs" />
     <Compile Include="Model\Player\DisplayMode.cs" />
     <Compile Include="Model\Item\IContainerListener.cs" />
-    <Compile Include="Model\Mob\Direction.cs" />
     <Compile Include="Model\IEntity.cs" />
     <Compile Include="Model\Item\ContainerFullListener.cs" />
     <Compile Include="Model\Player\Equipment.cs" />
@@ -116,13 +136,13 @@
     <Compile Include="Model\Mob\SpotAnimation.cs" />
     <Compile Include="Model\Mob\MobList.cs" />
     <Compile Include="Model\Player\Tab.cs" />
-    <Compile Include="Model\Mob\WalkingQueue.cs" />
     <Compile Include="Msg\Decoder\ButtonMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\ChatMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\CommandMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\DisplayMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\EquipItemMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\InterfaceClosedMessageDecoder.cs" />
+    <Compile Include="Msg\Decoder\ObjectOptionOneMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\RemoveItemMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\SwapItemsMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\WalkMessageDecoder.cs" />
@@ -147,6 +167,7 @@
     <Compile Include="Msg\Handler\DisplayMessageHandler.cs" />
     <Compile Include="Msg\Handler\EquipItemMessageHandler.cs" />
     <Compile Include="Msg\Handler\InterfaceClosedMessageHandler.cs" />
+    <Compile Include="Msg\Handler\ObjectOptionOneMessageHandler.cs" />
     <Compile Include="Msg\Handler\RemoveItemMessageHandler.cs" />
     <Compile Include="Msg\Handler\SwapItemsMessageHandler.cs" />
     <Compile Include="Msg\Handler\WalkMessageHandler.cs" />
@@ -167,6 +188,7 @@
     <Compile Include="Msg\Impl\InterfaceTextMessage.cs" />
     <Compile Include="Msg\Impl\LogoutMessage.cs" />
     <Compile Include="Msg\Impl\NpcUpdateMessage.cs" />
+    <Compile Include="Msg\Impl\ObjectOptionOneMessage.cs" />
     <Compile Include="Msg\Impl\PlayerUpdateMessage.cs" />
     <Compile Include="Msg\Impl\RegionChangeMessage.cs" />
     <Compile Include="Msg\Impl\RemoveItemMessage.cs" />
@@ -231,7 +253,6 @@
       <Name>Zen.Util</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

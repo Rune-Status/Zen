@@ -24,6 +24,7 @@ namespace Zen.Game.Msg
             Bind(new RemoveItemMessageDecoder());
             Bind(new InterfaceClosedMessageDecoder());
             Bind(new DisplayMessageDecoder());
+            Bind(new ObjectOptionOneMessageDecoder());
 
             Bind(new RegionChangeMessageEncoder(keyTable));
             Bind(new InterfaceRootMessageEncoder());
@@ -50,6 +51,7 @@ namespace Zen.Game.Msg
             Bind(new RemoveItemMessageHandler());
             Bind(new InterfaceClosedMessageHandler());
             Bind(new DisplayMessageHandler());
+            Bind(new ObjectOptionOneMessageHandler());
         }
 
         public Dictionary<int, object> InCodecs { get; } = new Dictionary<int, object>();
