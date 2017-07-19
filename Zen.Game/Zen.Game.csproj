@@ -86,6 +86,9 @@
     <Compile Include="IO\Serializers\DummyPlayerSerializer.cs" />
     <Compile Include="IO\LandscapeKeyTable.cs" />
     <Compile Include="IO\PlayerSerializer.cs" />
+    <Compile Include="Model\Mob\Action\Action.cs" />
+    <Compile Include="Model\Mob\Action\ActionQueue.cs" />
+    <Compile Include="Model\Mob\Action\Impl\AnimateAction.cs" />
     <Compile Include="Model\Mob\Animation.cs" />
     <Compile Include="Model\Player\Appearance.cs" />
     <Compile Include="Model\Item\ContainerAppearanceListener.cs" />
