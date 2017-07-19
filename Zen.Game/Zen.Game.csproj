@@ -96,6 +96,9 @@
     <Compile Include="Model\Map\ObjectDataListener.cs" />
     <Compile Include="Model\Map\Tile.cs" />
     <Compile Include="Model\Map\TraversalMap.cs" />
+    <Compile Include="Model\Mob\Action\Action.cs" />
+    <Compile Include="Model\Mob\Action\ActionQueue.cs" />
+    <Compile Include="Model\Mob\Action\Impl\PlayerAction.cs" />
     <Compile Include="Model\Mob\Animation.cs" />
     <Compile Include="Model\Mob\Direction.cs" />
     <Compile Include="Model\Mob\WalkingQueue.cs" />

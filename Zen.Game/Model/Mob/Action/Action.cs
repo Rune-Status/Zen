@@ -16,10 +16,16 @@ namespace Zen.Game.Model.Mob.Action
             this.Mob = mob;
         }
 
-        protected abstract void Start();
+        public abstract void Start();
 
-        protected abstract void Stop();
+        public abstract void Process();
 
-        protected abstract bool IsCancellable();
+        public abstract void ProcessWithDelay(int delay);
+
+        public abstract void Stop();
+
+        public abstract bool IsRunning();
+
+        public abstract bool IsCancellable();
     }
 }
