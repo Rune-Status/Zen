@@ -4,6 +4,7 @@ RuneScape Emulator written in C#
 ## Contributors
 * Tom Legodais
 * William Talleur
+* Ben Stern
 
 ## Backlog
 The project management is now setup at http://theprodigynetwork.com/kanboard
