@@ -208,6 +208,7 @@
     <Compile Include="Plugin\Buttons\LogoutButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\RunOrbButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
+    <Compile Include="Plugin\Commands\OpenInterfacePlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />
     <Compile Include="Plugin\Type\IPlugin.cs" />
