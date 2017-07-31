@@ -4,9 +4,8 @@ namespace Zen.Game.Model.Mob
 {
     public abstract class Mob : IEntity
     {
-        protected Mob(GameWorld world, Position position)
+        protected Mob(Position position)
         {
-            World = world;
             Position = position;
             WalkingQueue = new WalkingQueue(this);
         }

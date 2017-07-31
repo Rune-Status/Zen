@@ -10,7 +10,7 @@ namespace Zen.Game.Model.Player
 {
     public class Player : Mob.Mob
     {
-        public Player(string username, string password) : base(GameWorld.Instance, new Position(GameConstants.SpawnX, GameConstants.SpawnY))
+        public Player(string username, string password) : base(new Position(GameConstants.SpawnX, GameConstants.SpawnY))
         {
             Username = username;
             Password = password;

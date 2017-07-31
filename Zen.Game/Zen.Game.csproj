@@ -209,6 +209,7 @@
     <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
     <Compile Include="Plugin\Commands\OpenInterfacePlugin.cs" />
     <Compile Include="Plugin\Commands\PlayerActionTestPlugin.cs" />
+    <Compile Include="Plugin\Commands\SpawnItemPlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />
     <Compile Include="Plugin\Type\IPlugin.cs" />

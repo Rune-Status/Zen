@@ -3,7 +3,7 @@
   "Rights": 2,
   "Position": {
     "X": 3087,
-    "Y": 3490,
+    "Y": 3489,
     "Height": 0
   },
   "Appearance": {
@@ -147,7 +147,13 @@
       "Experience": 0.0
     }
   ],
-  "Inventory": [],
+  "Inventory": [
+    {
+      "Slot": 0,
+      "Id": 4151,
+      "Amount": 1
+    }
+  ],
   "Equipment": [],
   "Settings": {
     "AutoRetaliating": true,

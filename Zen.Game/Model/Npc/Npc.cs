@@ -2,7 +2,7 @@
 {
     public class Npc : Mob.Mob
     {
-        public Npc(int type, Position position) : base(GameWorld.Instance, position)
+        public Npc(int type, Position position) : base(position)
         {
             Type = type;
         }
