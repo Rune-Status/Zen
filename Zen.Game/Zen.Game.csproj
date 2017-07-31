@@ -97,7 +97,6 @@
     <Compile Include="Model\Map\Tile.cs" />
     <Compile Include="Model\Map\TraversalMap.cs" />
     <Compile Include="Model\Mob\Action\Action.cs" />
-    <Compile Include="Model\Mob\Action\ActionQueue.cs" />
     <Compile Include="Model\Mob\Action\Impl\PlayerAction.cs" />
     <Compile Include="Model\Mob\Animation.cs" />
     <Compile Include="Model\Mob\Direction.cs" />
@@ -209,11 +208,14 @@
     <Compile Include="Plugin\Buttons\RunOrbButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
     <Compile Include="Plugin\Commands\OpenInterfacePlugin.cs" />
+    <Compile Include="Plugin\Commands\PlayerActionTestPlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />
     <Compile Include="Plugin\Type\IPlugin.cs" />
     <Compile Include="Plugin\PluginRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduling\ScheduledTask.cs" />
+    <Compile Include="Scheduling\Scheduler.cs" />
     <Compile Include="Update\Block\NpcBlock.cs" />
     <Compile Include="Update\Descriptor\AddNpcDescriptor.cs" />
     <Compile Include="Update\Descriptor\AddPlayerDescriptor.cs" />
@@ -256,6 +258,9 @@
       <Project>{D1FE5BDF-2FA1-4EE9-8879-A7CA5110083C}</Project>
       <Name>Zen.Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugin\Skills\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,6 +7,7 @@ using Zen.Game.Model.Npc;
 using Zen.Game.Model.Object;
 using Zen.Game.Model.Player;
 using Zen.Game.Plugin;
+using Zen.Game.Scheduling;
 using Zen.Game.Update;
 using Zen.Shared;
 
@@ -31,6 +32,7 @@ namespace Zen.Game
         public GroundObjectList GroundObjects { get; } = new GroundObjectList();
         public TraversalMap TraversalMap { get; } = new TraversalMap();
         public MapLoader MapLoader { get; set; }
+        public Scheduler Scheduler { get; set; } = new Scheduler();
 
         public bool AddPlayer(Player player)
         {
@@ -73,6 +75,10 @@ namespace Zen.Game
                 player.Session?.ProcessMessageQueue();
 
             _updater.Tick();
+            Scheduler.Pulse();
         }
+
+        public void Schedule(ScheduledTask task) => Scheduler.Schedule(task);
+
     }
 }

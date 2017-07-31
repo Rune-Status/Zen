@@ -3,29 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zen.Game.Scheduling;
 
 namespace Zen.Game.Model.Mob.Action
 {
-    public abstract class Action<T> where T : Mob
+    public abstract class Action<T> : ScheduledTask where T : Mob
     {
 
-        protected T Mob { get; set; }
+        protected readonly T Mob;
 
-        protected Action(T mob)
+        private bool Stopping = false;
+
+        protected Action(int delay, bool immediate, T mob) : base(delay, immediate)
         {
             this.Mob = mob;
         }
 
-        public abstract void Start();
+        public T GetMob()
+        {
+            return Mob;
+        }
 
-        public abstract void Process();
+        public override void Stop()
+        {
+            base.Stop();
+            if (!Stopping)
+            {
+                Stopping = true;
+                Mob.StopAction();
+            }
+        }
 
-        public abstract void ProcessWithDelay(int delay);
-
-        public abstract void Stop();
-
-        public abstract bool IsRunning();
-
-        public abstract bool IsCancellable();
     }
 }
