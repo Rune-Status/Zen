@@ -26,28 +26,26 @@ namespace Zen.Game.Model.Map
             _referenceTable = ReferenceTable.Decode(Container.Decode(_cache.Store.Read(255, 5)).Data);
         }
 
-        public void Load(int mapX, int mapY)
+        public void Load()
         {
-            for (var x = mapX - 4; x <= mapX + 4 && x < _loaded.Length; x++)
-            {
-                if (x < 0) continue;
+            for (var x = 0; x < 256; x++)
+            for (var y = 0; y < 256; y++)
+                Load(x, y);
+        }
 
-                for (var y = mapY - 4; y <= mapY + 4 && y < _loaded.Length; y++)
-                {
-                    if (y < 0) continue;
-                    if (_loaded[x, y]) continue;
+        private void Load(int x, int y)
+        {
+            if (_loaded[x, y]) return;
 
-                    var landscapeId = _referenceTable.GetEntryId($"l{x}_{y}");
-                    if (landscapeId != -1)
-                        ReadLandscape(x, y, landscapeId);
+            var mapId = _referenceTable.GetEntryId($"m{x}_{y}");
+            if (mapId != -1)
+                ReadMap(x, y, mapId);
 
-                    var mapId = _referenceTable.GetEntryId($"m{x}_{y}");
-                    if (mapId != -1)
-                        ReadMap(x, y, mapId);
+            var landscapeId = _referenceTable.GetEntryId($"l{x}_{y}");
+            if (landscapeId != -1)
+                ReadLandscape(x, y, landscapeId);
 
-                    _loaded[x, y] = true;
-                }
-            }
+            _loaded[x, y] = true;
         }
 
         private void ReadMap(int x, int y, int id)
@@ -110,31 +108,38 @@ namespace Zen.Game.Model.Map
             }
 
             var id = -1;
-            int deltaId;
 
-            while ((deltaId = buffer.ReadSmart()) != 0)
+            try
             {
-                id += deltaId;
-
-                var pos = 0;
-                int deltaPos;
-
-                while ((deltaPos = buffer.ReadSmart()) != 0)
+                int deltaId;
+                while ((deltaId = buffer.ReadSmart()) != 0)
                 {
-                    pos += deltaPos - 1;
+                    id += deltaId;
 
-                    var localX = (pos >> 6) & 0x3F;
-                    var localY = pos & 0x3F;
-                    var height = (pos >> 12) & 0x3;
+                    var pos = 0;
+                    int deltaPos;
 
-                    var temp = buffer.ReadUnsignedByte();
-                    var type = temp >> 2;
-                    var rotation = temp & 0x3;
+                    while ((deltaPos = buffer.ReadSmart()) != 0)
+                    {
+                        pos += deltaPos - 1;
 
-                    var position = new Position(x * 64 + localX, y * 64 + localY, height);
-                    foreach (var listener in _listeners)
-                        listener.OnObjectDecode(id, rotation, (ObjectType) type, position);
+                        var localX = (pos >> 6) & 0x3F;
+                        var localY = pos & 0x3F;
+                        var height = (pos >> 12) & 0x3;
+
+                        var temp = buffer.ReadUnsignedByte();
+                        var type = temp >> 2;
+                        var rotation = temp & 0x3;
+
+                        var position = new Position(x * 64 + localX, y * 64 + localY, height);
+                        foreach (var listener in _listeners)
+                            listener.OnObjectDecode(id, rotation, (ObjectType)type, position);
+                    }
                 }
+            }
+            catch
+            {
+                /* Could not parse landscape. */
             }
         }
 

@@ -83,7 +83,6 @@ namespace Zen.Game.Model.Player
         public void SetLastKnownRegion(Position lastKnownRegion)
         {
             LastKnownRegion = lastKnownRegion;
-            GameWorld.Instance.MapLoader.Load(LastKnownRegion.RegionX, LastKnownRegion.RegionY);
             RegionChanging = true;
         }
     }

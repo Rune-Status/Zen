@@ -8,9 +8,9 @@ namespace Zen.Game.Update
 {
     public class PlayerUpdater
     {
-        private readonly GameWorld _world;
+        private readonly World _world;
 
-        public PlayerUpdater(GameWorld world)
+        public PlayerUpdater(World world)
         {
             _world = world;
         }

@@ -34,7 +34,7 @@ namespace Zen.Net.Service
             }
         }
 
-        public void RegisterNewPlayers(GameWorld world)
+        public void RegisterNewPlayers(Zen.Game.World world)
         {
             lock (NewPlayers)
             {

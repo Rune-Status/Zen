@@ -31,11 +31,11 @@ namespace Zen.Game
             mapLoader.AddListener(new GroundObjectPopulator(World.GroundObjects));
             mapLoader.AddListener(new MapDataListener(World.TraversalMap));
 
-            World.MapLoader = mapLoader;
+            mapLoader.Load();
         }
 
         public MessageRepository Repository { get; }
         public Cache Cache { get; }
-        public GameWorld World { get; } = GameWorld.Instance;
+        public World World { get; } = World.Instance;
     }
 }
