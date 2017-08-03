@@ -1,4 +1,6 @@
-﻿namespace Zen.Game.Model.Mob
+﻿using Zen.Game.Model.Mob.Action;
+
+namespace Zen.Game.Model.Mob
 {
     public abstract class Mob : IEntity
     {
@@ -19,6 +21,8 @@
         public WalkingQueue WalkingQueue { get; }
         public int LastRegionId { get; set; }
         public Position Position { get; set; }
+        public GameWorld World { get; set; }
+        public Action<Mob> Action { get; set; }
 
         public void SetDirections(Direction firstDirection, Direction secondDirection)
         {
@@ -37,8 +41,28 @@
         public bool IsAnimationUpdated() => Animation != null;
         public bool IsSpotAnimationUpdated() => SpotAnimation != null;
 
-        public void StopActions(bool cancelMoving)
+        public void StartAction(Action<Mob> action)
         {
+            if (Action != null)
+            {
+                if (Action.Equals((action)))
+                {
+                    return;
+                }
+
+                StopAction(true);
+            }
+            Action = action;
+            World.Schedule(action);
+        }
+
+        public void StopAction(bool cancelMoving = false)
+        {
+            if (Action != null)
+            {
+                Action.Stop();
+                Action = null;
+            }
             PlayAnimation(new Animation(-1));
             PlaySpotAnimation(new SpotAnimation(-1));
             if (cancelMoving)

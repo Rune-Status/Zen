@@ -3,43 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zen.Game.Model.Player;
 
 namespace Zen.Game.Model.Mob.Action.Impl
 {
     public class PlayerAction : Action<Player.Player>
     {
-        public PlayerAction(Player.Player mob) : base(mob)
+        public PlayerAction(int delay, bool immediate, Player.Player mob) : base(delay, immediate, mob)
         {
         }
 
-        public override void Start()
+        public override void Execute()
         {
-            throw new NotImplementedException();
-        }
-
-        public override void Stop()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Process()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ProcessWithDelay(int delay)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool IsCancellable()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool IsRunning()
-        {
-            throw new NotImplementedException();
+            this.Mob.SendGameMessage("Testing player action execution...");
         }
     }
 }
