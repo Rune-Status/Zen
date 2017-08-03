@@ -76,7 +76,8 @@
     <Compile Include="Definition\ItemDefinition.cs" />
     <Compile Include="Definition\ObjectDefinition.cs" />
     <Compile Include="GameServer.cs" />
-    <Compile Include="GameWorld.cs" />
+    <Compile Include="Plugin\Commands\PositionCommands.cs" />
+    <Compile Include="World.cs" />
     <Compile Include="IO\Json\AppearanceColumn.cs" />
     <Compile Include="IO\Json\EquipmentColumn.cs" />
     <Compile Include="IO\Json\InventoryColumn.cs" />

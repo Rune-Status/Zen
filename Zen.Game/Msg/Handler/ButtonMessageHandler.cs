@@ -14,7 +14,7 @@ namespace Zen.Game.Msg.Handler
             var slot = message.Slot;
             var parameter = message.Parameter;
 
-            if (!GameWorld.Instance.Repository.OnButtonClick(player, id, slot, parameter))
+            if (!World.Instance.Repository.OnButtonClick(player, id, slot, parameter))
                 Logger.Debug($"Unhandled Button Click (Id={id}, Slot={slot}, Parameter={parameter}).");
         }
     }

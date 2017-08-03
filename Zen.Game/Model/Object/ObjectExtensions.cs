@@ -15,10 +15,20 @@ namespace Zen.Game.Model.Object
 
         public static bool IsWall(this ObjectType type) => ForType((int) type) == ObjectGroup.Wall;
 
-        public static ObjectGroup ForType(int type) => Enum.GetValues(typeof(ObjectGroup))
-            .Cast<object>()
-            .Where(group => (int) group == Groups[type])
-            .Cast<ObjectGroup>().FirstOrDefault();
+        public static ObjectGroup ForType(int type)
+        {
+            if (type >= Groups.Length)
+                return default(ObjectGroup);
+
+            var id = Groups[type];
+            foreach (var val in Enum.GetValues(typeof(ObjectGroup)))
+            {
+                if ((int) val == id)
+                    return (ObjectGroup) val;
+            }
+
+            return default(ObjectGroup);
+        }
 
         public static ObjectGroup GetObjectGroup(this ObjectType type) => ForType((int) type);
     }

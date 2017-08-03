@@ -13,14 +13,14 @@ using Zen.Shared;
 
 namespace Zen.Game
 {
-    public class GameWorld
+    public class World
     {
-        public static readonly GameWorld Instance = new GameWorld();
+        public static readonly World Instance = new World();
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private readonly PlayerUpdater _updater;
 
-        private GameWorld()
+        private World()
         {
             _updater = new PlayerUpdater(this);
             GroundObjects.AddListener(new ObjectDataListener(TraversalMap));
@@ -32,7 +32,6 @@ namespace Zen.Game
         public GroundObjectList GroundObjects { get; } = new GroundObjectList();
         public TraversalMap TraversalMap { get; } = new TraversalMap();
         public MapLoader MapLoader { get; set; }
-        public Scheduler Scheduler { get; set; } = new Scheduler();
 
         public bool AddPlayer(Player player)
         {

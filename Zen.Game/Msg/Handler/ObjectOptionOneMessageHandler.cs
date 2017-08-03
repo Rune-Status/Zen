@@ -9,10 +9,10 @@ namespace Zen.Game.Msg.Handler
         public override void Handle(Player player, ObjectOptionOneMessage message)
         {
             var position = new Position(message.X, message.Y, player.Position.Height);
-            if (GameWorld.Instance.TraversalMap.ShouldModifyPlane(position.X, position.Y))
+            if (World.Instance.TraversalMap.ShouldModifyPlane(position.X, position.Y))
                 position = position.Translate(0, 0, 1);
 
-            var groundObject = GameWorld.Instance.GroundObjects.Get(message.Id, position);
+            var groundObject = World.Instance.GroundObjects.Get(message.Id, position);
             if (groundObject == null) return;
 
             player.SendGameMessage($"Object = {groundObject.Definition.Name}");
