@@ -32,6 +32,7 @@ namespace Zen.Game
         public GroundObjectList GroundObjects { get; } = new GroundObjectList();
         public TraversalMap TraversalMap { get; } = new TraversalMap();
         public MapLoader MapLoader { get; set; }
+        public Scheduler Scheduler { get; } = new Scheduler();
 
         public bool AddPlayer(Player player)
         {

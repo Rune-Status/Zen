@@ -21,7 +21,7 @@ namespace Zen.Game.Model.Mob
         public WalkingQueue WalkingQueue { get; }
         public int LastRegionId { get; set; }
         public Position Position { get; set; }
-        public GameWorld World { get; set; }
+        public World World { get; set; }
         public Action<Mob> Action { get; set; }
 
         public void SetDirections(Direction firstDirection, Direction secondDirection)
