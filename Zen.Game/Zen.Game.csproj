@@ -113,6 +113,8 @@
     <Compile Include="Model\Player\Appearance.cs" />
     <Compile Include="Model\Item\ContainerAppearanceListener.cs" />
     <Compile Include="Model\Item\ContainerMessageListener.cs" />
+    <Compile Include="Model\Player\Communication\ContactManager.cs" />
+    <Compile Include="Model\Player\Communication\Contact.cs" />
     <Compile Include="Model\Player\DisplayMode.cs" />
     <Compile Include="Model\Item\IContainerListener.cs" />
     <Compile Include="Model\IEntity.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Msg\Decoder\SwapItemsMessageDecoder.cs" />
     <Compile Include="Msg\Decoder\WalkMessageDecoder.cs" />
     <Compile Include="Msg\Encoder\ConfigMessageEncoder.cs" />
+    <Compile Include="Msg\Encoder\ContactEncoder.cs" />
     <Compile Include="Msg\Encoder\GameMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceCloseMessageEncoder.cs" />
     <Compile Include="Msg\Encoder\InterfaceItemsMessageEncoder.cs" />
@@ -177,6 +180,7 @@
     <Compile Include="Msg\Impl\ChatMessage.cs" />
     <Compile Include="Msg\Impl\CommandMessage.cs" />
     <Compile Include="Msg\Impl\ConfigMessage.cs" />
+    <Compile Include="Msg\Impl\ContactMessage.cs" />
     <Compile Include="Msg\Impl\DisplayMessage.cs" />
     <Compile Include="Msg\Impl\EquipItemMessage.cs" />
     <Compile Include="Msg\Impl\GameMessage.cs" />
@@ -208,7 +212,6 @@
     <Compile Include="Plugin\Buttons\RunOrbButtonPlugin.cs" />
     <Compile Include="Plugin\Buttons\SettingsButtonPlugin.cs" />
     <Compile Include="Plugin\Commands\OpenInterfacePlugin.cs" />
-    <Compile Include="Plugin\Commands\PlayerActionTestPlugin.cs" />
     <Compile Include="Plugin\Commands\SpawnItemPlugin.cs" />
     <Compile Include="Plugin\Type\IButtonPlugin.cs" />
     <Compile Include="Plugin\Type\ICommandPlugin.cs" />

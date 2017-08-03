@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Zen.Game.Model.Item;
+using Zen.Game.Model.Player.Communication;
 using Zen.Game.Msg;
 using Zen.Game.Msg.Impl;
 using Zen.Shared;
@@ -20,7 +21,7 @@ namespace Zen.Game.Model.Player
         public string Username { get; }
         public string Password { get; }
         public int Rights { get; set; } = 2;
-        public DateTime CreationDateTime { get; set; } = DateTime.UtcNow;
+        public DateTimeOffset CreationDateTime { get; set; } = DateTimeOffset.UtcNow;
         public PlayerSession Session { get; set; }
         public Appearance Appearance { get; } = Appearance.DefaultAppearance;
         public int[] AppearanceTickets { get; } = new int[2500];
@@ -34,6 +35,7 @@ namespace Zen.Game.Model.Player
         public ItemContainer Inventory { get; } = new ItemContainer(28);
         public ItemContainer Equipment { get; } = new ItemContainer(14);
         public PlayerSettings Settings { get; private set; }
+        public ContactManager ContactManager { get; set; }
 
         public int Stance => Equipment.Get(EquipmentConstants.Weapon)?.EquipmentDefinition.Stance ?? 1426;
 
@@ -43,6 +45,7 @@ namespace Zen.Game.Model.Player
             InterfaceSet = new InterfaceSet(this);
             SkillSet = new SkillSet(this);
             Settings = new PlayerSettings(this);
+            ContactManager = new ContactManager(this);
 
             /* Register container listeners. */
             Inventory.AddListener(new ContainerMessageListener(this, 149, 0, 93));

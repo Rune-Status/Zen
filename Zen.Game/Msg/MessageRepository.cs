@@ -41,6 +41,7 @@ namespace Zen.Game.Msg
             Bind(new NpcUpdateMessageEncoder());
             Bind(new ConfigMessageEncoder());
             Bind(new LogoutMessageEncoder());
+            Bind(new ContactEncoder());
 
             Bind(new WalkMessageHandler());
             Bind(new CommandMessageHandler());
