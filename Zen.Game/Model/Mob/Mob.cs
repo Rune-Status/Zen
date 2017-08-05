@@ -45,11 +45,8 @@ namespace Zen.Game.Model.Mob
         {
             if (Action != null)
             {
-                if (Action.Equals((action)))
-                {
+                if (Action.Equals(action))
                     return;
-                }
-
                 StopAction(true);
             }
             Action = action;

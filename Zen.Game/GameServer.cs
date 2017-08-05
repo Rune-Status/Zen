@@ -2,8 +2,6 @@
 using Zen.Fs;
 using Zen.Game.Definition;
 using Zen.Game.IO;
-using Zen.Game.Model.Map;
-using Zen.Game.Model.Object;
 using Zen.Game.Model.Player;
 using Zen.Game.Msg;
 using Zen.Shared;
@@ -26,12 +24,6 @@ namespace Zen.Game
             EquipmentDefinition.Load();
             EnumDefinition.Load(Cache);
             ObjectDefinition.Load(Cache);
-
-            var mapLoader = new MapLoader(Cache, keyTable);
-            mapLoader.AddListener(new GroundObjectPopulator(World.GroundObjects));
-            mapLoader.AddListener(new MapDataListener(World.TraversalMap));
-
-            mapLoader.Load();
         }
 
         public MessageRepository Repository { get; }

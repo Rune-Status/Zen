@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zen.Game.Model.Item;
+﻿using Zen.Game.Model.Item;
 using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
 
@@ -20,8 +15,10 @@ namespace Zen.Game.Plugin.Commands
         public void OnCommand(Player player, string keyword, string[] arguments)
         {
             var itemId = int.Parse(arguments[0]);
-            var itemAmount = int.Parse(arguments[1]);
-            player.Inventory.Add(new Item(itemId, itemAmount));
+            var amount = 1;
+            if (arguments.Length > 1)
+                amount = int.Parse(arguments[1]);
+            player.Inventory.Add(new Item(itemId, amount));
         }
 
     }
