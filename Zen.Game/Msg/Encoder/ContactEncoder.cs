@@ -30,20 +30,21 @@ namespace Zen.Game.Msg.Encoder
                     builder = new GameFrameBuilder(alloc, 126, FrameType.VariableShort);
                     foreach (var ignored in player.ContactManager.Ignored)
                     {
-                 
-                        builder.Put(DataType.Long, Convert.ToInt64(ignored));
+                        if (ignored.Length == 0)
+                            continue;
+                        builder.Put(DataType.Long, StringUtil.stringToLong(ignored));
                     }
                     break;
                 case ContactMessage.UpdateFriendType:
                     builder = new GameFrameBuilder(alloc, 62, FrameType.VariableByte);
-                    builder.Put(DataType.Long, Convert.ToInt64(contact.Name));
+                    builder.Put(DataType.Long, StringUtil.stringToLong(contact.Name));
                     builder.Put(DataType.Short, contact.WorldId);
 
-                    var c = player.ContactManager.Contacts; // get contact based on message
+                    var c = player.ContactManager.Contacts[contact.Name];
                     if (c != null)
                     {
                         // TODO: ranks
-                        builder.Put(DataType.Byte, 0);
+                        builder.Put(DataType.Byte, 1);
                     }
                     else
                     {

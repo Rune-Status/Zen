@@ -9,13 +9,12 @@ namespace Zen.Game.Model.Player.Communication
     public class Contact
     {
 
-        private string Username { get; }
+        private string Username { get; set; }
         private int WorldId { get; set; }
 
-        public Contact(string username, int worldId)
+        public Contact(string username)
         {
             Username = username;
-            WorldId = worldId;
         }
 
     }
