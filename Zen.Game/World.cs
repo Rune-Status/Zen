@@ -72,6 +72,5 @@ namespace Zen.Game
         }
 
         public void Schedule(ScheduledTask task) => Scheduler.Schedule(task);
-
     }
 }

@@ -12,6 +12,9 @@
         public int CentralRegionX => X / 8;
         public int CentralRegionY => Y / 8;
 
+        public int TopLeftRegionX => CentralRegionX - 6;
+        public int TopLeftRegionY => CentralRegionY - 6;
+
         public int RegionX => X / 64;
         public int RegionY => Y / 64;
 
