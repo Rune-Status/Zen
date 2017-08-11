@@ -1,7 +1,7 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Zen.Game;
 using Zen.Game.IO;
 using Zen.Game.Model.Player;
 using Zen.Net.Login;
@@ -21,9 +21,10 @@ namespace Zen.Net.Service
         private Queue<SessionPlayerPair> NewPlayers { get; } = new Queue<SessionPlayerPair>();
         private Queue<Player> OldPlayers { get; } = new Queue<Player>();
 
-        public void AddLoginRequest(LoginSession session, LoginRequest request)
+        public void AddLoginRequest(Zen.Game.World world, LoginSession session, LoginRequest request)
         {
-            Jobs.Add(new LoginJob(session, request));
+            Console.Out.WriteLine("Hello World");
+            Jobs.Add(new LoginJob(world, session, request));
         }
 
         public void AddLogoutRequest(Player player)
@@ -40,12 +41,14 @@ namespace Zen.Net.Service
             {
                 SessionPlayerPair pair;
                 while (NewPlayers.Count > 0 && (pair = NewPlayers.Dequeue()) != null)
+                {
                     if (world.GetPlayer(pair.Player.Username) != null)
                         pair.Session.SendLoginFailure(LoginConstants.StatusAlreadyOnline);
                     else if (!world.AddPlayer(pair.Player))
                         pair.Session.SendLoginFailure(LoginConstants.StatusWorldFull);
                     else
                         pair.Session.SendLoginSuccess(LoginConstants.StatusOk, pair.Player);
+                }
             }
 
             lock (OldPlayers)
@@ -73,27 +76,32 @@ namespace Zen.Net.Service
 
         internal class LoginJob : Job
         {
-            public LoginJob(LoginSession session, LoginRequest request)
+            public LoginJob(Zen.Game.World world, LoginSession session, LoginRequest request)
             {
+                World = world;
                 Session = session;
                 Request = request;
             }
 
+            private Zen.Game.World World { get; }
             private LoginSession Session { get; }
             private LoginRequest Request { get; }
 
             public override void Perform(LoginService service)
             {
-                var result = service.Serializer.Load(Request.Username, Request.Password);
+                var result = service.Serializer.Load(World, Request.Username, Request.Password);
                 var status = result.Status;
 
                 if (status != LoginConstants.StatusOk)
+                {
                     Session.SendLoginFailure(status);
-                else
-                    lock (service.NewPlayers)
-                    {
-                        service.NewPlayers.Enqueue(new SessionPlayerPair(Session, result.Player));
-                    }
+                    return;
+                }
+
+                lock (service.NewPlayers)
+                {
+                    service.NewPlayers.Enqueue(new SessionPlayerPair(Session, result.Player));
+                }
             }
         }
 

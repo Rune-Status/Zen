@@ -13,7 +13,7 @@ namespace Zen.Game.Msg.Handler
             var keyword = message.Name;
             var arguments = message.Arguments;
 
-            if (!World.Instance.Repository.OnCommand(player, keyword, arguments))
+            if (!player.World.Repository.OnCommand(player, keyword, arguments))
                 Logger.Debug($"Unhandled Command (keyword={keyword})");
         }
     }

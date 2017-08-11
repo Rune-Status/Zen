@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using NLog;
+using Zen.Game.Model.Map;
 using Zen.Game.Model.Mob;
 using Zen.Game.Model.Npc;
 using Zen.Game.Model.Player;
@@ -12,13 +13,13 @@ namespace Zen.Game
 {
     public class World
     {
-        public static readonly World Instance = new World();
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-
         private readonly PlayerUpdater _updater;
 
-        private World()
+        public World(GameMap map, TraversalMap traversal)
         {
+            GameMap = map;
+            TraversalMap = traversal;
             _updater = new PlayerUpdater(this);
         }
 
@@ -26,6 +27,8 @@ namespace Zen.Game
         public MobList<Npc> Npcs { get; } = new MobList<Npc>(GameConstants.MaxNpcs);
         public PluginRepository Repository { get; } = new PluginRepository();
         public Scheduler Scheduler { get; } = new Scheduler();
+        public TraversalMap TraversalMap { get; }
+        public GameMap GameMap { get; }
 
         public bool AddPlayer(Player player)
         {

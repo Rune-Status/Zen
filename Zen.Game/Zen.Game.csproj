@@ -76,6 +76,13 @@
     <Compile Include="Definition\ItemDefinition.cs" />
     <Compile Include="Definition\ObjectDefinition.cs" />
     <Compile Include="GameServer.cs" />
+    <Compile Include="Model\Map\GameMap.cs" />
+    <Compile Include="Model\Map\GameMapListener.cs" />
+    <Compile Include="Model\Map\MapTile.cs" />
+    <Compile Include="Model\Map\TraversalMap.cs" />
+    <Compile Include="Model\Object\GameObject.cs" />
+    <Compile Include="Model\Object\ObjectGroup.cs" />
+    <Compile Include="Model\Object\ObjectType.cs" />
     <Compile Include="Plugin\Commands\PositionCommands.cs" />
     <Compile Include="World.cs" />
     <Compile Include="IO\Json\AppearanceColumn.cs" />

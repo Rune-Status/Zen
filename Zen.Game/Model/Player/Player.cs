@@ -11,7 +11,7 @@ namespace Zen.Game.Model.Player
 {
     public class Player : Mob.Mob
     {
-        public Player(string username, string password) : base(new Position(GameConstants.SpawnX, GameConstants.SpawnY))
+        public Player(World world, string username, string password) : base(world, new Position(GameConstants.SpawnX, GameConstants.SpawnY))
         {
             Username = username;
             Password = password;
@@ -86,6 +86,7 @@ namespace Zen.Game.Model.Player
         public void SetLastKnownRegion(Position lastKnownRegion)
         {
             LastKnownRegion = lastKnownRegion;
+            World.GameMap.Parse(Position.RegionX, Position.RegionY);
             RegionChanging = true;
         }
     }

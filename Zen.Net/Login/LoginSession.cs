@@ -55,7 +55,7 @@ namespace Zen.Net.Login
             }
 
             _displayMode = request.DisplayMode;
-            _service.AddLoginRequest(this, request);
+            _service.AddLoginRequest(Server.World, this, request);
         }
 
         public override void Unregister()
