@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Zen.Game.Model.Map;
 using Zen.Util;
 
 namespace Zen.Game.Model.Mob
@@ -8,10 +9,12 @@ namespace Zen.Game.Model.Mob
     {
         private readonly Mob _mob;
         private readonly Queue<Position> _points = new Queue<Position>();
+        private readonly TraversalMap _traversalMap;
 
         public WalkingQueue(Mob mob)
         {
             _mob = mob;
+            _traversalMap = mob.World.TraversalMap;
         }
 
         public bool MinimapFlagReset { get; set; }
@@ -70,27 +73,67 @@ namespace Zen.Game.Model.Mob
             var next = _points.RemoveFirst();
             if (next != null)
             {
-                firstDirection = GetDirectionBetween(position, next);
-                position = next;
+                var direction = GetDirectionBetween(position, next);
+                var traversable = IsTraversable(position, direction, _mob.Size);
 
-                var player = _mob as Player.Player;
-                var running = player != null ? player.Settings.Running || RunningQueue : RunningQueue;
-
-                if (running)
+                if (traversable)
                 {
-                    // TODO Decrease Run Energy.
+                    firstDirection = direction;
+                    position = next;
 
-                    next = _points.RemoveFirst();
-                    if (next != null)
+                    var player = _mob as Player.Player;
+                    var running = RunningQueue || player != null && player.Settings.Running;
+
+                    if (running)
                     {
-                        secondDirection = GetDirectionBetween(position, next);
-                        position = next;
+                        next = _points.RemoveFirst();
+                        if (next != null)
+                        {
+                            direction = GetDirectionBetween(position, next);
+                            traversable = IsTraversable(position, direction, _mob.Size);
+
+                            if (traversable)
+                            {
+                                secondDirection = direction;
+                                position = next;
+                            }
+                        }
                     }
                 }
+
+                if (!traversable)
+                    Reset();
             }
 
             _mob.SetDirections(firstDirection, secondDirection);
             _mob.Position = position;
+        }
+
+        private bool IsTraversable(Position from, Direction direction, int size)
+        {
+            switch (direction)
+            {
+                case Direction.None:
+                    return true;
+                case Direction.NorthWest:
+                    return _traversalMap.IsTraversableNorthWest(from.Height, from.X, from.Y, size);
+                case Direction.North:
+                    return _traversalMap.IsTraversableNorth(from.Height, from.X, from.Y, size);
+                case Direction.NorthEast:
+                    return _traversalMap.IsTraversableNorthEast(from.Height, from.X, from.Y, size);
+                case Direction.West:
+                    return _traversalMap.IsTraversableWest(from.Height, from.X, from.Y, size);
+                case Direction.East:
+                    return _traversalMap.IsTraversableEast(from.Height, from.X, from.Y, size);
+                case Direction.SouthWest:
+                    return _traversalMap.IsTraversableSouthWest(from.Height, from.X, from.Y, size);
+                case Direction.South:
+                    return _traversalMap.IsTraversableSouth(from.Height, from.X, from.Y, size);
+                case Direction.SouthEast:
+                    return _traversalMap.IsTraversableSouthEast(from.Height, from.X, from.Y, size);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+            }
         }
 
         private static Direction GetDirectionBetween(Position cur, Position next)

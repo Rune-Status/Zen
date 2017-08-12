@@ -39,12 +39,33 @@ namespace Zen.Game.Model.Object
             Types[Value] = this;
         }
 
-        public static ObjectType ForId(int type)
-        {
-            return (from kvp in Types where kvp.Key == type select kvp.Value).FirstOrDefault();
-        }
-
         public ObjectGroup Group { get; }
         public int Value { get; }
+
+        protected bool Equals(ObjectType other)
+        {
+            return Equals(Group, other.Group) && Value == other.Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+            return Equals((ObjectType) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((Group != null ? Group.GetHashCode() : 0) * 397) ^ Value;
+            }
+        }
+
+        public bool IsWall() => Equals(Group, ObjectGroup.Wall);
+
+        public static ObjectType ForId(int type) => (from kvp in Types where kvp.Key == type select kvp.Value)
+            .FirstOrDefault();
     }
 }

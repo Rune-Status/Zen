@@ -9,6 +9,9 @@ namespace Zen.Game.Model.Map
 {
     public class GameMap
     {
+        public const int FlagClip = 0x1;
+        public const int FlagBridge = 0x2;
+
         private readonly Cache _cache;
         private readonly ReferenceTable _table;
         private readonly LandscapeKeyTable _keyTable;

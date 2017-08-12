@@ -83,6 +83,7 @@
     <Compile Include="Model\Object\GameObject.cs" />
     <Compile Include="Model\Object\ObjectGroup.cs" />
     <Compile Include="Model\Object\ObjectType.cs" />
+    <Compile Include="Model\Object\Rotation.cs" />
     <Compile Include="Plugin\Commands\PositionCommands.cs" />
     <Compile Include="World.cs" />
     <Compile Include="IO\Json\AppearanceColumn.cs" />
@@ -96,8 +97,6 @@
     <Compile Include="IO\Serializers\DummyPlayerSerializer.cs" />
     <Compile Include="IO\LandscapeKeyTable.cs" />
     <Compile Include="IO\PlayerSerializer.cs" />
-    <Compile Include="Model\Mob\Action\Action.cs" />
-    <Compile Include="Model\Mob\Action\Impl\PlayerAction.cs" />
     <Compile Include="Model\Mob\Animation.cs" />
     <Compile Include="Model\Mob\Direction.cs" />
     <Compile Include="Model\Mob\WalkingQueue.cs" />
