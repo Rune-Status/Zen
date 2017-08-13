@@ -84,6 +84,10 @@
     <Compile Include="Model\Object\ObjectGroup.cs" />
     <Compile Include="Model\Object\ObjectType.cs" />
     <Compile Include="Model\Object\Rotation.cs" />
+    <Compile Include="Model\Pathfinding\AStarPathFinder.cs" />
+    <Compile Include="Model\Pathfinding\Path.cs" />
+    <Compile Include="Model\Pathfinding\PathFinder.cs" />
+    <Compile Include="Plugin\Commands\PathCommandPlugin.cs" />
     <Compile Include="Plugin\Commands\PositionCommands.cs" />
     <Compile Include="World.cs" />
     <Compile Include="IO\Json\AppearanceColumn.cs" />

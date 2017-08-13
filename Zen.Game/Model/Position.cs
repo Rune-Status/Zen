@@ -24,7 +24,12 @@
 
         public int LocalX => GetLocalX(CentralRegionX);
         public int LocalY => GetLocalY(CentralRegionY);
+        public int BaseLocalX => GetBaseLocalX(CentralRegionX);
+        public int BaseLocalY => GetBaseLocalY(CentralRegionY);
         public int RegionId => RegionX * 256 + RegionY;
+
+        public int GetBaseLocalX(int centralRegionX) => (centralRegionX - 6) * 8;
+        public int GetBaseLocalY(int centralRegionY) => (centralRegionY - 6) * 8;
 
         public int GetLocalX(int centralRegionX) => X - (centralRegionX - 6) * 8;
         public int GetLocalY(int centralRegionY) => Y - (centralRegionY - 6) * 8;

@@ -23,7 +23,6 @@ namespace Zen.Net.Service
 
         public void AddLoginRequest(Zen.Game.World world, LoginSession session, LoginRequest request)
         {
-            Console.Out.WriteLine("Hello World");
             Jobs.Add(new LoginJob(world, session, request));
         }
 
