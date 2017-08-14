@@ -88,6 +88,7 @@
     <Compile Include="Model\Pathfinding\DumbPathFinder.cs" />
     <Compile Include="Model\Pathfinding\Path.cs" />
     <Compile Include="Model\Pathfinding\PathFinder.cs" />
+    <Compile Include="Plugin\Buttons\WelcomeScreenButtonPlugin.cs" />
     <Compile Include="Plugin\Commands\PathCommandPlugin.cs" />
     <Compile Include="Plugin\Commands\PositionCommands.cs" />
     <Compile Include="World.cs" />

@@ -4,6 +4,10 @@
     {
         public const int Fixed = 548;
         public const int Resizable = 746;
+        public const int Empty = 549;
+
+        public const int WelcomeScreen = 378;
+        public const int MessageOfTheWeek = 15;
 
         public const int Skills = 320;
         public const int Quests = 274;

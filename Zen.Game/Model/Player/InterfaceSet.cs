@@ -23,12 +23,20 @@ namespace Zen.Game.Model.Player
 
         public void OnLogin(int displayMode)
         {
-            /* Determine display mode and open root interface. */
+            /* Determine display mode. */
             if (displayMode == 0 || displayMode == 1)
                 Mode = DisplayMode.Fixed;
             else
                 Mode = DisplayMode.Resizable;
 
+            /* Send the Welcome Screen. */
+            OpenRootInterface(Interface.Empty);
+            Open(Interface.WelcomeScreen, Interface.Empty, 2);
+            Open(Interface.MessageOfTheWeek, Interface.Empty, 3);
+        }
+
+        public void OpenGameFrame()
+        {
             OpenRootInterface(Resizable ? Interface.Resizable : Interface.Fixed);
 
             /* Setup Chatbox. */
