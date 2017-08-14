@@ -85,6 +85,7 @@
     <Compile Include="Model\Object\ObjectType.cs" />
     <Compile Include="Model\Object\Rotation.cs" />
     <Compile Include="Model\Pathfinding\AStarPathFinder.cs" />
+    <Compile Include="Model\Pathfinding\DumbPathFinder.cs" />
     <Compile Include="Model\Pathfinding\Path.cs" />
     <Compile Include="Model\Pathfinding\PathFinder.cs" />
     <Compile Include="Plugin\Commands\PathCommandPlugin.cs" />

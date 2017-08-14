@@ -15,12 +15,12 @@ namespace Zen.Game.Plugin.Commands
 
         public void OnCommand(Player player, string keyword, string[] arguments)
         {
-            var pathFinder = new AStarPathFinder(player.World.TraversalMap);
             var x = int.Parse(arguments[0]);
             var y = int.Parse(arguments[1]);
 
             player.WalkingQueue.Reset();
-            var path = pathFinder.Find(player, new Position(x, y, player.Position.Height));
+            var path = DumbPathFinder.Find(player.World.TraversalMap, player.Position,
+                new Position(x, y, player.Position.Height), player.Size, 5, false);
 
             if (path == null)
                 return;
