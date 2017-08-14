@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using DotNetty.Buffers;
+﻿using DotNetty.Buffers;
 using Zen.Builder;
-using Zen.Game.Model.Player;
-using Zen.Game.Model.Player.Communication;
 using Zen.Game.Msg.Impl;
 using Zen.Util;
 
@@ -32,12 +23,12 @@ namespace Zen.Game.Msg.Encoder
                     {
                         if (ignored.Length == 0)
                             continue;
-                        builder.Put(DataType.Long, StringUtil.stringToLong(ignored));
+                        builder.Put(DataType.Long, ignored.EncodeBase37());
                     }
                     break;
                 case ContactMessage.UpdateFriendType:
                     builder = new GameFrameBuilder(alloc, 62, FrameType.VariableByte);
-                    builder.Put(DataType.Long, StringUtil.stringToLong(contact.Name));
+                    builder.Put(DataType.Long, contact.Name.EncodeBase37());
                     builder.Put(DataType.Short, contact.WorldId);
 
                     var c = player.ContactManager.Contacts[contact.Name];

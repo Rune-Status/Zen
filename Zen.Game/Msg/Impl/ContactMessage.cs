@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zen.Game.Model.Player;
+﻿using Zen.Game.Model.Player;
 
 namespace Zen.Game.Msg.Impl
 {
@@ -16,7 +11,7 @@ namespace Zen.Game.Msg.Impl
             Type = type;
         }
 
-        public ContactMessage(Player player, String name, int worldId)
+        public ContactMessage(Player player, string name, int worldId)
         {
             Player = player;
             Name = name;

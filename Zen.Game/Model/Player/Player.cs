@@ -63,7 +63,7 @@ namespace Zen.Game.Model.Player
             ChatMessage = null;
         }
 
-        public void StopActions(bool cancelMoving)
+        public new void StopAction(bool cancelMoving)
         {
             base.StopAction(cancelMoving);
             if (InterfaceSet.InterfaceOpen)

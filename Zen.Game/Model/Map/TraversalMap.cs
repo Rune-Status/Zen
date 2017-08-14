@@ -10,12 +10,12 @@ namespace Zen.Game.Model.Map
         public const int RegionSize = 64;
         public const int MaximumPlane = 4;
 
-        private readonly Region[] regions = new Region[Size * Size];
+        private readonly Region[] _regions = new Region[Size * Size];
 
         private void Set(int plane, int x, int y, int flag)
         {
             int regionX = x >> 6, regionY = y >> 6;
-            var region = regions[regionX + regionY * Size];
+            var region = _regions[regionX + regionY * Size];
 
             region?.GetTile(plane, x & 0x3f, y & 0x3f).Set(flag);
         }
@@ -27,7 +27,7 @@ namespace Zen.Game.Model.Map
             int regionX = x >> 6, regionY = y >> 6;
             int localX = x & 0x3f, localY = y & 0x3f;
 
-            var region = regions[regionX + regionY * Size];
+            var region = _regions[regionX + regionY * Size];
             if (region == null)
                 return;
 
@@ -41,13 +41,13 @@ namespace Zen.Game.Model.Map
         public bool RegionInitialized(int x, int y)
         {
             int regionX = x >> 6, regionY = y >> 6;
-            return regions[regionX + regionY * Size] != null;
+            return _regions[regionX + regionY * Size] != null;
         }
 
         public void InitializeRegion(int x, int y)
         {
             int regionX = x >> 6, regionY = y >> 6;
-            regions[regionX + regionY * Size] = new Region();
+            _regions[regionX + regionY * Size] = new Region();
         }
 
         public void MarkWall(Rotation rotation, int plane, int x, int y, ObjectType type, bool impenetrable)
@@ -214,7 +214,7 @@ namespace Zen.Game.Model.Map
             int regionX = x >> 6, regionY = y >> 6;
             int localX = x & 0x3f, localY = y & 0x3f;
 
-            var region = regions[regionX + regionY * Size];
+            var region = _regions[regionX + regionY * Size];
             if (region == null)
                 return false;
 
@@ -389,17 +389,17 @@ namespace Zen.Game.Model.Map
 
         private class Region
         {
-            private readonly Tile[,] tiles;
+            private readonly Tile[,] _tiles;
 
             public Region()
             {
-                tiles = new Tile[MaximumPlane, RegionSize * RegionSize];
+                _tiles = new Tile[MaximumPlane, RegionSize * RegionSize];
                 for (var plane = 0; plane < MaximumPlane; plane++)
                 for (var id = 0; id < RegionSize * RegionSize; id++)
-                    tiles[plane, id] = new Tile();
+                    _tiles[plane, id] = new Tile();
             }
 
-            public Tile GetTile(int plane, int x, int y) => tiles[plane, x + y * RegionSize];
+            public Tile GetTile(int plane, int x, int y) => _tiles[plane, x + y * RegionSize];
         }
     }
 }

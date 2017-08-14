@@ -1,5 +1,4 @@
-﻿using System;
-using Zen.Game.Definition;
+﻿using Zen.Game.Definition;
 using Zen.Game.Model.Object;
 
 namespace Zen.Game.Model.Map

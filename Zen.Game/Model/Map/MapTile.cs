@@ -6,7 +6,7 @@ namespace Zen.Game.Model.Map
 {
     public class MapTile
     {
-        private Dictionary<ObjectGroup, GameObject> _objects = new Dictionary<ObjectGroup, GameObject>();
+        private readonly Dictionary<ObjectGroup, GameObject> _objects = new Dictionary<ObjectGroup, GameObject>();
 
         public void Add(ObjectGroup group, GameObject obj, bool replace)
         {

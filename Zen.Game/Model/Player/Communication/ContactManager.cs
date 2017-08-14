@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zen.Game.Msg.Impl;
+﻿using System.Collections.Generic;
 
 namespace Zen.Game.Model.Player.Communication
 {
@@ -13,20 +8,20 @@ namespace Zen.Game.Model.Player.Communication
         public const int MaxContacts = 200;
         public const int MaxIgnores = 100;
 
-        private Player Player;
+        private Player _player;
         public Dictionary<string, Contact> Contacts { get; set; }
         public List<string> Ignored { get; set; }
 
         public ContactManager(Player player)
         {
-            Player = player;
+            _player = player;
             Contacts = new Dictionary<string, Contact>(MaxContacts);
             Ignored = new List<string>(MaxIgnores);
         }
 
         public void AddContact(Player player, string contact)
         {
-            if (Contacts.Count() >= MaxContacts)
+            if (Contacts.Count >= MaxContacts)
             {
                 player.SendGameMessage("Your friends list is full.");
                 return;
@@ -54,7 +49,7 @@ namespace Zen.Game.Model.Player.Communication
 
         public void AddIgnore(Player player, string contact)
         {
-            if (Ignored.Count() >= MaxIgnores)
+            if (Ignored.Count >= MaxIgnores)
             {
                 player.SendGameMessage("Your ignore list is full.");
                 return;

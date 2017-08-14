@@ -5,7 +5,6 @@ using Zen.Game.Model.Mob;
 using Zen.Game.Model.Npc;
 using Zen.Game.Model.Player;
 using Zen.Game.Plugin;
-using Zen.Game.Scheduling;
 using Zen.Game.Update;
 using Zen.Shared;
 
@@ -26,7 +25,6 @@ namespace Zen.Game
         public MobList<Player> Players { get; } = new MobList<Player>(GameConstants.MaxPlayers);
         public MobList<Npc> Npcs { get; } = new MobList<Npc>(GameConstants.MaxNpcs);
         public PluginRepository Repository { get; } = new PluginRepository();
-        public Scheduler Scheduler { get; } = new Scheduler();
         public TraversalMap TraversalMap { get; }
         public GameMap GameMap { get; }
 
@@ -71,9 +69,6 @@ namespace Zen.Game
                 player.Session?.ProcessMessageQueue();
 
             _updater.Tick();
-            Scheduler.Pulse();
         }
-
-        public void Schedule(ScheduledTask task) => Scheduler.Schedule(task);
     }
 }

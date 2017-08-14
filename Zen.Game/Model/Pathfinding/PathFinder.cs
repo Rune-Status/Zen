@@ -6,7 +6,7 @@ namespace Zen.Game.Model.Pathfinding
     {
         protected PathFinder(TraversalMap traversalMap)
         {
-            this.TraversalMap = traversalMap;
+            TraversalMap = traversalMap;
         }
 
         protected TraversalMap TraversalMap { get; }

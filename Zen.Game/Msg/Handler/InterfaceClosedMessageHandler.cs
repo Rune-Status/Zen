@@ -7,7 +7,7 @@ namespace Zen.Game.Msg.Handler
     {
         public override void Handle(Player player, InterfaceClosedMessage message)
         {
-            player.StopActions(true);
+            player.StopAction(true);
         }
     }
 }

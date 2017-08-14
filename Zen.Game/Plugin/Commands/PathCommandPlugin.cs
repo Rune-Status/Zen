@@ -1,5 +1,4 @@
-﻿using System;
-using Zen.Game.Model;
+﻿using Zen.Game.Model;
 using Zen.Game.Model.Pathfinding;
 using Zen.Game.Model.Player;
 using Zen.Game.Plugin.Type;
