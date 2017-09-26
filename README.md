@@ -6,9 +6,6 @@ RuneScape Emulator written in C#
 * William Talleur
 * Ben Stern
 
-## Backlog
-The project management is now setup at http://theprodigynetwork.com/kanboard
-
 ## Libraries
 * DotNetty 0.4.5
 * BouncyCastle 1.8.1
